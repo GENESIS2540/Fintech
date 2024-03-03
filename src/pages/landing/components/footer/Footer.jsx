@@ -12,11 +12,15 @@ const Footer = () => {
     <div className="bg-[#015FF1] text-white py-[60px] mt-[140px] ">
       <div className="grid grid-cols-4 gap-[20px] w-[80%] mx-[auto]">
         <div className="grid gap-[15px] text-[14px]">
-          <img
-            className="h-[60px]"
-            src={salem_logo_footer}
-            alt="salem_logo_footer"
-          />
+          <div className="flex items-center gap-[5px]">
+            <img
+              className="h-[50px]"
+              src={salem_logo_footer}
+              alt="salem_logo_footer"
+            />
+            <p className="text-[30px] font-bold cursor-pointer">BNPL</p>
+          </div>
+
           <p>
             264 Manon road F1 456 caron <br /> Town
           </p>

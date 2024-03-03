@@ -1,9 +1,9 @@
 import React from "react";
-import vector_1 from "../../Assets/SVGs/vector_1.svg";
-import vector_2 from "../../Assets/SVGs/vector_2.svg";
-import vector_3 from "../../Assets/SVGs/vector_3.svg";
-import emoji_warning from "../../Assets/SVGs/warning.svg";
-import check_balance from "../../Assets/Images/check_balance.jpeg";
+import vector_1 from "../../assets/SVGs/vector_1.svg";
+import vector_2 from "../../assets/SVGs/vector_2.svg";
+import vector_3 from "../../assets/SVGs/vector_3.svg";
+import emoji_warning from "../../assets/SVGs/warning.svg";
+import check_balance from "../../assets/images/check_balance.jpeg";
 
 const CheckBalance = () => {
   return (

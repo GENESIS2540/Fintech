@@ -16,6 +16,7 @@ import Sidebar from "./sidebar/Sidebar";
 
 const Admin = () => {
   const [selectedSidebar, setSelectedSidebar] = React.useState("dashboard");
+  
   const handleSidebarClick = (setting) => {
     setSelectedSidebar(setting);
   };

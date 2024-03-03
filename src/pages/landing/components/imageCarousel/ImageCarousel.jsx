@@ -5,14 +5,8 @@ import rates from "../../assets/SVGs/rates.svg";
 import interest_fee from "../../assets/SVGs/interest_fee.svg";
 import enhanced_shopping from "../../assets/SVGs/enhanced_shopping.svg";
 import SimpleSlider from "./SimpleSlider";
-import { useNavigate } from "react-router-dom";
 
-const ImageCarousel = () => {
-  const navigate = useNavigate();
-
-  const handleSignup = () => {
-    navigate("signup");
-  };
+const ImageCarousel = ({ handleButtonClick }) => {
   return (
     <div>
       <div className="relative mb-[220px]">
@@ -28,7 +22,7 @@ const ImageCarousel = () => {
           <h3 className="font-bold text-4xl my-[5px]">Buy Now</h3>
           <h3 className="font-bold text-4xl text-[#015FF1]">Pay Later</h3>
           <button
-            onClick={handleSignup}
+            onClick={() => handleButtonClick("signup")}
             className="uppercase mt-[15px] w-[145px] text-white bg-[#015FF1] rounded-[100vw] h-[40px]"
           >
             Enroll now
@@ -62,7 +56,7 @@ const ImageCarousel = () => {
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-200px]">
           <button
-            onClick={handleSignup}
+            onClick={() => handleButtonClick("signup")}
             className="uppercase mt-[15px] w-[145px] text-white bg-[#015FF1] rounded-[8px] h-[40px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150"
           >
             Enroll Now
