@@ -1,9 +1,9 @@
 import React from "react";
-import stroke_bar from "../../../Assets/SVGs/strokes-bars.svg";
-import payment_option from "../../../Assets/SVGs/payment_option.svg";
-import rates from "../../../Assets/SVGs/rates.svg";
-import interest_fee from "../../../Assets/SVGs/interest_fee.svg";
-import enhanced_shopping from "../../../Assets/SVGs/enhanced_shopping.svg";
+import stroke_bar from "../../assets/SVGs/strokes-bars.svg";
+import payment_option from "../../assets/SVGs/payment_option.svg";
+import rates from "../../assets/SVGs/rates.svg";
+import interest_fee from "../../assets/SVGs/interest_fee.svg";
+import enhanced_shopping from "../../assets/SVGs/enhanced_shopping.svg";
 import SimpleSlider from "./SimpleSlider";
 import { useNavigate } from "react-router-dom";
 

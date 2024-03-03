@@ -3,7 +3,6 @@ import { Checkbox, Form, Input, Radio } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React, { useState } from "react";
 import { DatePicker, Space } from "antd";
-import { Link } from "react-router-dom";
 
 const NewCoupon = ({ handleSidebarClick }) => {
   const [discountType, setDiscountType] = useState(1);

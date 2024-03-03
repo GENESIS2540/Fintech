@@ -1,7 +1,7 @@
 import React from "react";
-import stroke_bars from "../../../Assets/SVGs/strokes-bars.svg";
+import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
 
-export const FaqReferals = () => {
+ const FaqReferals = () => {
   return (
     <div className="bg-[#F7F7F7] h-[100vh] mt-[80px]">
       <div className="grid content-evenly h-[100%]">
@@ -48,4 +48,5 @@ export const FaqReferals = () => {
   );
 };
 
+export default FaqReferals;
 

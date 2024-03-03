@@ -1,11 +1,11 @@
 import React from "react";
-import salem_logo_footer from "../../../Assets/brand/salem-logo-footer.png";
-import app_store_banner from "../../../Assets/Images/appstorebanner.png";
-import googleplay from "../../../Assets/Images/googleplay.png";
-import facebook from "../../../Assets/SVGs/facebook.svg";
-import instagram from "../../../Assets/SVGs/instagram.svg";
-import twitter from "../../../Assets/SVGs/twitter.svg";
-import youtube from "../../../Assets/SVGs/youtube.svg";
+import salem_logo_footer from "../../assets/brand/salem-logo-footer.png";
+import app_store_banner from "../../assets/images/appstorebanner.png";
+import googleplay from "../../assets/images/googleplay.png";
+import facebook from "../../assets/SVGs/facebook.svg";
+import instagram from "../../assets/SVGs/instagram.svg";
+import twitter from "../../assets/SVGs/twitter.svg";
+import youtube from "../../assets/SVGs/youtube.svg";
 
 const Footer = () => {
   return (

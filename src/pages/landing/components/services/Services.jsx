@@ -1,11 +1,11 @@
 import React from "react";
-import stroke_bars from "../../../Assets/SVGs/strokes-bars.svg";
-import master_card from "../../../Assets/SVGs/master-card.svg";
-import money_exchange from "../../../Assets/SVGs/money-exchange.svg";
-import morgage_loan from "../../../Assets/SVGs/morgage-loan.svg";
-import online_business from "../../../Assets/SVGs/online-business.svg";
-import other_loans from "../../../Assets/SVGs/other-loans.svg";
-import phone_card from "../../../Assets/SVGs/phone-card.svg";
+import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
+import master_card from "../../assets/SVGs/master-card.svg";
+import money_exchange from "../../assets/SVGs/money-exchange.svg";
+import morgage_loan from "../../assets/SVGs/morgage-loan.svg";
+import online_business from "../../assets/SVGs/online-business.svg";
+import other_loans from "../../assets/SVGs/other-loans.svg";
+import phone_card from "../../assets/SVGs/phone-card.svg";
 
 const Services = () => {
   return (

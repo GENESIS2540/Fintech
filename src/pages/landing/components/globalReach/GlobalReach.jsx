@@ -1,9 +1,9 @@
 import React from "react";
-import christina from "../../../Assets/Images/christina.jpeg";
-import krake from "../../../Assets/Images/krake.jpeg";
-import stroke_bar from "../../../Assets/SVGs/strokes-bars.svg";
-import vision from "../../../Assets/SVGs/vision.svg";
-import bulls_eye from "../../../Assets/SVGs/Bullseye.svg";
+import christina from "../../assets/images/christina.jpeg";
+import krake from "../../assets/images/krake.jpeg";
+import stroke_bar from "../../assets/SVGs/strokes-bars.svg";
+import vision from "../../assets/SVGs/vision.svg";
+import bulls_eye from "../../assets/SVGs/Bullseye.svg";
 
 const GlobalReach = () => {
   return (

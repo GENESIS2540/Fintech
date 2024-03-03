@@ -2,10 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import thoughtCatalog from "../../../Assets/Images/thought-catalog.jpeg";
-import banner_2 from '../../../Assets/Images/banner_2.jpg'
-import banner_3 from '../../../Assets/Images/banner_3.jpg'
-import banner_4 from '../../../Assets/Images/banner_4.jpg'
+import thoughtCatalog from "../../assets/images/thought-catalog.jpeg";
+import banner_2 from '../../assets/images/banner_2.jpg'
+import banner_3 from '../../assets/images/banner_3.jpg'
+import banner_4 from '../../assets/images/banner_4.jpg'
 
 export default function SimpleSlider() {
     var settings = {
