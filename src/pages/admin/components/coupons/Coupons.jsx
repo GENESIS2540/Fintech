@@ -2,17 +2,15 @@ import { Badge, Checkbox, Table } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Coupons = () => {
+const Coupons = ({ handleSidebarClick }) => {
   return (
     <div className="overflow-auto">
       <div className="mx-[20px]">
         <div className="flex justify-between my-[20px]">
           <p className="text-[24px] font-semibold">Coupons</p>
-          <Link to="/newCoupon">
-          <button className="border-2 px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
-          New Coupon
-        </button>
-          </Link>
+            <button onClick={() => handleSidebarClick("newCoupon")} className="border-2 px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
+              New Coupon
+            </button>
         </div>
         <div>
           <Table

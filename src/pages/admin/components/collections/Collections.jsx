@@ -1,18 +1,15 @@
 import { Checkbox, Table } from "antd";
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Collections = () => {
+const Collections = ({ handleSidebarClick }) => {
   return (
     <div className="overflow-auto">
       <div className=" md:mx-[70px]">
         <div className="flex justify-between my-[30px]">
           <p className="text-[24px] font-semibold">Collections</p>
-          <Link to="/collections/newcollections">
-            <button className="border-2 px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
+            <button onClick={() => handleSidebarClick("newCollection")} className="border-2 px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
               New Collection
             </button>
-          </Link>
         </div>
         <div className="shadow-custom bg-white">
           <Table

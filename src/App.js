@@ -1,15 +1,18 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Customer from './pages/customer/Customer'
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Customer from "./pages/customer/Customer";
+import Admin from "./pages/admin/components/Admin";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Customer />} />
+        <Route path="/" element />
+        <Route path="/customer" element={<Customer />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

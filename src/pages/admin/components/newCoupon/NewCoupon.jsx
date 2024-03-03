@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { DatePicker, Space } from "antd";
 import { Link } from "react-router-dom";
 
-const NewCoupon = () => {
+const NewCoupon = ({ handleSidebarClick }) => {
   const [discountType, setDiscountType] = useState(1);
 
   const onDiscountTypeChange = (e) => {
@@ -25,9 +25,9 @@ const NewCoupon = () => {
     <div className="overflow-auto">
       <div className="md:mx-[20px] w-[95%] mx-[auto] grid gap-[20px]">
         <div className="flex mt-[30px] my-[10px] gap-[20px]">
-          <Link to="/coupons"><button className="border px-[10px] py-[5px] bg-white">
-          <ArrowLeftOutlined />
-        </button></Link>
+            <button onClick={() => handleSidebarClick("coupons")} className="border px-[10px] py-[5px] bg-white">
+              <ArrowLeftOutlined />
+            </button>
           <p className="text-[24px] font-semibold">Create A New Coupon</p>
         </div>
         <div className="shadow-custom bg-white p-[25px]">
@@ -53,7 +53,6 @@ const NewCoupon = () => {
                     format="YYYY-MM-DD"
                     onChange={onChange}
                     onOk={onOk}
-                    
                   />
                 </Space>
               </div>
@@ -79,7 +78,9 @@ const NewCoupon = () => {
           </Radio.Group>
         </div>
         <div className="shadow-custom bg-white p-[25px]">
-          <p className="text-[20px] font-semibold mb-[15px]">Order Conditions</p>
+          <p className="text-[20px] font-semibold mb-[15px]">
+            Order Conditions
+          </p>
           <label>Minimum purchase amount</label>
           <Input
             className="my-[10px]"

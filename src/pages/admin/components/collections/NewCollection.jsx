@@ -2,17 +2,14 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
-import { Link } from "react-router-dom";
 
-const NewCollection = () => {
+const NewCollection = ({ handleSidebarClick }) => {
   return (
     <div className="w-[600px] mx-[auto]">
       <div className="flex my-[30px] gap-[20px]">
-        <Link to="/collections">
-          <button className="border px-[10px] py-[5px] bg-white">
+          <button onClick={() => handleSidebarClick("collections")} className="border px-[10px] py-[5px] bg-white">
             <ArrowLeftOutlined />
           </button>
-        </Link>
         <p className="text-[24px] font-semibold">Create A New Collection</p>
       </div>
       <div className="bg-white shadow-custom p-[25px] grid gap-[10px]">
