@@ -1,27 +1,36 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
-import { DollarOutlined, PicLeftOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  DollarOutlined,
+  PicLeftOutlined,
+  ShoppingCartOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import CustomCollapse from "./CustomCollapse";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem, faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = () => {
   return (
-    <div className="bg-white h-[100%] p-[10px]">
+    <div className="bg-[#f2f7ff] h-[100%] p-[10px]">
       <div className="flex items-center h-[100px] justify-center gap-[5px] cursor-pointer">
         <img src={logo} className="h-[42px] w-[42px]" alt="logo" />
         <p className=" font-bold text-[25px] text-[#015FF1]">BNPL</p>
       </div>
-      <div className="grid gap-[10px]">
+      <div className="grid gap-[10px] ">
         <CustomCollapse
           icon=<ShoppingCartOutlined />
           title="Orders"
           children={
             <div className="grid gap-[8px]">
-              <p>Orders</p>
-              <p>Downloads</p>
-              <p>Cancellation Requests</p>
-              <p>Return Requests</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">Orders</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">Downloads</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Cancellation Requests
+              </p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Return Requests
+              </p>
             </div>
           }
         />
@@ -30,56 +39,70 @@ const Sidebar = () => {
           title="Offers & rewards"
           children={
             <div className="grid gap-[8px]">
-              <p>My Offers</p>
-              <p>Reward Points</p>
-              <p>Share and Earn</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">My Offers</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Reward Points
+              </p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Share and Earn
+              </p>
             </div>
           }
         />
         <CustomCollapse
-          icon= <PicLeftOutlined />
+          icon=<PicLeftOutlined />
           title="General"
           children={
             <div className="grid gap-[8px]">
-              <p>Messages</p>
-              <p>My Credits</p>
-              <p>Wishlist</p>
-              <p>Saved Searches</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">Messages</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">My Credits</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">Wishlist</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Saved Searches
+              </p>
             </div>
           }
         />
         <CustomCollapse
-          icon= <UserOutlined />
+          icon=<UserOutlined />
           title="Profile"
           children={
             <div className="grid gap-[8px]">
-              <p>My Account</p>
-              <p>Bank Account</p>
-              <p>Cookie Preferences</p>
-              <p>Manage Addresses</p>
-              <p>Update Credentials</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">My Account</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Bank Account
+              </p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Cookie Preferences
+              </p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Manage Addresses
+              </p>
+              <p className="hover:text-[#015FF1] cursor-pointer">
+                Update Credentials
+              </p>
             </div>
           }
         />
         <CustomCollapse
-          icon=<FontAwesomeIcon icon={faLanguage}/>
+          icon=<FontAwesomeIcon icon={faLanguage} />
           title="Language"
           children={
             <div className="grid gap-[8px]">
-              <p>English</p>
-              <p>Arabic</p>
-              <p>Spanish</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">English</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">Arabic</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">Spanish</p>
             </div>
           }
         />
         <CustomCollapse
-          icon= <DollarOutlined />
+          icon=<DollarOutlined />
           title="Currency"
           children={
             <div className="grid gap-[8px]">
-              <p>KSH</p>
-              <p>USD</p>
-              <p>INR</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">KSH</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">USD</p>
+              <p className="hover:text-[#015FF1] cursor-pointer">INR</p>
             </div>
           }
         />

@@ -1,12 +1,14 @@
 import { Table } from "antd";
 import shoe from "../../assets/shoe.jpeg";
 import React from "react";
+import Header from "./Header";
 
 const Orders = () => {
   return (
     <div>
-      <p className="text-[27px] my-[20px] font-bold text-[#015FF1] text-center ">My orders</p>
+      <Header title={"My Orders"} category={'Orders'} />
       <Table
+        bordered={true}
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}

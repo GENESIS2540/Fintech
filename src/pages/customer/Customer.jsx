@@ -6,16 +6,16 @@ import Orders from "./components/orders/Orders";
 
 const Customer = () => {
   return (
-    <div className="flex justify-center overflow-hidden h-[100vh] shadow-custom items-center bg-[#f6f6f7]">
-      <div className="grid grid-cols-4 h-[90vh] w-[90vw]">
-        <div className="border-2 w-[100%]">
+    <div className="bg-[#f6f6f7] my-[50px]">
+      <div className="grid grid-cols-4 w-[90vw] mx-auto shadow-custom">
+        <div className="w-[100%]">
           <Sidebar />
         </div>
         <div className="col-span-3 bg-white">
           <div>
             <Navbar />
           </div>
-          <div className="px-[20px] overflow-auto">
+          <div className="px-[40px]">
             <Orders />
           </div>
         </div>

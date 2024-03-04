@@ -4,7 +4,7 @@ import React from "react";
 const CustomCollapse = ({ icon, title, children }) => {
   return (
     <Collapse
-      className="bg-white"
+      className="bg-[#f2f7ff]"
       expandIconPosition="end"
       bordered={false}
       size="small"
@@ -18,7 +18,7 @@ const CustomCollapse = ({ icon, title, children }) => {
             </div>
           ),
           children: (
-            <div className="text-zinc-700">
+            <div className="text-zinc-700 px-[15px] ">
             {children}
           </div>
           ),
