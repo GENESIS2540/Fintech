@@ -17,7 +17,7 @@ const Customer = () => {
 
   return (
     <div className="bg-[#f6f6f7] my-[50px]">
-      <div className="grid grid-cols-4 w-[90vw] mx-auto shadow-custom">
+      <div className="grid grid-cols-4 w-[90vw] mx-auto min-h-[85vh] shadow-custom">
         <div className="w-[100%]">
           <Sidebar
             handleSidebarCustomerClick={handleSidebarCustomerClick}
