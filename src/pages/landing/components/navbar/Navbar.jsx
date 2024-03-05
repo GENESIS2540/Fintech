@@ -6,7 +6,7 @@ import business_icon from "../../assets/SVGs/business.svg";
 
 const Navbar = ({ handleButtonClick }) => {
   return (
-    <nav>
+    <nav className="bg-white">
       <div className="flex mx-[auto] justify-between w-[70%] py-[10px] mt-[5px]">
         <div className="flex font-bold gap-[5px] items-center justify-center">
           <img

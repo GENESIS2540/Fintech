@@ -3,14 +3,14 @@ import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
 
  const FaqReferals = () => {
   return (
-    <div className="bg-[#F7F7F7] h-[100vh] mt-[80px]">
-      <div className="grid content-evenly h-[100%]">
+    <div className="bg-[#F7F7F7] h-max py-[50px] mt-[80px]">
+      <div className="grid content-evenly ">
         <img
           className="justify-self-center"
           src={stroke_bars}
           alt="stroke_bars"
         />
-        <div className="grid grid-cols-2 mx-[auto] w-[75%] gap-[60px]">
+        <div className="grid my-[10px] grid-cols-2 mx-[auto] w-[75%] gap-[60px]">
           <div className="grid content-evenly  px-[10px] bg-[#ECF3FB] text-center ">
             <h3 className="text-[45px] font-bold">FAQs</h3>
             <div className="text-[#OB1035] text-[16px] opacity-75 font-bold">

@@ -10,7 +10,7 @@ import phone_card from "../../assets/SVGs/phone-card.svg";
 const Services = () => {
   return (
     <div>
-      <div className="text-center mt-[100px] grid gap-[10px]">
+      <div className="text-center grid gap-[10px] mt-[40px]">
         <div className="flex gap-[5px] text-[#015FF1] font-semibold justify-center items-center">
           <img src={stroke_bars} alt="stroke_bars" />
           <p className="text-[22px]">Best Services</p>

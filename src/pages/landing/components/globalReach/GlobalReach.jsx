@@ -7,8 +7,8 @@ import bulls_eye from "../../assets/SVGs/Bullseye.svg";
 
 const GlobalReach = () => {
   return (
-    <div className=" w-[100%] bg-[#F7F7F7] h-[90vh] py-[40px]">
-      <div className="grid grid-cols-2 w-[87%] mx-[auto] h-[100%]">
+    <div className=" w-[100%] bg-[#F7F7F7] h-max py-[40px]">
+      <div className="grid grid-cols-2 w-[87%] mx-[auto]">
         <div className="grid grid-cols-2 ">
           <div className="grid relative">
             <div className="text-white absolute right-[60px] font-bold bg-[#015FF1] w-max h-max px-[35px] py-[8px] text-[14px]">
