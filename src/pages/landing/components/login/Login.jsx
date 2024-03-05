@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#F7F7F7] gap-[20px] grid grid-cols-2	w-[80%] m-[auto]  h-[70vh] pl-[40px] p-[20px]">
+    <div className="bg-[#F7F7F7] gap-[20px] grid grid-cols-2	w-[80%] m-[auto] mb-[0px] h-[450px] pl-[40px] p-[20px]">
       <form
         className="flex flex-col justify-center gap-[20px]"
         onSubmit={(e) => {
