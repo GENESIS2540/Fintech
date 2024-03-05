@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { HomeOutlined, MenuOutlined, SettingOutlined } from "@ant-design/icons";
 import "./admin.css";
 import AdminNavbar from "./adminNavbar/AdminNavbar";
 import Dashboard from "./dashboard/Dashboard";
@@ -13,22 +14,32 @@ import Coupons from "./coupons/Coupons";
 import Settings from "./settings/Settings";
 import NewCollection from "./collections/NewCollection";
 import Sidebar from "./sidebar/Sidebar";
+import { Affix } from "antd";
 
 const Admin = () => {
   const [selectedSidebar, setSelectedSidebar] = React.useState("dashboard");
-  
+  const [toggleSideMenu, setToggleSideMenu] = useState(false);
+
+  const handleSideMenuToggle = () => {
+    setToggleSideMenu(!toggleSideMenu);
+  };
+
   const handleSidebarClick = (setting) => {
     setSelectedSidebar(setting);
+    setToggleSideMenu(!toggleSideMenu);
   };
+
 
   return (
     <div>
+      
       <div className="md:h-[100vh] overflow-hidden">
         <AdminNavbar />
         <main className="dashboard bg-[#f6f6f7] md:h-[88vh]">
           <Sidebar
             selectedSidebar={selectedSidebar}
             handleSidebarClick={handleSidebarClick}
+            toggleSideMenu={toggleSideMenu}
           />
           <div className="overflow-auto">
             {selectedSidebar === "dashboard" && <Dashboard />}
@@ -55,6 +66,25 @@ const Admin = () => {
           </div>
         </main>
       </div>
+      <Affix offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
+        <div className="flex sm:hidden justify-between w-[100vw] bg-white p-[20px] shadow-custom">
+          <div onClick={() => handleSidebarClick("dashboard")} className="grid place-items-center gap-[4px]">
+            <HomeOutlined />
+            <p>home</p>
+          </div>
+          <div
+            onClick={handleSideMenuToggle}
+            className="grid place-items-center gap-[4px]"
+          >
+            <MenuOutlined />
+            <p>Menu</p>
+          </div>
+          <div onClick={() => handleSidebarClick("settings")} className="grid place-items-center gap-[4px]">
+            <SettingOutlined />
+            <p>Settings</p>
+          </div>
+        </div>
+      </Affix>
     </div>
   );
 };

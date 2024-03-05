@@ -11,10 +11,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const Sidebar = ({ selectedSidebar, handleSidebarClick }) => {
+const Sidebar = ({ selectedSidebar, handleSidebarClick, toggleSideMenu }) => {
   return (
-    <div className=" sm:h-[100%] h-max sm:w-[90%] ">
-      <div className="p-[10px] text-[#202223] sidebar sm:block hidden">
+    <div className="relative sm:h-[100%] text-center sm:text-left h-max sm:w-[90%] ">
+      <div className={`p-[10px] text-[#202223] sidebar sm:block  ${toggleSideMenu ? 'block' : 'hidden'}`}>
         <p className=" p-[10px] uppercase text-[11px] font-semibold text-[11px] font-semibold">
           Quick links
         </p>
@@ -22,7 +22,7 @@ const Sidebar = ({ selectedSidebar, handleSidebarClick }) => {
           <button
             onClick={() => handleSidebarClick("dashboard")}
             className={
-              selectedSidebar === "dashboard" ? "active nav-link" : " nav-link"
+              selectedSidebar === "dashboard" ? "active nav-link" : "nav-link"
             }
           >
             <FontAwesomeIcon className="text-[12px]" icon={faHome} />
@@ -126,6 +126,7 @@ const Sidebar = ({ selectedSidebar, handleSidebarClick }) => {
           </p>
         </div>
       </button>
+      
     </div>
   );
 };
