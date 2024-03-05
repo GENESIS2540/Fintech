@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDoorOpen, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import salemLogo from "../../assets/brand/logo.svg";
@@ -45,11 +46,26 @@ const Navbar = ({ handleButtonClick }) => {
         </div>
         <ul className="nav-bar-items flex items-center justify-center gap-[20px] font-semibold">
           <li onClick={() => handleButtonClick("landingPage")}>Home</li>
-          <li onClick={() => handleButtonClick("signup")}>Enroll</li>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>FAQs</li>
-          <li>Refer a Friend</li>
+          <li>
+            <Link to="about" smooth={true} duration={500}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="services" smooth={true} duration={500}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="faqs" smooth={true} duration={500}>
+              FAQs
+            </Link>
+          </li>
+          <li>
+            <Link to="faqs" smooth={true} duration={500}>
+              Refer a Friend
+            </Link>
+          </li>
         </ul>
         <div className="self-center">
           <button

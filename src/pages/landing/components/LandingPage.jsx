@@ -23,15 +23,23 @@ const LandingPage = () => {
       <Navbar handleButtonClick={handleButtonClick} />
       {selectedPage === "landingPage" && (
         <>
-          <ImageCarousel handleButtonClick={handleButtonClick}/>
-          <GlobalReach />
-          <Services />
-          <FaqReferals />
+          <ImageCarousel handleButtonClick={handleButtonClick} />
+          <div id="about">
+            <GlobalReach />
+          </div>
+          <div id="services">
+            <Services />
+          </div>
+          <div id="faqs">
+            <FaqReferals />
+          </div>
           <NewsLetter />
           <Footer />
         </>
       )}
-      {selectedPage === "login" && <Login handleButtonClick={handleButtonClick} />}
+      {selectedPage === "login" && (
+        <Login handleButtonClick={handleButtonClick} />
+      )}
       {selectedPage === "signup" && (
         <Signup handleButtonClick={handleButtonClick} />
       )}

@@ -1,6 +1,10 @@
 body{
     overflow-wrap: hidden;
 }
+
+html{
+    scroll-behavior: smooth;
+}
 /* LANING PAGE CUSTOM CSS */
 .services-card > *{
     padding: 20px;
