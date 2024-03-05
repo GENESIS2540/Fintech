@@ -34,19 +34,7 @@ body {
       overflow-y: overlay;
       height: 80vh;
     }
-    .sidebar::-webkit-scrollbar {
-      width: 8px;
-    }
     
-    .sidebar::-webkit-scrollbar-thumb {
-      background-color: #3771ce;
-      border-radius: 8px;
-    }
-    
-    .sidebar::-webkit-scrollbar-track {
-      background-color: #a9c3ec;
-      border-radius: 10px;
-    }
     
   
     /* SIDEBAR styles */

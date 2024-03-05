@@ -23,26 +23,26 @@ const Navbar = () => {
       </div>
       <hr className="my-[10px]" />
       <div className="grid gap-[10px]">
-        <div className="flex gap-[5px] opacity-70 hover:opacity-100 cursor-pointer">
+        <div className="flex gap-[5px] opacity-70 transition-all duration-300 ease-in-out hover:opacity-100 cursor-pointer">
           <AuditOutlined />
           <p className="">Dashboard</p>
         </div>
-        <div className="flex gap-[5px] opacity-70 hover:opacity-100 cursor-pointer">
+        <div className="flex gap-[5px] transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
           <HomeOutlined />
           <p>Home</p>
         </div>
-        <div className="flex gap-[5px] opacity-70 hover:opacity-100 cursor-pointer">
+        <div className="flex gap-[5px] transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
           <UserOutlined />
           <p>Profile</p>
         </div>
-        <div className="flex gap-[5px] opacity-70 hover:opacity-100 cursor-pointer">
+        <div className="flex gap-[5px] transition-all duration-300 ease-in-out transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
           <RetweetOutlined />
           <p>Update Credentials</p>
         </div>
       </div>
 
       <hr className="my-[10px]" />
-      <div className="flex gap-[5px] opacity-70 hover:opacity-100 cursor-pointer">
+      <div className="flex gap-[5px] cursor-pointer">
         <LogoutOutlined />
         <p>Logout</p>
       </div>
