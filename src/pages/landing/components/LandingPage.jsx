@@ -7,7 +7,7 @@ import FaqReferals from "./faqReferals/FaqReferals";
 import NewsLetter from "./newsletter/NewsLetter";
 import Login from "./login/Login";
 import Signup from "./signup/Signup";
-import CheckBalance from "./checkBalance/checkBalance";
+import CheckBalance from "../../customer/components/profile/checkBalance/checkBalance";
 import Footer from "./footer/Footer";
 import Navbar from "./navbar/Navbar";
 

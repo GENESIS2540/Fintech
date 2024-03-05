@@ -1,7 +1,7 @@
 import React from "react";
 import lock_img from "../../assets/images/lock.jpeg";
 
-const Login = ({ handleButtonClick }) => {
+const Login = () => {
   return (
     <div className="bg-[#F7F7F7] gap-[20px] grid grid-cols-2	w-[80%] m-[auto]  h-[70vh] pl-[40px] p-[20px]">
       <div className="flex flex-col justify-center gap-[20px]">
@@ -17,10 +17,9 @@ const Login = ({ handleButtonClick }) => {
           className="bg-transparent border-b focus:outline-none px-[5px]"
         />
         <button
-          onClick={() => handleButtonClick("balance")}
           className="bg-[#015FF1] text-white px-[20px] rounded w-max justify-self-center  h-[40px] hover:bg-transparent hover:border-2 border-[#015FF1] hover:text-black"
         >
-          Check Balance
+          Login
         </button>
       </div>
       <div>

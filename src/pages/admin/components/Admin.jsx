@@ -29,7 +29,6 @@ const Admin = () => {
     setToggleSideMenu(!toggleSideMenu);
   };
 
-  
 
   return (
     <div>
@@ -68,7 +67,7 @@ const Admin = () => {
         </main>
       </div>
       <Affix offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
-        <div className="flex sm:hidden justify-between w-[100vw] bg-white p-[20px] shadow-custom">
+        <div className="flex sm:hidden justify-between w-[100vw] uppercase font-semibold bg-white p-[20px] shadow-custom">
           <div onClick={() => handleSidebarClick("dashboard")} className="grid place-items-center gap-[4px]">
             <HomeOutlined />
             <p>home</p>

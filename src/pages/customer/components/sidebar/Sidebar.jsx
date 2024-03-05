@@ -19,6 +19,64 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
       </div>
       <div className="grid gap-[10px] ">
         <CustomCollapse
+          icon=<UserOutlined />
+          title="Profile"
+          children={
+            <div className="grid gap-[8px]">
+              <p
+                onClick={() => handleSidebarCustomerClick("account")}
+                className={
+                  selectedSidebarCustomer === "account"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+                My Account
+              </p>
+              <p
+                onClick={() => handleSidebarCustomerClick("bank")}
+                className={
+                  selectedSidebarCustomer === "bank"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+                Bank Account
+              </p>
+              <p
+                onClick={() => handleSidebarCustomerClick("cookie")}
+                className={
+                  selectedSidebarCustomer === "cookie"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+                Cookie Preferences
+              </p>
+              <p
+                onClick={() => handleSidebarCustomerClick("manage")}
+                className={
+                  selectedSidebarCustomer === "manage"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+                Manage Addresses
+              </p>
+              <p
+                onClick={() => handleSidebarCustomerClick("update")}
+                className={
+                  selectedSidebarCustomer === "update"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+                Update Credentials
+              </p>
+            </div>
+          }
+        />
+        <CustomCollapse
           icon=<ShoppingCartOutlined />
           title="Orders"
           children={
@@ -152,64 +210,7 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
             </div>
           }
         />
-        <CustomCollapse
-          icon=<UserOutlined />
-          title="Profile"
-          children={
-            <div className="grid gap-[8px]">
-              <p
-                onClick={() => handleSidebarCustomerClick("account")}
-                className={
-                  selectedSidebarCustomer === "account"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                My Account
-              </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("bank")}
-                className={
-                  selectedSidebarCustomer === "bank"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Bank Account
-              </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("cookie")}
-                className={
-                  selectedSidebarCustomer === "cookie"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Cookie Preferences
-              </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("manage")}
-                className={
-                  selectedSidebarCustomer === "manage"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Manage Addresses
-              </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("update")}
-                className={
-                  selectedSidebarCustomer === "update"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Update Credentials
-              </p>
-            </div>
-          }
-        />
+
         <CustomCollapse
           icon=<FontAwesomeIcon icon={faLanguage} />
           title="Language"
