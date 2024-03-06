@@ -12,8 +12,10 @@ const Orders = () => {
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        style={{ height: "88vh", overflowY: "auto" }}
+        style={{ height: "88vh", overflow:"auto"}}
+        
       />
+      
     </div>
   );
 };
@@ -89,6 +91,7 @@ const columns = [
   {
     title: "Details",
     dataIndex: "details",
+    fixed: "left",
     render: (details) => (
       <div className="flex gap-[8px]">
         <img className="h-[50px] w-[50px]" src={shoe} alt="" />

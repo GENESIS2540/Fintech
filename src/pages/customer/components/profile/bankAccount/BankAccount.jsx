@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../common/Header";
-import { Input } from "antd";
+import { Alert, Input } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 import TextArea from "antd/es/input/TextArea";
 
 export default function BankAccount() {
   return (
-    <div>
+    <div className="mb-[20px]">
       <Header title={"Bank Account"} category={"Bank account information"} />
       <form className="grid gap-[20px]">
         <div className="flex gap-[40px] justify-between">
@@ -20,7 +20,7 @@ export default function BankAccount() {
               />
             </div>
 
-            <Input type="text" />
+            <Input type="text" required />
           </div>
           <div className="grid gap-[10px] w-[100%]">
             <div className="flex gap-[5px]">
@@ -30,7 +30,7 @@ export default function BankAccount() {
                 icon={faAsterisk}
               />
             </div>
-            <Input required/>
+            <Input type="text" required />
           </div>
         </div>
         <div className="flex gap-[40px] justify-between">
@@ -42,7 +42,7 @@ export default function BankAccount() {
                 icon={faAsterisk}
               />
             </div>
-            <Input type="number" />
+            <Input type="number" required />
           </div>
           <div className="grid gap-[10px] w-[100%]">
             <div className="flex gap-[5px]">
@@ -52,15 +52,24 @@ export default function BankAccount() {
                 icon={faAsterisk}
               />
             </div>
-            <Input required/>
+            <Input required />
           </div>
         </div>
         <div className=" grid gap-[10px]">
           <label>Bank Address</label>
           <TextArea />
         </div>
-        <div></div>
-        <button type="submit" className="border-2 w-max px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
+        <div className="flex w-max">
+          <Alert
+            description="Your bank information is safe with us"
+            type="info"
+            showIcon
+          />
+        </div>
+        <button
+          type="submit"
+          className="border-2 w-max px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+        >
           Save Changes
         </button>
       </form>

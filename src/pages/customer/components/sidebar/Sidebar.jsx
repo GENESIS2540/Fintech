@@ -54,9 +54,9 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
                 Cookie Preferences
               </p>
               <p
-                onClick={() => handleSidebarCustomerClick("manage")}
+                onClick={() => handleSidebarCustomerClick("address")}
                 className={
-                  selectedSidebarCustomer === "manage"
+                  selectedSidebarCustomer === "address"
                     ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
