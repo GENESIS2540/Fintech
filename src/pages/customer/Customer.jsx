@@ -7,6 +7,7 @@ import Downloads from "./components/orders/Downloads";
 import Cancellation from "./components/orders/requests/Cancellation";
 import Return from "./components/orders/requests/Return";
 import CheckBalance from "./components/profile/checkBalance/checkBalance";
+import BankAccount from "./components/profile/bankAccount/BankAccount";
 
 const Customer = () => {
   const [selectedSidebarCustomer, setSelectedSidebarCustomer] =
@@ -34,7 +35,8 @@ const Customer = () => {
             {selectedSidebarCustomer === "downloads" && <Downloads />}
             {selectedSidebarCustomer === "cancellation" && <Cancellation />}
             {selectedSidebarCustomer === "return" && <Return />}
-            {selectedSidebarCustomer === "account" && < CheckBalance/>}
+            {selectedSidebarCustomer === "account" && <CheckBalance/>}
+            {selectedSidebarCustomer === "bank" && <BankAccount/>}
           </div>
         </div>
       </div>

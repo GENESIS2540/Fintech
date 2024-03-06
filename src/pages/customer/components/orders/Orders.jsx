@@ -1,12 +1,12 @@
 import { Table } from "antd";
 import shoe from "../../assets/shoe.jpeg";
 import React from "react";
-import Header from "./Header";
+import Header from "../common/Header";
 
 const Orders = () => {
   return (
     <div>
-      <Header title={"My Orders"} category={'Orders'} />
+      <Header title={"My Orders"} category={"Orders"} />
       <Table
         bordered={true}
         dataSource={dataSource}
