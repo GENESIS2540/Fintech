@@ -66,12 +66,9 @@ export default function BankAccount() {
             showIcon
           />
         </div>
-        <button
-          type="submit"
-          className="border-2 w-max px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
-        >
-          Save Changes
-        </button>
+        <button type="submit" className="border-2 font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
+            Save Changes
+          </button>
       </form>
     </div>
   );

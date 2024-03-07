@@ -12,6 +12,7 @@ import { HomeOutlined, MenuOutlined, SettingOutlined } from "@ant-design/icons";
 import { Affix } from "antd";
 import Cookie from "./components/profile/cookie/Cookie";
 import ManageAddres from "./components/profile/address/ManageAddres";
+import Update from "./components/profile/updateCredentials/Update";
 
 const Customer = () => {
   const [selectedSidebarCustomer, setSelectedSidebarCustomer] =
@@ -43,6 +44,7 @@ const Customer = () => {
             {selectedSidebarCustomer === "bank" && <BankAccount />}
             {selectedSidebarCustomer === "cookie" && <Cookie />}
             {selectedSidebarCustomer === "address" && <ManageAddres />}
+            {selectedSidebarCustomer === "update" && <Update />}
           </div>
         </div>
       </div>

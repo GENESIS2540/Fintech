@@ -8,7 +8,7 @@ const ManageAddres = () => {
     <div>
       <Header title={"Manage Addresses"} category={"My Addresses"} />
       <Card>
-      <div className="grid sm:grid-cols-2 gap-[10px]">
+      <div className="grid md:grid-cols-2 gap-[10px]">
         <Card className="hover:shadow-xl transition-all ease-in-out duration-500 cursor-pointer">
           <div className="grid place-items-center place-content-center h-[250px] gap-[10px] text-[20px]">
             <HomeOutlined className="text-[30px]"/>
