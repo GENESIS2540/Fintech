@@ -13,6 +13,7 @@ import { Affix } from "antd";
 import Cookie from "./components/profile/cookie/Cookie";
 import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
+import Offers from "./components/offers/Offers";
 
 const Customer = () => {
   const [selectedSidebarCustomer, setSelectedSidebarCustomer] =
@@ -45,6 +46,7 @@ const Customer = () => {
             {selectedSidebarCustomer === "cookie" && <Cookie />}
             {selectedSidebarCustomer === "address" && <ManageAddres />}
             {selectedSidebarCustomer === "update" && <Update />}
+            {selectedSidebarCustomer === "offers" && <Offers />}
           </div>
         </div>
       </div>
