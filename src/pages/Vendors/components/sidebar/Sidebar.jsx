@@ -89,8 +89,20 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
               >
-                service
+                Orders
               </p>
+
+              <p
+                onClick={() => handleSidebarVendorClick("service")}
+                className={
+                  selectedSidebarVendor === "service"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+                Service List
+              </p>
+
               <p
                 onClick={() => handleSidebarVendorClick("downloads")}
                 className={
@@ -101,6 +113,8 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
               >
                 Add Service
               </p>
+
+
               <p
                 onClick={() => handleSidebarVendorClick("cancellation")}
                 className={

@@ -3,19 +3,19 @@ import shoe from "../../assets/shoe.jpeg";
 import React from "react";
 import Header from "../common/Header";
 
-const Services = () => {
+const Orders = () => {
   return (
     <div>
-      <Header title={"My Services"} category={"service"} />
+      <Header title={"My Orders"} category={"Orders"} />
       <Table
         bordered={true}
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        style={{ height: "88vh", overflow:"auto"}}
-        
+        style={{ height: "88vh", overflow: "auto" }}
+
       />
-      
+
     </div>
   );
 };
@@ -119,4 +119,4 @@ const columns = [
   },
 ];
 
-export default Services;
+export default Orders;

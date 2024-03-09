@@ -2,8 +2,8 @@ import React from "react";
 import "./Vendors.css";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
-import Services from "./components/Service/Services";
-import AddService from "./components/Service/AddService";
+import Orders from "./components/Service/Orders";
+import Downloads from "./components/Service/AddService";
 import Cancellation from "./components/Service/requests/Cancellation";
 import Return from "./components/Service/requests/Return";
 import CheckBalance from "./components/profile/checkBalance/checkBalance";
@@ -13,6 +13,7 @@ import { Affix } from "antd";
 import Cookie from "./components/profile/cookie/Cookie";
 import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
+import ServiceList from "./components/Service/ServiceList";
 
 const Vendors = () => {
   const [selectedSidebarVendor, setSelectedSidebarVendor] =
@@ -36,8 +37,8 @@ const Vendors = () => {
             <Navbar />
           </div>
           <div className="sm:px-[40px] px-[20px] mb-[20px]">
-            {selectedSidebarVendor === "orders" && <Services />}
-            {selectedSidebarVendor === "downloads" && <AddService />}
+            {selectedSidebarVendor === "orders" && <Orders />}
+            {selectedSidebarVendor === "downloads" && <Downloads />}
             {selectedSidebarVendor === "cancellation" && <Cancellation />}
             {selectedSidebarVendor === "return" && <Return />}
             {selectedSidebarVendor === "account" && <CheckBalance />}
@@ -45,6 +46,7 @@ const Vendors = () => {
             {selectedSidebarVendor === "cookie" && <Cookie />}
             {selectedSidebarVendor === "address" && <ManageAddres />}
             {selectedSidebarVendor === "update" && <Update />}
+            {selectedSidebarVendor === "service" && <ServiceList />}
           </div>
         </div>
       </div>
