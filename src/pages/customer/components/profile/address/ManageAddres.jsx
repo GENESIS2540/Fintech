@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 import Header from "../../common/Header";
 import { Card, Checkbox, Divider } from "antd";
 import { HomeOutlined, PhoneOutlined } from "@ant-design/icons";
@@ -9,7 +10,7 @@ const ManageAddres = () => {
       <Header title={"Manage Addresses"} category={"My Addresses"} />
       <Card>
       <div className="grid md:grid-cols-2 gap-[10px]">
-        <Card className="hover:shadow-xl transition-all ease-in-out duration-500 cursor-pointer">
+        <Card className="transition-all shadow-custom-2 ease-in-out duration-500 cursor-pointer">
           <div className="grid place-items-center place-content-center h-[250px] gap-[10px] text-[20px]">
             <HomeOutlined className="text-[30px]"/>
             <p>Add New Address</p>
