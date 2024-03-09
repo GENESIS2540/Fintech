@@ -93,9 +93,9 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
               </p>
 
               <p
-                onClick={() => handleSidebarVendorClick("servicelist")}
+                onClick={() => handleSidebarVendorClick("service")}
                 className={
-                  selectedSidebarVendor === "servicelist"
+                  selectedSidebarVendor === "service"
                     ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
                     : "hover:text-[#015FF1] cursor-pointer"
                 }

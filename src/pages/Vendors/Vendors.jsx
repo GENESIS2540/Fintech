@@ -46,7 +46,7 @@ const Vendors = () => {
             {selectedSidebarVendor === "cookie" && <Cookie />}
             {selectedSidebarVendor === "address" && <ManageAddres />}
             {selectedSidebarVendor === "update" && <Update />}
-            {selectedSidebarVendor === "update" && <ServiceList />}
+            {selectedSidebarVendor === "service" && <ServiceList />}
           </div>
         </div>
       </div>

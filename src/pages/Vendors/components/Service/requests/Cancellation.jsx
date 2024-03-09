@@ -83,7 +83,7 @@ const Cancellation = () => {
 
           <button
             type="submit"
-            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-300"
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-300"
           >
             Submit Cancellation Request
           </button>
