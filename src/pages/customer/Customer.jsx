@@ -14,6 +14,8 @@ import Cookie from "./components/profile/cookie/Cookie";
 import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
 import Offers from "./components/offers/Offers";
+import Rewards from "./components/rewards/Rewards";
+import Share from "./components/share/Share";
 
 const Customer = () => {
   const [selectedSidebarCustomer, setSelectedSidebarCustomer] =
@@ -47,6 +49,8 @@ const Customer = () => {
             {selectedSidebarCustomer === "address" && <ManageAddres />}
             {selectedSidebarCustomer === "update" && <Update />}
             {selectedSidebarCustomer === "offers" && <Offers />}
+            {selectedSidebarCustomer === "reward" && <Rewards />}
+            {selectedSidebarCustomer === "share" && <Share />}
           </div>
         </div>
       </div>
