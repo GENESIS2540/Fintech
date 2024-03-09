@@ -31,7 +31,7 @@ const CheckBalance = () => {
         <Avatar />
         </div>
         <form className="grid gap-[20px]">
-          <div className="flex gap-[40px]">
+          <div className=" sm:flex gap-[40px]">
             <div className="grid w-[100%] gap-[10px]">
               <label>Username</label>
               <Input placeholder="username" disabled />
@@ -41,7 +41,7 @@ const CheckBalance = () => {
               <Input placeholder="username@gmail.com" disabled />
             </div>
           </div>
-          <div className="flex gap-[40px]">
+          <div className="sm:flex gap-[40px]">
             <div className="grid w-[100%] gap-[10px]">
               <div className="flex gap-[5px]">
                 <label>New Email</label>
@@ -54,10 +54,10 @@ const CheckBalance = () => {
             </div>
             <div className="grid w-[100%] gap-[10px]">
               <label>Date of birth</label>
-              <Input placeholder="username@gmail.com" disabled />
+              <Input placeholder="22nd February 1990" disabled />
             </div>
           </div>
-          <div className="flex gap-[40px]">
+          <div className="sm:flex gap-[40px]">
             <div className="grid w-[100%] gap-[10px]">
               <label>Phone</label>
               <PhoneInput
@@ -86,7 +86,7 @@ const CheckBalance = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[40px]">
+          <div className="sm:flex gap-[40px]">
             <div className="grid w-[100%] gap-[10px]">
               <div className="flex gap-[5px]">
                 <label>State</label>
