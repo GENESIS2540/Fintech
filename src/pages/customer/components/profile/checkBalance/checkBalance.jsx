@@ -1,61 +1,142 @@
-import React from "react";
-import vector_1 from "../../../assets/vector_1.svg";
-import vector_2 from "../../../assets/vector_1.svg";
-import vector_3 from "../../../assets/vector_1.svg";
-import emoji_warning from "../../../assets/warning.svg";
-import check_balance from "../../../assets/check_balance.jpeg";
+import React, { useState } from "react";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import Header from "../../common/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
+import { Divider, Input } from "antd";
+import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import TextArea from "antd/es/input/TextArea";
+import Avatar from "../../../../../Common/avatarEditor/Avatar";
 
 const CheckBalance = () => {
+  const [value, setValue] = useState();
+  const [country, setCountry] = useState("");
+  const [region, setRegion] = useState("");
+
+  const handleCountryChange = (val) => {
+    setCountry(val);
+  };
+
+  const handleRegionChange = (val) => {
+    setRegion(val);
+  };
+
+
   return (
-    <div className="grid grid-cols-2 p-[20px] gap-[40px]">
-      <div className="grid p-[10px]">
-        <h3 className="font-bold text-[20px] text-[#015FF1]">
-          Account Balance
-        </h3>
-        <h2 className="font-bold text-[20px] text-[#535353]">
-          Account Statistics
-        </h2>
-        <div className="flex justify-between">
-          <div className="relative">
-            <img src={vector_1} alt="vector_1" />
-            <p className="absolute top-[23px] left-[18px] text-[25px] font-semibold text-[#696464]">
-              99%
-            </p>
-            <p className="text-[12px] text-[#6D6D6D]">Account Balance</p>
-          </div>
-
-          <div className="relative">
-            <img src={vector_2} alt="vector_2" />
-            <p className="absolute top-[23px] left-[15px] text-[25px] font-semibold text-[#696464]">
-              0.9%
-            </p>
-            <p className="text-[12px] text-[#6D6D6D]">Make Payments</p>
-          </div>
-          <div className="relative">
-            <img src={vector_3} alt="vector_3" />
-            <p className="absolute top-[23px] left-[18px] text-[25px] font-semibold text-[#696464]">
-              0.0%
-            </p>
-            <p className="text-[12px] text-[#6D6D6D]">Maintainance</p>
-          </div>
+    <div className="">
+      <Header title={"Account Settings"} category={"Profile Info"} />
+      <div className="shadow-custom p-[20px]">
+        <div>
+        <Avatar />
         </div>
-
-        <div className="flex gap-[10px] items-center text-[12px] text-[#D7D7D7] border mb-[30px]">
-          <img src={emoji_warning} alt="emoji_warning" />
-          <p>
-            Your Account may be Blocked as no activity has taken place for a
-            long time Plese Login to prevent this from Happening.
-          </p>
-        </div>
-        <p className="font-semibold text-[24px]">$4,500</p>
-        <hr className="bg-[#D7D7D7]" />
-        <p className="text-[#84DA97] text-[14px]">Credit Balance</p>
-        <p className="font-semibold text-[24px]">$4,800</p>
-        <hr className="bg-[#D7D7D7]" />
-        <p className="text-[#DC6D6D] text-[14px]">Ledger Balance</p>
-      </div>
-      <div>
-        <img src={check_balance} alt="check_balance" />
+        <form className="grid gap-[20px]">
+          <div className="flex gap-[40px]">
+            <div className="grid w-[100%] gap-[10px]">
+              <label>Username</label>
+              <Input placeholder="username" disabled />
+            </div>
+            <div className="grid w-[100%] gap-[10px]">
+              <label>Email</label>
+              <Input placeholder="username@gmail.com" disabled />
+            </div>
+          </div>
+          <div className="flex gap-[40px]">
+            <div className="grid w-[100%] gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>New Email</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input placeholder="New Email" type="email" required />
+            </div>
+            <div className="grid w-[100%] gap-[10px]">
+              <label>Date of birth</label>
+              <Input placeholder="username@gmail.com" disabled />
+            </div>
+          </div>
+          <div className="flex gap-[40px]">
+            <div className="grid w-[100%] gap-[10px]">
+              <label>Phone</label>
+              <PhoneInput
+                international
+                defaultCountry="KE"
+                placeholder="Enter phone number"
+                value={value}
+                onChange={setValue}
+                className="outline-none border p-[5px] rounded-[5px]"
+              />
+            </div>
+            <div className="grid w-[100%] gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Country</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <div>
+                <CountryDropdown
+                  classes="country"
+                  value={country}
+                  onChange={handleCountryChange}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex gap-[40px]">
+            <div className="grid w-[100%] gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>State</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <RegionDropdown
+                classes="county"
+                country={country}
+                value={region}
+                onChange={handleRegionChange}
+              />
+            </div>
+            <div className="grid w-[100%] gap-[10px]">
+              <label>City</label>
+              <Input placeholder="Enter City" required />
+            </div>
+          </div>
+          <div className="grid gap-[10px]">
+            <label>Company</label>
+            <Input placeholder="Enter company" />
+          </div>
+          <div className="flex gap-[40px]">
+            <div className="grid w-[100%]">
+              <label>Brief profile</label>
+              <TextArea />
+            </div>
+            <div className="grid w-[100%]">
+              <label>
+                What kind of products/services do you want to advertise?
+              </label>
+              <TextArea />
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="border-2 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+          >
+            Save changes
+          </button>
+          <Divider children="More Options" />
+          <div className="flex gap-[40px]">
+            <button className="shadow-btn transition-all ease-in-out duration-500 w-[100%] border border-zinc-300 py-[10px] px-[25px]">
+              Request To Remove My Data
+            </button>
+            <button className="shadow-btn transition-all ease-in-out duration-500 border w-[100%] border-zinc-300 py-[10px] px-[25px]">Request My Data</button>
+          </div>
+        </form>
       </div>
     </div>
   );

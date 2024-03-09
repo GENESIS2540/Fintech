@@ -3,7 +3,7 @@ import "./customer.css";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import Orders from "./components/orders/Orders";
-import Downloads from "./components/orders/Downloads";
+import Downloads from "./components/orders/downloads/Downloads";
 import Cancellation from "./components/orders/requests/Cancellation";
 import Return from "./components/orders/requests/Return";
 import CheckBalance from "./components/profile/checkBalance/checkBalance";
@@ -48,7 +48,11 @@ const Customer = () => {
           </div>
         </div>
       </div>
-      <Affix className="w-[100vw]" offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
+      <Affix
+        className="w-[100vw]"
+        offsetBottom={-5}
+        onChange={(affixed) => console.log(affixed)}
+      >
         <div className="flex sm:hidden justify-between w-[100vw] uppercase font-semibold bg-white p-[20px] shadow-custom">
           <div
             onClick={() => handleSidebarCustomerClick("dashboard")}
@@ -57,9 +61,7 @@ const Customer = () => {
             <HomeOutlined />
             <p>home</p>
           </div>
-          <div
-            className="grid place-items-center gap-[4px]"
-          >
+          <div className="grid place-items-center gap-[4px]">
             <MenuOutlined />
             <p>Menu</p>
           </div>
