@@ -1,11 +1,11 @@
-import { Table } from "antd";
-import shoe from "../../assets/shoe.jpeg";
+import { Table, Tag, Space, Image } from "antd";
 import React from "react";
 import Header from "../common/Header";
+import shoe from "../../assets/shoe.jpeg";
 
 const Orders = () => {
   return (
-    <div>
+    <div className="p-6">
       <Header title={"My Orders"} category={"Orders"} />
       <Table
         bordered={true}
@@ -13,9 +13,7 @@ const Orders = () => {
         columns={columns}
         pagination={{ pageSize: 10 }}
         style={{ height: "88vh", overflow: "auto" }}
-
       />
-
     </div>
   );
 };
@@ -29,57 +27,53 @@ const dataSource = [
     },
     details: {
       image: { shoe },
-      name: "Name of the Product",
-      brand: "Brand: ",
-      qty: "Quantity:",
-      orderNo: "Part of order NO: ",
+      name: "Comfort Sneakers",
+      brand: "Nike",
+      qty: 2,
+      orderNo: "O46BHVGYTGYT",
     },
     amount: "$270.00",
     status: {
-      text: "Cancelled",
+      text: "Shipped",
+      tag: "success",
     },
+    shippingInfo: {
+      address: "123 Main St, Cityville",
+      trackingNumber: "123456789",
+    },
+    specialInstructions: "Handle with care",
   },
+
   {
-    key: "2",
+    key: "1",
     order: {
       orderId: "O46BHVGYTGYT",
       date: "12/10/2023",
     },
     details: {
       image: { shoe },
-      name: "Name of the Product",
-      brand: "Brand: ",
-      qty: "Quantity:",
-      orderNo: "Part of order NO: ",
+      name: "Comfort Sneakers",
+      brand: "Nike",
+      qty: 2,
+      orderNo: "O46BHVGYTGYT",
     },
     amount: "$270.00",
     status: {
-      text: "Cancelled",
+      text: "Shipped",
+      tag: "success",
     },
+    shippingInfo: {
+      address: "123 Main St, Cityville",
+      trackingNumber: "123456789",
+    },
+    specialInstructions: "Handle with care",
   },
-  {
-    key: "3",
-    order: {
-      orderId: "O46BHVGYTGYT",
-      date: "12/10/2023",
-    },
-    details: {
-      image: { shoe },
-      name: "Name of the Product",
-      brand: "Brand: ",
-      qty: "Quantity:",
-      orderNo: "Part of order NO: ",
-    },
-    amount: "$270.00",
-    status: {
-      text: "Cancelled",
-    },
-  },
+ 
 ];
 
 const columns = [
   {
-    title: "Service ID & Date",
+    title: "Order ID & Date",
     dataIndex: "order",
     render: (date) => (
       <div className="grid">
@@ -89,17 +83,16 @@ const columns = [
     ),
   },
   {
-    title: "Details",
+    title: "Product Details",
     dataIndex: "details",
-    fixed: "left",
     render: (details) => (
-      <div className="flex gap-[8px]">
-        <img className="h-[50px] w-[50px]" src={shoe} alt="" />
+      <div className="flex gap-4 items-center">
+        <Image src={details.image} alt={details.name} preview={false} width={50} />
         <div>
-          <p>{details.name}</p>
+          <p className="font-bold">{details.name}</p>
           <p>{details.brand}</p>
-          <p>{details.qty}</p>
-          <p>{details.orderNo}</p>
+          <p>Quantity: {details.qty}</p>
+          <p>Order No: {details.orderNo}</p>
         </div>
       </div>
     ),
@@ -111,10 +104,31 @@ const columns = [
   {
     title: "Status",
     dataIndex: "status",
-    render: (text) => (
-      <p className="bg-[#dee5fb] flex rounded py-[3px] justify-center text-[#015FF1] ">
-        {text.text}
-      </p>
+    render: (text) => <Tag color={text.tag}>{text.text}</Tag>,
+  },
+  {
+    title: "Shipping Info",
+    dataIndex: "shippingInfo",
+    render: (shippingInfo) => (
+      <div>
+        <p>{shippingInfo.address}</p>
+        <p>Tracking #: {shippingInfo.trackingNumber}</p>
+      </div>
+    ),
+  },
+  {
+    title: "Special Instructions",
+    dataIndex: "specialInstructions",
+  },
+  {
+    title: "Actions",
+    key: "actions",
+    render: (text, record) => (
+      <Space size="middle">
+        <a href="#">Update Status</a>
+        <a href="#">Generate Invoice</a>
+        <a href="#">Contact User</a>
+      </Space>
     ),
   },
 ];

@@ -73,6 +73,17 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
               >
                 Update Credentials
               </p>
+
+              <p
+                onClick={() => handleSidebarVendorClick("payment")}
+                className={
+                  selectedSidebarVendor === "Payment"
+                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                    : "hover:text-[#015FF1] cursor-pointer"
+                }
+              >
+               Payment Registration
+              </p>
             </div>
           }
         />
