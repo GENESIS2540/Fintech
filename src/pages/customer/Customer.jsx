@@ -16,6 +16,9 @@ import Update from "./components/profile/updateCredentials/Update";
 import Offers from "./components/offers/Offers";
 import Rewards from "./components/rewards/Rewards";
 import Share from "./components/share/Share";
+import Messages from "./components/general/Messages";
+import Credits from "./components/general/Credits";
+import Wishlist from "./components/general/Wishlist";
 
 const Customer = () => {
   const [selectedSidebarCustomer, setSelectedSidebarCustomer] =
@@ -51,6 +54,9 @@ const Customer = () => {
             {selectedSidebarCustomer === "offers" && <Offers />}
             {selectedSidebarCustomer === "reward" && <Rewards />}
             {selectedSidebarCustomer === "share" && <Share />}
+            {selectedSidebarCustomer === "messages" && <Messages />}
+            {selectedSidebarCustomer === "credits" && <Credits />}
+            {selectedSidebarCustomer === "wishlist" && <Wishlist />}
           </div>
         </div>
       </div>

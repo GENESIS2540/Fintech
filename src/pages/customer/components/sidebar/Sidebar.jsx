@@ -197,16 +197,7 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
               >
                 Wishlist
               </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("searches")}
-                className={
-                  selectedSidebarCustomer === "searches"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Saved Searches
-              </p>
+              
             </div>
           }
         />
