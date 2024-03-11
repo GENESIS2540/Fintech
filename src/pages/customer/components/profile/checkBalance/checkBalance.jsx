@@ -118,14 +118,14 @@ const CheckBalance = () => {
             </div>
             <div className="grid w-[100%]">
               <label>
-                What kind of products/services do you want to advertise?
+                Products to advertise
               </label>
               <TextArea />
             </div>
           </div>
           <button
             type="submit"
-            className="border-2 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+            className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
           >
             Save changes
           </button>

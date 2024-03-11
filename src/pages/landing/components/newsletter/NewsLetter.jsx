@@ -5,7 +5,7 @@ const NewsLetter = () => {
     <div className="relative my-[100px]">
       <div className="newsletter">
         <div className="newsletter-content">
-          <h3 className="text-[46px] font-bold">SignUp For Our News Letter</h3>
+          <h3 className="md:text-[46px] text-[30px] font-bold">SignUp For Our News Letter</h3>
           <div className="flex gap-[10px] justify-center">
             <input
               className="w-[130px] focus:outline-none border bg-transparent h-[40px] rounded text-center placeholder-white"

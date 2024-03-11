@@ -5,7 +5,7 @@ import React from "react";
 const Search = () => {
   return (
     <div>
-      <div className="flex gap-[20px] px-[20px] pb-[20px]">
+      <div className="flex flex-wrap gap-[20px] px-[20px] pb-[20px]">
         <div className="items-center w-[100%] flex relative">
           <FontAwesomeIcon className="absolute pl-[10px]" icon={faSearch} />
           <input

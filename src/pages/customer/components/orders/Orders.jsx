@@ -13,9 +13,7 @@ const Orders = () => {
         columns={columns}
         pagination={{ pageSize: 10 }}
         style={{ height: "88vh", overflow:"auto"}}
-        
       />
-      
     </div>
   );
 };

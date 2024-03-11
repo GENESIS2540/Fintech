@@ -10,22 +10,22 @@ import phone_card from "../../assets/SVGs/phone-card.svg";
 const Services = () => {
   return (
     <div>
-      <div className="text-center grid gap-[10px] pt-[20px] mt-[20px]">
+      <div className="w-[90%] mx-auto text-center grid gap-[10px] pt-[20px] mt-[20px]">
         <div className="flex gap-[5px] text-[#015FF1] font-semibold justify-center items-center">
           <img src={stroke_bars} alt="stroke_bars" />
           <p className="text-[22px]">Best Services</p>
         </div>
-        <h3 className="text-[48px] text-[#484c68] font-bold">
+        <h3 className="md:text-[48px] text-[25px] text-[#484c68] font-bold">
           Entirely Providing The Best{" "}
           <span className="text-[#015FF1]">Services</span>
         </h3>
         <p>
-          we offer a wide Range of Services To Our Costomers these Helps to meet
+          We offer a wide Range of Services To Our Costomers these Helps to meet
           every Costomer’s Needs and Expectations.
         </p>
       </div>
-      <div className=" w-[80%] mt-[50px] mx-[auto] grid grid-cols-3 grid-rows-2 gap-[35px] services-card">
-        <div className="text-center grid cursor-pointer | shaow-custom transform-scale">
+      <div className="lg:w-[80%] w-[90%] mt-[50px] mx-[auto] grid md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-[35px] services-card">
+        <div className="text-center grid h-[300px] content-center gap-[10px] cursor-pointer | shaow-custom transform-scale">
           <img className="justify-self-center	" src={phone_card} alt="phone_card" />
           <h4 className="text-[20px] font-bold text-[#0B1035BF] leading-[30px]">
             Interest Free Periods
@@ -35,7 +35,7 @@ const Services = () => {
             incurring additional costs.
           </p>
         </div>
-        <div className="grid h- text-center bg-[#015FF1] cursor-pointer | shaow-custom  transform-scale">
+        <div className="grid h-[300px] content-center gap-[10px] text-center bg-[#015FF1] cursor-pointer | shaow-custom  transform-scale">
           <img className="justify-self-center	" src={morgage_loan} alt="morgage_loan" />
           <h4 className="text-[20px] text-white font-bold text-[#0B1035BF] leading-[30px]">
             Extended Payment Plans
@@ -46,7 +46,7 @@ const Services = () => {
             and budget flexibility.{" "}
           </p>
         </div>
-        <div className="grid h- text-center cursor-pointer | transform-scale shaow-custom">
+        <div className="grid h-[300px] content-center gap-[10px] text-center cursor-pointer | transform-scale shaow-custom">
           <img className="justify-self-center	" src={money_exchange} alt="money_exchange" />
           <h4 className="text-[20px] font-bold text-[#0B1035BF] leading-[30px]">
             Customer Support and Assistance{" "}
@@ -57,7 +57,7 @@ const Services = () => {
             Pay Later Service.{" "}
           </p>
         </div>
-        <div className="grid h- text-center aspect-square cursor-pointer | transform-scale shaow-custom">
+        <div className="grid text-center h-[300px] content-center gap-[10px] cursor-pointer | transform-scale shaow-custom">
           <img className="justify-self-center	" src={master_card} alt="master_card" />
           <h4 className="text-[20px] font-bold text-[#0B1035BF] leading-[30px]">
             Enhanced Shopping Experience
@@ -67,7 +67,7 @@ const Services = () => {
             get to offer very convenient checkout options.{" "}
           </p>
         </div>
-        <div className="grid h- text-center aspect-square cursor-pointer | transform-scale shaow-custom">
+        <div className="grid h- text-center h-[300px] content-center gap-[10px] cursor-pointer | transform-scale shaow-custom">
           <img className="justify-self-center	" src={online_business} alt="online_business" />
           <h4 className="text-[20px] font-bold text-[#0B1035BF] leading-[30px]">
             Exclusive Offers and Discounts
@@ -77,7 +77,7 @@ const Services = () => {
             users who utilize our services.
           </p>
         </div>
-        <div className="grid h- text-center cursor-pointer | transform-scale shaow-custom">
+        <div className="grid h-[300px] content-center gap-[10px] text-center cursor-pointer | transform-scale shaow-custom">
           <img className="justify-self-center	" src={other_loans} alt="other_loans" />
           <h4 className="text-[20px] font-bold text-[#0B1035BF] leading-[30px]">
             Low Or No Fees
