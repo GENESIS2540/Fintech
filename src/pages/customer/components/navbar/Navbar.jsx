@@ -1,5 +1,6 @@
 import {
   AuditOutlined,
+  BarsOutlined,
   HomeOutlined,
   LogoutOutlined,
   MailOutlined,
@@ -11,7 +12,7 @@ import React from "react";
 import UuerOutlined from "../../assets/check_balance.jpeg";
 import { Popover } from "antd";
 
-const Navbar = ({ handleSidebarCustomerClick }) => {
+const Navbar = ({ handleSidebarCustomerClick, handleToggleSidebar }) => {
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
@@ -52,7 +53,10 @@ const Navbar = ({ handleSidebarCustomerClick }) => {
   return (
     <div className="border-b border-stone-400">
       <div className="flex justify-between  px-[20px] items-center h-[100px]">
-        <div>
+        <div onClick={handleToggleSidebar} className="sm:hidden">
+        <BarsOutlined />
+        </div>
+      <div>
           <p className="text-[20px] font-semibold">Hello Brandon!</p>
         </div>
         <div className="flex gap-[15px] text-[20px]">

@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../common/Header";
 import { Table } from "antd";
+import Header from "../../common/Header";
 
 const Rewards = () => {
   return (
