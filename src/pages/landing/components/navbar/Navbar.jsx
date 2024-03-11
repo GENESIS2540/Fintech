@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDoorOpen, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faDoorOpen,
+  faPhoneAlt,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import salemLogo from "../../assets/brand/logo.svg";
 import business_icon from "../../assets/SVGs/business.svg";
 
 const Navbar = ({ handleButtonClick }) => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <nav className="bg-white">
-      <div className="flex mx-[auto] justify-between w-[70%] py-[10px] mt-[5px]">
+      <div className="flex mx-[auto] justify-between w-[90%] md:w-[70%] py-[10px] mt-[5px]">
         <div className="flex font-bold gap-[5px] items-center justify-center">
           <img
             className="cursor-pointer"
@@ -28,8 +39,8 @@ const Navbar = ({ handleButtonClick }) => {
           </div>
         </div>
       </div>
-      <hr className="w-[70%] mx-[auto]" />
-      <div className="flex justify-between w-[70%] mx-[auto] py-[10px]">
+      <hr className="md:w-[70%] w-[90%] mx-[auto]" />
+      <div className="flex justify-between md:w-[70%] w-[90%] mx-[auto] py-[10px]">
         <div className="flex items-center justify-center gap-[5px]">
           <img
             onClick={() => handleButtonClick("landingPage")}
@@ -44,7 +55,7 @@ const Navbar = ({ handleButtonClick }) => {
             BNPL
           </p>
         </div>
-        <ul className="nav-bar-items flex items-center justify-center gap-[20px] font-semibold">
+        <ul className="nav-bar-items md:flex hidden items-center justify-center gap-[20px] font-semibold">
           <li onClick={() => handleButtonClick("landingPage")}>Home</li>
           <li>
             <Link to="about" smooth={true} duration={500}>
@@ -75,6 +86,13 @@ const Navbar = ({ handleButtonClick }) => {
             Sign in
           </button>
         </div>
+        <button onClick={handleToggle} className="z-20">
+          {toggle ? (
+            <FontAwesomeIcon icon={faX} />
+          ) : (
+            <FontAwesomeIcon icon={faBars} />
+          )}
+        </button>        
       </div>
     </nav>
   );
