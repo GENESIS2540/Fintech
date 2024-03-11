@@ -63,7 +63,7 @@ const GlobalReach = () => {
               </p>
             </div>
           </div>
-          <button className="text-white place-self-center md:place-self-start bg-[#015FF1] rounded-[5px]  w-[140px] mt-[20px] h-[40px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150">
+          <button className="text-white place-self-center md:place-self-start bg-[#015FF1] rounded-[5px]  w-[140px] mt-[20px] h-[40px] shadow-btn transition-all duration-300 ease-in-out">
             More About Us
           </button>
         </div>
