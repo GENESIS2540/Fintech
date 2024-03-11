@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../common/Header";
 
-const AddService = () => {
+const AddService = () 
 
   return (
     <div>

@@ -58,7 +58,7 @@ const Vendors = () => {
             {selectedSidebarVendor === "rewards" && < RewardPoints/>}
             {selectedSidebarVendor === "feed" && <FeedbackPage />}
          
-          </div>
+              </div>
         </div>
       </div>
       <Affix className="w-[100vw]" offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
