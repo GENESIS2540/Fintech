@@ -14,6 +14,11 @@ import Cookie from "./components/profile/cookie/Cookie";
 import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
 import ServiceList from "./components/Service/ServiceList";
+import PaymentRegistration from "./components/profile/payment/PaymentRegistration";
+import MyOffers from "./components/Offers/MyOffers";
+import MyCredits from "./components/General/MyCredits";
+import RewardPoints from "./components/Offers/RewardPoints";
+import FeedbackPage from "./components/General/FeeedbackPage";
 
 const Vendors = () => {
   const [selectedSidebarVendor, setSelectedSidebarVendor] =
@@ -47,7 +52,13 @@ const Vendors = () => {
             {selectedSidebarVendor === "address" && <ManageAddres />}
             {selectedSidebarVendor === "update" && <Update />}
             {selectedSidebarVendor === "service" && <ServiceList />}
-          </div>
+            {selectedSidebarVendor === "registration" && <PaymentRegistration />}
+            {selectedSidebarVendor === "offers" && <MyOffers />}
+            {selectedSidebarVendor === "credits" && <MyCredits />}
+            {selectedSidebarVendor === "rewards" && < RewardPoints/>}
+            {selectedSidebarVendor === "feed" && <FeedbackPage />}
+         
+              </div>
         </div>
       </div>
       <Affix className="w-[100vw]" offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
