@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Header from "../../common/Header";
 
     const PaymentRegistration = () => {
         const [paymentInfo, setPaymentInfo] = useState({
@@ -16,12 +16,13 @@ import React, { useState } from "react";
       
         const handleSubmit = (e) => {
           e.preventDefault();
-          // Add logic to submit payment information to the server
+        
           console.log("Payment information submitted:", paymentInfo);
-          // You may want to send this data to your backend for further processing
+          
         };
   return (
-  
+  <>
+    <Header title={"Add Service"} category={"Add"} />
     
     <div className="container mx-auto p-6 bg-white rounded-md shadow-md mt-10">
       <h2 className="text-3xl font-bold mb-6 text-center">Payment Registration</h2>
@@ -134,7 +135,7 @@ import React, { useState } from "react";
         </button>
       </form>
     </div>
-
+</>
   )
 }
 

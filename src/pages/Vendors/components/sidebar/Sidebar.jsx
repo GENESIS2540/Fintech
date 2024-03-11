@@ -175,14 +175,14 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                 Reward Points
               </p>
               <p
-                onClick={() => handleSidebarVendorClick("share")}
+                onClick={() => handleSidebarVendorClick("Performance")}
                 className={
-                  selectedSidebarVendor === "share"
+                  selectedSidebarVendor === "perfomance"
                     ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
               >
-                Share and Earn
+                Perfomance and Analytics
               </p>
             </div>
           }
@@ -193,14 +193,14 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
           children={
             <div className="grid gap-[8px]">
               <p
-                onClick={() => handleSidebarVendorClick("messages")}
+                onClick={() => handleSidebarVendorClick("feedback")}
                 className={
                   selectedSidebarVendor === "messages"
                     ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
               >
-                Messages
+                Feed Back
               </p>
               <p
                 onClick={() => handleSidebarVendorClick("credits")}

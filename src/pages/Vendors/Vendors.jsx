@@ -15,6 +15,10 @@ import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
 import ServiceList from "./components/Service/ServiceList";
 import PaymentRegistration from "./components/profile/payment/PaymentRegistration";
+import MyOffers from "./components/Offers/MyOffers";
+import MyCredits from "./components/General/MyCredits";
+import RewardPoints from "./components/Offers/RewardPoints";
+import FeedbackPage from "./components/General/FeeedbackPage";
 
 const Vendors = () => {
   const [selectedSidebarVendor, setSelectedSidebarVendor] =
@@ -49,6 +53,12 @@ const Vendors = () => {
             {selectedSidebarVendor === "update" && <Update />}
             {selectedSidebarVendor === "service" && <ServiceList />}
             {selectedSidebarVendor === "payment" && <PaymentRegistration />}
+            {selectedSidebarVendor === "payment" && <MyOffers />}
+            {selectedSidebarVendor === "payment" && <MyCredits />}
+            {selectedSidebarVendor === "payment" && < RewardPoints/>}
+            {selectedSidebarVendor === "payment" && <PaymentRegistration />}
+            {selectedSidebarVendor === "payment" && <FeedbackPage />}
+         
           </div>
         </div>
       </div>
