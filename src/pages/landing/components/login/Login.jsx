@@ -10,6 +10,8 @@ const Login = () => {
       navigate("/customer");
     } else if (acccountID === "admin" && passcode === "1234567") {
       navigate("/admin");
+    } else if (acccountID === "vendor" && passcode === "1234567") {
+      navigate("/vendors");
     } else {
       alert("Wrong passcode or account id");
     }
@@ -40,7 +42,7 @@ const Login = () => {
         />
         <button
           type="submit"
-          className="bg-[#015FF1] text-white px-[20px] rounded w-max justify-self-center  h-[40px] hover:bg-transparent hover:border-2 border-[#015FF1] hover:text-black"
+          className="bg-[#015FF1] text-white px-[20px] rounded w-max justify-self-center  h-[40px] shadow-btn transition-all ease-in-out duration-500"
         >
           Login
         </button>

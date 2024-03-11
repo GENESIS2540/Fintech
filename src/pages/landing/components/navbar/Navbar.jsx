@@ -108,7 +108,7 @@ const Navbar = ({ handleButtonClick }) => {
         <div className="self-center md:block hidden">
           <button
             onClick={() => handleButtonClick("login")}
-            className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150"
+            className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] shadow-btn transition-all ease-in-out duration-500"
           >
             Sign in
           </button>
