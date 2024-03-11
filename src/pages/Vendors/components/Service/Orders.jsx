@@ -1,3 +1,11 @@
+import { Table, Tag, Space, Image } from "antd";
+import React from "react";
+import Header from "../common/Header";
+import shoe from "../../assets/shoe.jpeg";
+
+const Orders = () => {
+  return (
+    <div className="p-6">
 import { Table } from "antd";
 import shoe from "../../assets/shoe.jpeg";
 import React from "react";
@@ -13,6 +21,7 @@ const Orders = () => {
         columns={columns}
         pagination={{ pageSize: 10 }}
         style={{ height: "88vh", overflow: "auto" }}
+      />
 
       />
 
@@ -29,6 +38,25 @@ const dataSource = [
     },
     details: {
       image: { shoe },
+      name: "Comfort Sneakers",
+      brand: "Nike",
+      qty: 2,
+      orderNo: "O46BHVGYTGYT",
+    },
+    amount: "$270.00",
+    status: {
+      text: "Shipped",
+      tag: "success",
+    },
+    shippingInfo: {
+      address: "123 Main St, Cityville",
+      trackingNumber: "123456789",
+    },
+    specialInstructions: "Handle with care",
+  },
+
+  {
+    key: "1",
       name: "Name of the Product",
       brand: "Brand: ",
       qty: "Quantity:",
@@ -47,6 +75,23 @@ const dataSource = [
     },
     details: {
       image: { shoe },
+      name: "Comfort Sneakers",
+      brand: "Nike",
+      qty: 2,
+      orderNo: "O46BHVGYTGYT",
+    },
+    amount: "$270.00",
+    status: {
+      text: "Shipped",
+      tag: "success",
+    },
+    shippingInfo: {
+      address: "123 Main St, Cityville",
+      trackingNumber: "123456789",
+    },
+    specialInstructions: "Handle with care",
+  },
+ 
       name: "Name of the Product",
       brand: "Brand: ",
       qty: "Quantity:",
@@ -79,6 +124,7 @@ const dataSource = [
 
 const columns = [
   {
+    title: "Order ID & Date",
     title: "Service ID & Date",
     dataIndex: "order",
     render: (date) => (
@@ -89,6 +135,17 @@ const columns = [
     ),
   },
   {
+
+    title: "Product Details",
+    dataIndex: "details",
+    render: (details) => (
+      <div className="flex gap-4 items-center">
+        <Image src={details.image} alt={details.name} preview={false} width={50} />
+        <div>
+          <p className="font-bold">{details.name}</p>
+          <p>{details.brand}</p>
+          <p>Quantity: {details.qty}</p>
+          <p>Order No: {details.orderNo}</p>
     title: "Details",
     dataIndex: "details",
     fixed: "left",
@@ -111,6 +168,31 @@ const columns = [
   {
     title: "Status",
     dataIndex: "status",
+    render: (text) => <Tag color={text.tag}>{text.text}</Tag>,
+  },
+  {
+    title: "Shipping Info",
+    dataIndex: "shippingInfo",
+    render: (shippingInfo) => (
+      <div>
+        <p>{shippingInfo.address}</p>
+        <p>Tracking #: {shippingInfo.trackingNumber}</p>
+      </div>
+    ),
+  },
+  {
+    title: "Special Instructions",
+    dataIndex: "specialInstructions",
+  },
+  {
+    title: "Actions",
+    key: "actions",
+    render: (text, record) => (
+      <Space size="middle">
+        <a href="#">Update Status</a>
+        <a href="#">Generate Invoice</a>
+        <a href="#">Contact User</a>
+      </Space>
     render: (text) => (
       <p className="bg-[#dee5fb] flex rounded py-[3px] justify-center text-[#015FF1] ">
         {text.text}
