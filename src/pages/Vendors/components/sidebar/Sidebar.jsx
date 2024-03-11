@@ -17,6 +17,28 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
         <img src={logo} className="h-[42px] w-[42px]" alt="logo" />
         <p className=" font-bold text-[25px] text-[#015FF1]">BNPL</p>
       </div>
+
+      <VendorCollapse
+        icon=<FontAwesomeIcon icon={faGem} />
+        title="DashBoard"
+        children={
+          <div className="grid gap-[8px]">
+            <p
+              onClick={() => handleSidebarVendorClick("dash")}
+              className={
+                selectedSidebarVendor === "dash"
+                  ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
+                  : "hover:text-[#015FF1] cursor-pointer"
+              }
+            >
+              Dash Board
+            </p>
+           
+
+          </div>
+        }
+      />
+
       <div className="grid gap-[10px] ">
         <VendorCollapse
           icon=<UserOutlined />
@@ -82,7 +104,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
               >
-               Payment Registration
+                Payment Registration
               </p>
             </div>
           }
@@ -126,7 +148,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
               </p>
 
 
-              <p
+              {/* <p
                 onClick={() => handleSidebarVendorClick("cancellation")}
                 className={
                   selectedSidebarVendor === "cancellation"
@@ -135,8 +157,8 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                 }
               >
                 Cancellation Requests
-              </p>
-              <p
+              </p> */}
+              {/* <p
                 onClick={() => handleSidebarVendorClick("return")}
                 className={
                   selectedSidebarVendor === "return"
@@ -145,57 +167,20 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                 }
               >
                 Return Requests
-              </p>
+              </p> */}
             </div>
           }
         />
-        <VendorCollapse
-          icon=<FontAwesomeIcon icon={faGem} />
-          title="Offers & rewards"
-          children={
-            <div className="grid gap-[8px]">
-              <p
-                onClick={() => handleSidebarVendorClick("offers")}
-                className={
-                  selectedSidebarVendor === "offers"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                My Offers
-              </p>
-              <p
-                onClick={() => handleSidebarVendorClick("reward")}
-                className={
-                  selectedSidebarVendor === "reward"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Reward Points
-              </p>
-              <p
-                onClick={() => handleSidebarVendorClick("Performance")}
-                className={
-                  selectedSidebarVendor === "perfomance"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Perfomance and Analytics
-              </p>
-            </div>
-          }
-        />
+
         <VendorCollapse
           icon=<PicLeftOutlined />
           title="General"
           children={
             <div className="grid gap-[8px]">
               <p
-                onClick={() => handleSidebarVendorClick("feedback")}
+                onClick={() => handleSidebarVendorClick("feed")}
                 className={
-                  selectedSidebarVendor === "messages"
+                  selectedSidebarVendor === "feed"
                     ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
@@ -212,7 +197,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
               >
                 My Credits
               </p>
-              <p
+              {/* <p
                 onClick={() => handleSidebarVendorClick("wishlist")}
                 className={
                   selectedSidebarVendor === "wishlist"
@@ -231,7 +216,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                 }
               >
                 Saved Searches
-              </p>
+              </p> */}
             </div>
           }
         />

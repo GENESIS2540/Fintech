@@ -6,7 +6,14 @@ import shoe from "../../assets/shoe.jpeg";
 const ServiceList = () => {
   return (
     <div className="p-6">
-      <Header title={"Service Listings"} category={"Services"} />
+      
+      <div className="flex justify-between ">
+      <Header title={"Service Listings"} category={"Services"} /> 
+       <button className="rounded border text-blue-300 px-2 h-[40px] mt-2">
+        Add A Service
+       </button>
+      </div>
+
       <Table
         bordered={true}
         dataSource={dataSource}
@@ -31,8 +38,8 @@ const dataSource = [
       description: "Service Description",
       price: "$50.00",
     },
-    status: {
-      text: "Active",
+    stock: {
+      text: "200",
     },
   },
   {
@@ -47,8 +54,8 @@ const dataSource = [
       description: "Description of Another Service",
       price: "$75.00",
     },
-    status: {
-      text: "Inactive",
+    stock: {
+      text: "300",
     },
   },
   {
@@ -63,8 +70,8 @@ const dataSource = [
       description: "Description of Service Three",
       price: "$100.00",
     },
-    status: {
-      text: "Active",
+    stock: {
+      text: "120",
     },
   },
 ];
@@ -89,17 +96,17 @@ const columns = [
         <Image src={details.image} alt={details.name} preview={false} width={50} />
         <div>
           <p className="font-bold">{details.name}</p>
-          <p>{details.description}</p>
+          {/* <p>{details.description}</p> */}
           <p>{details.price}</p>
         </div>
       </div>
     ),
   },
   {
-    title: "Status",
-    dataIndex: "status",
+    title: "Stock",
+    dataIndex: "stock",
     render: (text) => (
-      <p className="bg-[#dee5fb] flex rounded py-[3px] justify-center text-[#015FF1] ">
+      <p className=" flex  py-[3px] justify-center  ">
         {text.text}
       </p>
     ),
@@ -110,12 +117,12 @@ const columns = [
     key: "actions",
     render: (text, record) => (
       <Space size="middle">
-        <Button type="primary" size="small">
+        <button className="rounded border text-blue-300 px-2">
           Edit
-        </Button>
-        <Button type="danger" size="small">
+        </button>
+        <button  className="rounded border text-red-300 px-2">
           Delete
-        </Button>
+        </button>
       </Space>
     ),
   },
