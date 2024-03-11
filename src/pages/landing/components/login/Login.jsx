@@ -45,7 +45,7 @@ const Login = () => {
           Login
         </button>
       </form>
-      <div>
+      <div className="md:block hidden">
         <img className="h-[100%]" src={lock_img} alt="lock_img" />
       </div>
     </div>
