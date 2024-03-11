@@ -14,15 +14,15 @@ const Wishlist = () => {
     <div>
       <Header title={"Wishlist"} category={"Wishlist"} />
       <div className="shadow-custom">
-        <div className="flex gap-[20px]">
+        <div className="flex px-[20px] gap-[20px]">
           <button
-            className="p-[20px] border-b-2 border-gray-300"
-            onClick={() => handleSelected("wishlist")}
+          className={selected === 'wishlist' ? "border-b-2 border-[#015FF1] py-[20px]" : "py-[20px]"}
+          onClick={() => handleSelected("wishlist")}
           >
             Wishlist
           </button>
           <button
-            className="p-[20px]"
+            className={selected === 'vendors' ? "border-b-2 border-[#015FF1]" : ""}
             onClick={() => handleSelected("vendors")}
           >
             Vendors

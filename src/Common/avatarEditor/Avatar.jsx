@@ -1,152 +1,73 @@
 import React, { Component } from 'react';
-import AvatarEditor from 'react-avatar-editor'
 import Dropzone from 'react-dropzone';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 
 class Avatar extends Component {
   constructor() {
     super();
 
-    this.initialWidth = 300;
-    this.initialHeight = 250;
-
     this.state = {
-      width: this.initialWidth,
-      height: this.initialHeight,
+      width: 100,
+      height: 100,
       rotate: 0,
       scale: 1,
-      image: ''
+      image: null
     };
 
-    this.set = this.setOption.bind(this);
-    this.uploadFile = this.uploadFile.bind(this);
-
-    this.image = null;
+    this.editorRef = React.createRef();
+    this.onDrop = this.onDrop.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  setOption(field, value) {
-    if (field === 'ratio') {
-      switch (value) {
-        case '169': {
-          this.setState({
-            width: this.state.width, height: this.state.width * 0.5625
-          });
-          break;
-        }
-
-        case '11': {
-          this.setState({
-            width: this.state.width, height: this.state.width
-          });
-          break;
-        }
-      }
-    }
-
-    if (field === 'resize') {
-      switch (value) {
-        case 'logo': {
-          this.setState({
-            width: 400, height: 400
-          });
-          break;
-        }
-
-        case 'cover': {
-          this.setState({
-            width: 1920, height: 500
-          });
-          break;
-        }
-      }
-    }
-
-    if (field === 'flip') {
-      switch (value) {
-        case 'left': {
-          this.setState({
-            rotate: this.state.rotate - 90
-          });
-          break;
-        }
-
-        case 'right': {
-          this.setState({
-            rotate: this.state.rotate + 90
-          });
-          break;
-        }
-      }
-    }
-
-    if (field === 'zoom') {
-      this.setState({
-        scale: Number(value)
-      });
-    }
-  }
-  
-  componentDidUpdate() {
-    console.log(this.image)
-    console.log(this.image.calculatePosition())
-  }
-
-  uploadFile(acceptedFiles) {
+  onDrop(acceptedFiles) {
     if (acceptedFiles.length > 0) {
-      const file = acceptedFiles[0];
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        this.setState({ image: reader.result });
-      };
-
-      reader.readAsDataURL(file);
+      this.setState({ image: acceptedFiles[0] });
     }
+  }
+
+  handleEdit() {
+    this.setState({ image: null });
+  }
+
+  handleDelete() {
+    this.setState({ image: null });
   }
 
   render() {
+    const { image } = this.state;
+
     return (
-      <div>
       <Dropzone
         multiple={false}
-        onDropAccepted={this.uploadFile}
+        onDropAccepted={this.onDrop}
+        accept="image/*"
       >
-      {({getRootProps, getInputProps}) => (
-        <div {...getRootProps()} style={{width: '100%', height: '100%', border: '2px dashed #ccc'}}>
-          <input {...getInputProps()} />
-          <p>Drag 'n' drop an image here, or click to select one</p>
-        </div>
-      )}
+        {({ getRootProps, getInputProps }) => (
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div {...getRootProps()} style={{ width: '100px', height: '100px', borderRadius: '50%', border: '2px dashed #ccc', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+              <input {...getInputProps()} />
+              {image && (
+                <img src={URL.createObjectURL(image)} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
+              )}
+              {!image && (
+                <FontAwesomeIcon className="text-[50px]" icon={faUser}/>
+              )}
+              {image && (
+                <div style={{ position: 'absolute', bottom: '10px', left: '100px', display: 'flex' }}>
+                  <button onClick={this.handleEdit} style={{ marginRight: '10px' }}>
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  <button onClick={this.handleDelete}>
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </Dropzone>
-
-      {this.state.image &&
-      <div>
-      <hr />
-      <AvatarEditor
-        disableDrop={true}
-        style={{ cursor: 'drag' }}
-        ref={e => this.image = e}
-        image={this.state.image}
-        width={this.state.width}
-        height={this.state.height}
-        border={0}
-        scale={this.state.scale}
-        rotate={this.state.rotate}
-        onDropFile={e => console.log(e.target)}
-      />
-      <div>
-        <button onClick={() => { this.set('ratio', '169') }}>Set 16/9 ratio</button>
-        <button onClick={() => { this.set('ratio', '11') }}>Set 1/1 ratio</button>
-        <button onClick={() => { this.set('flip', 'left') }}>Flip left</button>
-        <button onClick={() => { this.set('flip', 'right') }}>Flip right</button>
-        <br />
-        <button onClick={() => { this.set('resize', 'logo') }}>Set as logo (400 x 400)</button>
-        <button onClick={() => { this.set('resize', 'cover') }}>Set as cover (1920 x 500)</button>
-        <br />
-        Zoom: <input type="range" min="100" max="200" onChange={e => { const v = e.target.value / 100; this.set('zoom', v) }} />
-      </div>
-      </div>
-      }
-      </div>
     );
   }
 }

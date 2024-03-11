@@ -11,7 +11,7 @@ import React from "react";
 import UuerOutlined from "../../assets/check_balance.jpeg";
 import { Popover } from "antd";
 
-const Navbar = () => {
+const Navbar = ({ handleSidebarCustomerClick }) => {
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
@@ -57,7 +57,7 @@ const Navbar = () => {
         </div>
         <div className="flex gap-[15px] text-[20px]">
           <SearchOutlined className="cursor-pointer" />
-          <MailOutlined className="cursor-pointer" />
+          <button onClick={() => handleSidebarCustomerClick("messages")}><MailOutlined className="cursor-pointer" /></button>
           <div className="">
             <Popover content={content} placement="leftTop" trigger="click">
               <img

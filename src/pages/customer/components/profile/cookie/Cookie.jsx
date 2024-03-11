@@ -48,7 +48,7 @@ const Cookie = () => {
           </p>
         </div>
         <Divider />
-        <button className="text-white font-semibold bg-red-500 px-[20px] py-[5px] rounded-lg">
+        <button className="shadow-btn text-white font-semibold bg-[#015FF1] px-[20px] py-[5px] rounded-lg">
           Save Changes
         </button>
       </div>

@@ -273,7 +273,7 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
               >
-                INR
+                Dirham
               </p>
             </div>
           }
