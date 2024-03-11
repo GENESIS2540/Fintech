@@ -20,7 +20,10 @@ const LandingPage = () => {
 
   return (
     <div id="home" className="bg-white">
-      <Navbar handleButtonClick={handleButtonClick} />
+      <div className="">
+        <Navbar handleButtonClick={handleButtonClick} />
+      </div>
+
       {selectedPage === "landingPage" && (
         <>
           <ImageCarousel handleButtonClick={handleButtonClick} />

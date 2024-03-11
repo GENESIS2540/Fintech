@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import thoughtCatalog from "../../assets/images/b3.jpg";
 import banner_2 from '../../assets/images/b4.jpg'
-import banner_3 from '../../assets/images/b2.jpg'
+import banner_3 from '../../assets/images/thought-catalog.jpeg'
 import banner_4 from '../../assets/images/b1.jpg'
 
 export default function SimpleSlider() {

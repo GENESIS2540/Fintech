@@ -14,7 +14,7 @@ const ImageCarousel = ({ handleButtonClick }) => {
           <SimpleSlider />
         </div>
 
-        <div className="absolute md:top-[150px] rounded opacity-75 bg-white left-[20px] top-[300px] md:left-[15%] p-4 ">
+        <div className="absolute md:top-[150px] rounded opacity-75 bg-white left-[20px] top-[300px] md:left-[5%] p-4 ">
           <span className="text-[#015FF1] flex gap-[5px] justify-center items-center">
             <img src={stroke_bar} alt="stroke_bar" />
             <p>Welcome To BNPL</p>

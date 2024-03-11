@@ -64,7 +64,7 @@ const Navbar = ({ handleButtonClick }) => {
         <ul
           className={`nav-bar-items grid md:flex text-center items-center justify-center gap-[20px] font-semibold py-[20px] absolute md:relative md:h-[50px] md:w-[100%]  transition-all duration-500 ease-in-out ${
             toggle
-              ? "w-[300px] h-[300px] bg-white right-0 mx-auto z-[999] top-[80px] "
+              ? "w-[300px] h-[300px] bg-white right-0 mx-auto z-[999] md:top-[0px] top-[80px] "
               : "w-[0] h-[300px] hidden"
           }`}
         >
@@ -74,7 +74,14 @@ const Navbar = ({ handleButtonClick }) => {
             </Link>
           </li>
           <li>
-            <Link onClick={handleToggle} to="about" smooth={true} duration={500}>About Us</Link>
+            <Link
+              onClick={handleToggle}
+              to="about"
+              smooth={true}
+              duration={500}
+            >
+              About Us
+            </Link>
           </li>
           <li>
             <Link
@@ -107,7 +114,10 @@ const Navbar = ({ handleButtonClick }) => {
         </ul>
         <div className="self-center md:block hidden">
           <button
-            onClick={() => handleButtonClick("login")}
+            onClick={() => {
+              handleButtonClick("login");
+              handleToggle();
+            }}
             className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] shadow-btn transition-all ease-in-out duration-500"
           >
             Sign in
