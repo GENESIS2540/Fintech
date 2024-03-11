@@ -52,12 +52,11 @@ const Vendors = () => {
             {selectedSidebarVendor === "address" && <ManageAddres />}
             {selectedSidebarVendor === "update" && <Update />}
             {selectedSidebarVendor === "service" && <ServiceList />}
-            {selectedSidebarVendor === "payment" && <PaymentRegistration />}
-            {selectedSidebarVendor === "payment" && <MyOffers />}
-            {selectedSidebarVendor === "payment" && <MyCredits />}
-            {selectedSidebarVendor === "payment" && < RewardPoints/>}
-            {selectedSidebarVendor === "payment" && <PaymentRegistration />}
-            {selectedSidebarVendor === "payment" && <FeedbackPage />}
+            {selectedSidebarVendor === "registration" && <PaymentRegistration />}
+            {selectedSidebarVendor === "offers" && <MyOffers />}
+            {selectedSidebarVendor === "credits" && <MyCredits />}
+            {selectedSidebarVendor === "rewards" && < RewardPoints/>}
+            {selectedSidebarVendor === "feed" && <FeedbackPage />}
          
           </div>
         </div>
