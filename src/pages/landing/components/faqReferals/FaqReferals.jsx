@@ -10,8 +10,8 @@ import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
           src={stroke_bars}
           alt="stroke_bars"
         />
-        <div className="grid my-[10px] grid-cols-2 mx-[auto] w-[75%] gap-[60px]">
-          <div className="grid content-evenly  px-[10px] bg-[#ECF3FB] text-center ">
+        <div className="grid my-[10px] md:grid-cols-2 mx-[auto] w-[90%] md:w-[75%] gap-[20px] md:gap-[60px]">
+          <div className="grid content-evenly py-[20px] px-[10px] bg-[#ECF3FB] text-center ">
             <h3 className="text-[45px] font-bold">FAQs</h3>
             <div className="text-[#OB1035] text-[16px] opacity-75 font-bold">
               <p>&gt;How do I transfer money? </p>
