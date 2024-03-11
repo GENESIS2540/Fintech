@@ -61,25 +61,38 @@ const Navbar = ({ handleButtonClick }) => {
           }`}
           onClick={handleToggle}
         ></div>
-        <ul className={`nav-bar-items grid md:flex text-center items-center justify-center gap-[20px] font-semibold py-[20px] absolute md:fixed transition-all duration-500 ease-in-out ${toggle ? "w-[300px] h-[300px] bg-white right-0 mx-auto z-[999] top-[80px] " : "w-[0] h-[300px] hidden"}`}>
-          <li onClick={() => handleButtonClick("landingPage")}>Home</li>
+        <ul
+          className={`nav-bar-items grid md:flex text-center items-center justify-center gap-[20px] font-semibold py-[20px] absolute md:relative md:h-[50px] md:w-[100%]  transition-all duration-500 ease-in-out ${
+            toggle
+              ? "w-[300px] h-[300px] bg-white right-0 mx-auto z-[999] top-[80px] "
+              : "w-[0] h-[300px] hidden"
+          }`}
+        >
           <li>
-            <Link to="about" smooth={true} duration={500}>
-              About Us
+            <Link onClick={handleToggle} to="home" smooth={true} duration={500}>
+              Home
             </Link>
           </li>
           <li>
-            <Link to="services" smooth={true} duration={500}>
+            <Link onClick={handleToggle} to="about" smooth={true} duration={500}>About Us</Link>
+          </li>
+          <li>
+            <Link
+              onClick={handleToggle}
+              to="services"
+              smooth={true}
+              duration={500}
+            >
               Services
             </Link>
           </li>
           <li>
-            <Link to="faqs" smooth={true} duration={500}>
+            <Link onClick={handleToggle} to="faqs" smooth={true} duration={500}>
               FAQs
             </Link>
           </li>
           <li>
-            <Link to="faqs" smooth={true} duration={500}>
+            <Link onClick={handleToggle} to="faqs" smooth={true} duration={500}>
               Refer a Friend
             </Link>
           </li>
@@ -100,7 +113,10 @@ const Navbar = ({ handleButtonClick }) => {
             Sign in
           </button>
         </div>
-        <button onClick={handleToggle} className="z-[999] bg-white rounded-md h-[50px] w-[50px] md:hidden ">
+        <button
+          onClick={handleToggle}
+          className="z-[999] bg-white rounded-md h-[50px] w-[50px] md:hidden "
+        >
           {toggle ? (
             <FontAwesomeIcon icon={faX} />
           ) : (

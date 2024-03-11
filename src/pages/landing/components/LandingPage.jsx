@@ -19,7 +19,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div id="home" className="bg-white">
       <Navbar handleButtonClick={handleButtonClick} />
       {selectedPage === "landingPage" && (
         <>
