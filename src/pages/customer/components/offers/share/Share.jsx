@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../common/Header";
+import Header from "../../common/Header";
 import { Input } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
-import shareEarn from "../../assets/share-earn.png";
+import shareEarn from "../../../assets/share-earn.png";
 import {
   LinkedinFilled,
   RedditOutlined,

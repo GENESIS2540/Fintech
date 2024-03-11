@@ -44,7 +44,7 @@ const Update = () => {
               <Input type="password" placeholder="Current password" required />
               <button
                 type="submit"
-                className="border-2 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+                className="shadow-btn transition-all ease-in-out duration-500 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
               >
                 Save
               </button>
@@ -90,7 +90,7 @@ const Update = () => {
               />
               <button
                 type="submit"
-                className="border-2 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+                className="shadow-btn transition-all ease-in-out duration-500 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
               >
                 Save
               </button>

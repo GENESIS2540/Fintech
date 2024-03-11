@@ -13,7 +13,7 @@ import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
 import Offers from "./components/offers/Offers";
 import Rewards from "./components/rewards/Rewards";
-import Share from "./components/share/Share";
+import Share from "./components/offers/share/Share";
 import Messages from "./components/general/Messages";
 import Credits from "./components/general/Credits";
 import Wishlist from "./components/general/Wishlist";
@@ -37,7 +37,7 @@ const Customer = () => {
         </div>
         <div className="col-span-3 bg-white">
           <div>
-            <Navbar handleSidebarCustomerClick={handleSidebarCustomerClick}/>
+            <Navbar handleSidebarCustomerClick={handleSidebarCustomerClick} />
           </div>
           <div className="sm:px-[40px] px-[20px] mb-[20px]">
             {selectedSidebarCustomer === "orders" && <Orders />}

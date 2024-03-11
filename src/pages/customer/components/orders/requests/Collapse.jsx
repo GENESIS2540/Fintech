@@ -59,7 +59,7 @@ const Collapsed = () => {
         <button className="shadow-btn transition-all ease-in-out duration-300 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
           Search
         </button>
-        <button className="shadow-btn transition-all ease-in-out duration-300 border-2 w-[90px] hover:border-none px-[20px] py-[5px] font-semibold  bg-white rounded-lg">
+        <button className="shadow-btn transition-all ease-in-out duration-300 outline outline-gray-300 hover:outline-none w-[90px] hover:border-none px-[20px] py-[5px] font-semibold  bg-white rounded-lg">
           Clear
         </button>
       </div>
