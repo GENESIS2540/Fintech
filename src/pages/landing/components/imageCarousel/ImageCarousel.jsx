@@ -29,25 +29,25 @@ const ImageCarousel = ({ handleButtonClick }) => {
           </button>
         </div>
         <div className="md:flex grid grid-cols-2  mt-[20px] md:mt-0 mx-auto gap-[20px] md:justify-between w-[90%] md:w-[60%] md:absolute md:left-1/2 transform md:-translate-x-1/2 md:bottom-[-110px] ">
-          <div className="flex flex-col cursor-pointer rounded justify-center  items-center h-[150px] w-[100%] md:w-[150px] text-center bg-white font-semibold | transform-scale shaow-custom ">
+          <div className="flex order-1 flex-col cursor-pointer rounded justify-center  items-center h-[150px] w-[100%] md:w-[150px] text-center bg-white font-semibold | transform-scale shaow-custom ">
             <img src={payment_option} alt="payment_option" />
             <p>
               Flexible Payment <br /> Options
             </p>
           </div>
-          <div className="flex flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center bg-[#015FF1] text-white font-semibold | transform-scale shaow-custom">
+          <div className="flex order-2 flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center bg-[#015FF1] text-white font-semibold | transform-scale shaow-custom">
             <img src={interest_fee} alt="interest_fee" />
             <p>
               Interest Free <br /> Periods
             </p>
           </div>
-          <div className="flex flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center  bg-white font-semibold | transform-scale shaow-custom">
+          <div className="flex order-4 md:order-3 flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center  bg-white font-semibold | transform-scale shaow-custom">
             <img src={rates} alt="rates" />{" "}
             <p>
               Instant Approval <br /> Rates
             </p>
           </div>
-          <div className="flex flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center bg-[#015FF1] text-white font-semibold | transform-scale shaow-custom">
+          <div className="flex order-3 md:order-4 flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center bg-[#015FF1] text-white font-semibold | transform-scale shaow-custom">
             <img src={enhanced_shopping} alt="enhanced_shopping" />
             <p>
               Enhanced Shopping <br /> Experience
