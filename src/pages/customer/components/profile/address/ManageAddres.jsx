@@ -42,9 +42,9 @@ const ManageAddres = () => {
           </div>
           <Divider />
           <div className="flex justify-between">
-            <button className="uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Edit</button>
+            <button className="shadow-btn transition-all ease-in-out duration-500 py-[5px] uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Edit</button>
             <Divider type="vertical"/>
-            <button className="uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Delete</button>
+            <button className="shadow-btn transition-all ease-in-out duration-500 py-[5px] uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Delete</button>
           </div>
         </Card>
         <Card>
@@ -73,9 +73,9 @@ const ManageAddres = () => {
           </div>
           <Divider />
           <div className="flex justify-between">
-            <button className="uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Edit</button>
+            <button className="shadow-btn transition-all ease-in-out duration-500 py-[5px] uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Edit</button>
             <Divider type="vertical"/>
-            <button className="uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Delete</button>
+            <button className="shadow-btn transition-all ease-in-out duration-500 py-[5px] uppercase w-[100%] text-center hover:text-[#015FF1] cursor-pointer">Delete</button>
           </div>
         </Card>
         </div>

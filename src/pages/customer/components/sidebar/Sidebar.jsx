@@ -197,16 +197,6 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
               >
                 Wishlist
               </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("searches")}
-                className={
-                  selectedSidebarCustomer === "searches"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                Saved Searches
-              </p>
             </div>
           }
         />
@@ -216,34 +206,13 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
           title="Language"
           children={
             <div className="grid gap-[8px]">
-              <p
-                onClick={() => handleSidebarCustomerClick("english")}
-                className={
-                  selectedSidebarCustomer === "english"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
+              <p className="hover:text-[#015FF1] w-max cursor-pointer">
                 English
               </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("arabic")}
-                className={
-                  selectedSidebarCustomer === "arabic"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
+              <p className="hover:text-[#015FF1] w-max cursor-pointer">
                 Arabic
               </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("spanish")}
-                className={
-                  selectedSidebarCustomer === "spanish"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
+              <p className="hover:text-[#015FF1] w-max cursor-pointer">
                 Spanish
               </p>
             </div>
@@ -254,35 +223,14 @@ const Sidebar = ({ handleSidebarCustomerClick, selectedSidebarCustomer }) => {
           title="Currency"
           children={
             <div className="grid gap-[8px]">
-              <p
-                onClick={() => handleSidebarCustomerClick("ksh")}
-                className={
-                  selectedSidebarCustomer === "ksh"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
+              <p className="hover:text-[#015FF1] w-max cursor-pointer">
                 KSH
               </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("usd")}
-                className={
-                  selectedSidebarCustomer === "usd"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
+              <p className="hover:text-[#015FF1] w-max cursor-pointer">
                 USD
               </p>
-              <p
-                onClick={() => handleSidebarCustomerClick("inr")}
-                className={
-                  selectedSidebarCustomer === "inr"
-                    ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
-                    : "hover:text-[#015FF1] cursor-pointer"
-                }
-              >
-                INR
+              <p className="hover:text-[#015FF1] w-max cursor-pointer">
+                Dirham
               </p>
             </div>
           }

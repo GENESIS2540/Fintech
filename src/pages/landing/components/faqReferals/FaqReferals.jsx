@@ -1,7 +1,7 @@
 import React from "react";
 import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
 
- const FaqReferals = () => {
+const FaqReferals = () => {
   return (
     <div className="bg-[#F7F7F7] h-max py-[50px] mt-[80px]">
       <div className="grid content-evenly ">
@@ -10,8 +10,8 @@ import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
           src={stroke_bars}
           alt="stroke_bars"
         />
-        <div className="grid my-[10px] grid-cols-2 mx-[auto] w-[75%] gap-[60px]">
-          <div className="grid content-evenly  px-[10px] bg-[#ECF3FB] text-center ">
+        <div className="grid my-[10px] md:grid-cols-2 mx-[auto] w-[90%] md:w-[75%] gap-[20px] md:gap-[60px]">
+          <div className="grid content-evenly py-[20px] px-[10px] bg-[#ECF3FB] text-center ">
             <h3 className="text-[45px] font-bold">FAQs</h3>
             <div className="text-[#OB1035] text-[16px] opacity-75 font-bold">
               <p>&gt;How do I transfer money? </p>
@@ -23,7 +23,7 @@ import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
               <p className="text-[#OB1035] opacity-75 text-[18px] font-bold">
                 Have More Questions?
               </p>
-              <button className="bg-[#015FF1] mt-[10px] text-white px-[20px] rounded w-max font-semibold justify-self-center  h-[40px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150">
+              <button className="bg-[#015FF1] mt-[10px] text-white px-[20px] rounded w-max font-semibold justify-self-center  h-[40px] shadow-btn transition-all duration-300 ease-in-out">
                 Contact Us
               </button>
             </div>
@@ -33,7 +33,7 @@ import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
             <p className="text-[#OB1035] opacity-75 text-[16px] font-bold">
               Refer Your Friends and Earn More Discount Rewards
             </p>
-            <button className="bg-[#015FF1]	 justify-self-center text-white px-[20px] rounded w-max font-semibold  h-[40px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150">
+            <button className="bg-[#015FF1]	 justify-self-center text-white px-[20px] rounded w-max font-semibold  h-[40px] shadow-btn transition-all duration-300 ease-in-out">
               Invite Friends
             </button>
           </div>
@@ -49,4 +49,3 @@ import stroke_bars from "../../assets/SVGs/strokes-bars.svg";
 };
 
 export default FaqReferals;
-

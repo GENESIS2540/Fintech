@@ -2,15 +2,15 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const Search = () => {
+const Search = ({search}) => {
   return (
       <div className="items-center w-[100%] flex relative">
         <FontAwesomeIcon className="absolute pl-[10px]" icon={faSearch} />
         <input
-          className="bg-white w-[100%] rounded px-[40px] py-[5px] outline-none focus:border-[#015FF1] border-2"
+          className="bg-white w-[100%] border-zinc-500 rounded px-[40px] py-[5px] outline-none focus:border-[#015FF1] border"
           type="search"
           name="search"
-          placeholder="Search by invoice number"
+          placeholder={search}
         />
       </div>
   );
