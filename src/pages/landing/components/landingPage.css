@@ -18,6 +18,12 @@ html{
     height: 360px;
 }
 
+@media(max-width: 768px) {
+.newsletter{
+    height: 250px;
+}
+}
+
 .newsletter::after {
     content: '';
     position: absolute;
