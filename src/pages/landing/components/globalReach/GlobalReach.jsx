@@ -7,10 +7,10 @@ import bulls_eye from "../../assets/SVGs/Bullseye.svg";
 
 const GlobalReach = () => {
   return (
-    <div className=" w-[100%] bg-[#F7F7F7] h-max py-[40px]">
-      <div className="grid grid-cols-2 w-[87%] mx-[auto]">
-        <div className="grid grid-cols-2 ">
-          <div className="grid relative">
+    <div className="w-[100%] bg-[#F7F7F7] h-max py-[40px]">
+      <div className="grid gap-[20px] md:grid-cols-2 md:w-[87%] w-[95%] mx-[auto]">
+        <div className="grid order-last md:order-first grid-cols-2">
+          <div className="grid h-[280px] md:h-[100%] relative">
             <div className="text-white absolute right-[60px] font-bold bg-[#015FF1] w-max h-max px-[35px] py-[8px] text-[14px]">
               <p>
                 100 <br /> Awards
@@ -35,12 +35,12 @@ const GlobalReach = () => {
             />
           </div>
         </div>
-        <div className="grid ml-[50px] my-[20px] content-between">
-          <div className="flex gap-[5px] text-[#015FF1] items-center">
+        <div className="grid md:ml-[50px] md:my-[20px] content-between">
+          <div className="flex gap-[5px] text-[#015FF1] md:justify-start justify-center items-center">
             <img src={stroke_bar} alt="stroke_bar" />
             <p className="text-[22px]  font-semibold">About us</p>
           </div>
-          <h2 className="font-semibold text-[36px] leading-tight	">
+          <h2 className="font-semibold text-[34px] text-center md:text-left md:text-[36px] leading-tight	">
             Not Fast Decisions But <br /> Good{" "}
             <span className="text-[#015FF1]">Decisions</span> Fast
           </h2>
@@ -63,7 +63,7 @@ const GlobalReach = () => {
               </p>
             </div>
           </div>
-          <button className="text-white bg-[#015FF1] rounded-[5px]  w-[140px] mt-[20px] h-[40px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150">
+          <button className="text-white place-self-center md:place-self-start bg-[#015FF1] rounded-[5px]  w-[140px] mt-[20px] h-[40px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150">
             More About Us
           </button>
         </div>
