@@ -56,12 +56,12 @@ const Navbar = ({ handleButtonClick }) => {
           </p>
         </div>
         <div
-        className={`${
-          toggle ? "fixed md:hidden inset-0 bg-black opacity-50 z-[99]" : ""
-        }`}
-        onClick={handleToggle}
-      ></div>
-        <ul className="nav-bar-items md:flex grid absolute w-[300px] h-[300px] bg-white right-0 mx-auto z-[999] top-[100px] items-center justify-center gap-[20px] font-semibold">
+          className={`${
+            toggle ? "fixed md:hidden inset-0 bg-black opacity-50 z-[99]" : ""
+          }`}
+          onClick={handleToggle}
+        ></div>
+        <ul className={`nav-bar-items grid md:flex text-center items-center justify-center gap-[20px] font-semibold py-[20px] absolute md:fixed transition-all duration-500 ease-in-out ${toggle ? "w-[300px] h-[300px] bg-white right-0 mx-auto z-[999] top-[80px] " : "w-[0] h-[300px] hidden"}`}>
           <li onClick={() => handleButtonClick("landingPage")}>Home</li>
           <li>
             <Link to="about" smooth={true} duration={500}>
@@ -83,8 +83,16 @@ const Navbar = ({ handleButtonClick }) => {
               Refer a Friend
             </Link>
           </li>
+          <div className="self-center md:hidden">
+            <button
+              onClick={() => handleButtonClick("login")}
+              className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150"
+            >
+              Sign in
+            </button>
+          </div>
         </ul>
-        <div className="self-center">
+        <div className="self-center md:block hidden">
           <button
             onClick={() => handleButtonClick("login")}
             className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150"
@@ -92,13 +100,13 @@ const Navbar = ({ handleButtonClick }) => {
             Sign in
           </button>
         </div>
-        <button onClick={handleToggle} className="z-20">
+        <button onClick={handleToggle} className="z-[999] bg-white rounded-md h-[50px] w-[50px] md:hidden ">
           {toggle ? (
             <FontAwesomeIcon icon={faX} />
           ) : (
             <FontAwesomeIcon icon={faBars} />
           )}
-        </button>        
+        </button>
       </div>
     </nav>
   );
