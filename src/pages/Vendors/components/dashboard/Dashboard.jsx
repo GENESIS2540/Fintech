@@ -4,8 +4,29 @@ import DonutApexChart from "./DonutChart";
 
 const Dashboard = () => {
   return (
-    <div className="overflow-auto md:mx-[10px] w-[95%] mx-[auto] bg-[#f6f6f7]">
-      <p className="text-[24px] font-bold sm:mt-[30px] mt-[10px] mb-[10px]">Dashboard</p>
+    <div className="overflow-auto md:mx-[10px] w-[95%] mx-[auto] bg-[#f6f6f7] ml-2">
+          <p className="text-[24px] font-bold sm:mt-[30px] mt-[2px] mb-[2px]">Dashboard</p>
+
+    <div className="grid grid-cols-3 gap-4 my-2">
+    <div className="shadow-custom bg-white p-[10px] text-[13px]">
+            <p className="font-semibold text-[18px] mb-[10px]">
+             Total Sales
+            </p>
+            <p className="my-[8px]">6734</p>
+      </div>
+      <div className="shadow-custom bg-white p-[10px] text-[13px]">
+            <p className="font-semibold text-[18px] mb-[10px]">
+             Total Profit
+            </p>
+            <p className="my-[8px]">Ksh 67344</p>
+      </div>
+      <div className="shadow-custom bg-white p-[10px] text-[13px]">
+            <p className="font-semibold text-[18px] mb-[10px]">
+             My Ratings
+            </p>
+            <p className="my-[8px]">67+</p>
+      </div>
+    </div>
       <div className="dashboard-charts gap-[10px]">
         <div className="bg-white shadow-custom">
           <ApexChart />

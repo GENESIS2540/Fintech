@@ -31,14 +31,14 @@ const Vendors = () => {
 
   return (
     <div className="bg-[#f6f6f7]">
-      <div className="grid sm:grid-cols-4 w-[100%] mx-auto min-h-[85vh] shadow-custom">
-        <div className="w-[100%] hidden sm:block">
+      <div className="flex w-[100%] mx-auto min-h-[85vh] shadow-custom">
+        <div className="w-[18%] hidden sm:block">
           <Sidebar
             handleSidebarVendorClick={handleSidebarVendorClick}
             selectedSidebarVendor={selectedSidebarVendor}
           />
         </div>
-        <div className="col-span-3 bg-white">
+        <div className="w-[82%] bg-white">
           <div>
             <Navbar />
           </div>

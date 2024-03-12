@@ -8,7 +8,7 @@ class ApexChart extends React.Component {
     this.state = {
       series: [
         {
-          name: "TotalOrders",
+          name: "My orders",
           data: [31, 40, 28, 51, 42, 109, 100],
         },
         {

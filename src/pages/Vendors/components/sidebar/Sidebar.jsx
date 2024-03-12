@@ -12,7 +12,7 @@ import { faGem, faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
   return (
-    <div className="bg-[#f2f7ff] h-[100%] p-[10px]">
+    <div className="bg-[#f2f7ff] h-[100%] pt-[10px]">
       <div className="flex items-center h-[100px] justify-center gap-[5px] cursor-pointer">
         <img src={logo} className="h-[42px] w-[42px]" alt="logo" />
         <p className=" font-bold text-[25px] text-[#015FF1]">BNPL</p>
@@ -31,7 +31,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                   : "hover:text-[#015FF1] cursor-pointer"
               }
             >
-              Dash Board
+              My Performance
             </p>
            
 
