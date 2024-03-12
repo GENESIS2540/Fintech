@@ -15,10 +15,11 @@ import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
 import ServiceList from "./components/Service/ServiceList";
 import PaymentRegistration from "./components/profile/payment/PaymentRegistration";
-import MyOffers from "./components/Offers/MyOffers";
 import MyCredits from "./components/General/MyCredits";
-import RewardPoints from "./components/Offers/RewardPoints";
-import FeedbackPage from "./components/General/FeeedbackPage";
+import Dashboard from "./components/dashboard/Dashboard";
+
+
+
 
 const Vendors = () => {
   const [selectedSidebarVendor, setSelectedSidebarVendor] =
@@ -30,18 +31,19 @@ const Vendors = () => {
 
   return (
     <div className="bg-[#f6f6f7]">
-      <div className="grid sm:grid-cols-4 w-[100%] mx-auto min-h-[85vh] shadow-custom">
-        <div className="w-[100%] hidden sm:block">
+      <div className="flex w-[100%] mx-auto min-h-[85vh] shadow-custom">
+        <div className="w-[18%] hidden sm:block">
           <Sidebar
             handleSidebarVendorClick={handleSidebarVendorClick}
             selectedSidebarVendor={selectedSidebarVendor}
           />
         </div>
-        <div className="col-span-3 bg-white">
+        <div className="w-[82%] bg-white">
           <div>
             <Navbar />
           </div>
           <div className="sm:px-[40px] px-[20px] mb-[20px]">
+          {selectedSidebarVendor === "dash" && <Dashboard />}
             {selectedSidebarVendor === "orders" && <Orders />}
             {selectedSidebarVendor === "downloads" && <Downloads />}
             {selectedSidebarVendor === "cancellation" && <Cancellation />}
@@ -53,11 +55,11 @@ const Vendors = () => {
             {selectedSidebarVendor === "update" && <Update />}
             {selectedSidebarVendor === "service" && <ServiceList />}
             {selectedSidebarVendor === "registration" && <PaymentRegistration />}
-            {selectedSidebarVendor === "offers" && <MyOffers />}
             {selectedSidebarVendor === "credits" && <MyCredits />}
-            {selectedSidebarVendor === "rewards" && < RewardPoints/>}
-            {selectedSidebarVendor === "feed" && <FeedbackPage />}
-         
+        
+           {/* {selectedSidebarVendor === "charts" && <Charts />} */}
+           
+           
               </div>
         </div>
       </div>
