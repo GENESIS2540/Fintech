@@ -99,7 +99,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
               <p
                 onClick={() => handleSidebarVendorClick("payment")}
                 className={
-                  selectedSidebarVendor === "Payment"
+                  selectedSidebarVendor === "payment"
                     ? "border-b border-zinc-600 text-[#015FF1] hover:text-[#015FF1] w-max cursor-pointer"
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
@@ -185,7 +185,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
                     : "hover:text-[#015FF1] cursor-pointer"
                 }
               >
-                Feed Back
+                Messages
               </p>
               <p
                 onClick={() => handleSidebarVendorClick("credits")}

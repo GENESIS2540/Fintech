@@ -37,12 +37,12 @@ const Dashboard = () => {
         <div className="md:mx-[10px]">
           <div className="shadow-custom bg-white p-[10px] text-[13px] pb-[20px]">
             <p className="font-semibold text-[18px] mb-[10px]">
-              Lifetime orders
+              Lifetime Sales
             </p>
-            <p className="mb-[8px]">6734 orders</p>
+            <p className="mb-[8px]">6734 Sales</p>
             <p>$9,999,999.33 lifetime sale</p>
-            <p className="my-[8px]">60% of orders completed</p>
-            <p>30% of orders cancelled</p>
+            <p className="my-[8px]">60% of Sales completed</p>
+            <p>30% of of cancelled</p>
           </div>
           <div className="bg-white shadow-custom my-[10px] py-[10px] flex justify-center items-center h-[200px]">
             <DonutApexChart />
