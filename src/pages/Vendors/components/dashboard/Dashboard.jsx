@@ -1,11 +1,14 @@
 import React from "react";
 import ApexChart from "./Charts";
 import DonutApexChart from "./DonutChart";
+import Header from "../common/Header";
+
 
 const Dashboard = () => {
   return (
+    <div>
+       <Header title={"My Performance"} category={"performance"} />
     <div className="overflow-auto md:mx-[10px] w-[95%] mx-[auto] bg-[#f6f6f7] ml-2">
-          <p className="text-[24px] font-bold sm:mt-[30px] mt-[2px] mb-[2px]">Dashboard</p>
 
     <div className="grid grid-cols-3 gap-4 my-2">
     <div className="shadow-custom bg-white p-[10px] text-[13px]">
@@ -46,6 +49,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

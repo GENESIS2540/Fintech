@@ -43,6 +43,7 @@ const Vendors = () => {
             <Navbar />
           </div>
           <div className="sm:px-[40px] px-[20px] mb-[20px]">
+          {selectedSidebarVendor === "dash" && <Dashboard />}
             {selectedSidebarVendor === "orders" && <Orders />}
             {selectedSidebarVendor === "downloads" && <Downloads />}
             {selectedSidebarVendor === "cancellation" && <Cancellation />}
@@ -55,7 +56,7 @@ const Vendors = () => {
             {selectedSidebarVendor === "service" && <ServiceList />}
             {selectedSidebarVendor === "registration" && <PaymentRegistration />}
             {selectedSidebarVendor === "credits" && <MyCredits />}
-            {selectedSidebarVendor === "dash" && <Dashboard />}
+        
            {/* {selectedSidebarVendor === "charts" && <Charts />} */}
            
            
