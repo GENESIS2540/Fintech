@@ -26,7 +26,7 @@ const PaymentRegistration = () => {
     <>
       <Header title={"Payment Registration"} category={"Register"} />
 
-      <div className="bg-gray-100 min-h-screen py-8 flex justify-center">
+      <div className=" min-h-screen py-8 flex justify-center">
         <div className="bg-white rounded-md shadow-md overflow-hidden w-full max-w-lg">
           <div className="bg-blue-500 py-4 px-6 text-white font-bold text-xl">
             Payment Registration
