@@ -17,6 +17,7 @@ import ServiceList from "./components/Service/ServiceList";
 import PaymentRegistration from "./components/profile/payment/PaymentRegistration";
 import MyCredits from "./components/General/MyCredits";
 import Dashboard from "./components/dashboard/Dashboard";
+import MessagesPage from "./components/General/MessagesPage";
 
 
 
@@ -54,10 +55,10 @@ const Vendors = () => {
             {selectedSidebarVendor === "address" && <ManageAddres />}
             {selectedSidebarVendor === "update" && <Update />}
             {selectedSidebarVendor === "service" && <ServiceList />}
-            {selectedSidebarVendor === "registration" && <PaymentRegistration />}
+            {selectedSidebarVendor === "payment" && <PaymentRegistration />}
             {selectedSidebarVendor === "credits" && <MyCredits />}
         
-           {/* {selectedSidebarVendor === "charts" && <Charts />} */}
+           {selectedSidebarVendor === "feed" && <MessagesPage/>}
            
            
               </div>
