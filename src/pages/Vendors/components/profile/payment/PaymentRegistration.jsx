@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Header from "../../common/Header";
+import { Card, Input } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 
 const PaymentRegistration = () => {
   const [paymentInfo, setPaymentInfo] = useState({
@@ -24,86 +27,134 @@ const PaymentRegistration = () => {
 
   return (
     <>
-      <Header title={"Payment Registration"} category={"Register"} />
+      <Header title={"Payment Integration Page"} category={"Register"} />
 
-      <div className="min-h-screen py-8 flex justify-center">
-        <div className="bg-white rounded-md shadow-md overflow-hidden w-full max-w-lg">
-          <div className="bg-blue-500 py-4 px-6 text-white font-bold text-xl">
-            Payment Registration
-          </div>
-          <form onSubmit={handleSubmit} className="p-6">
-            <div className="grid grid-cols- gap-6">
-              <InputField
-                label="Preferred Payment Methods"
-                name="preferredMethods"
-                value={paymentInfo.preferredMethods}
-                onChange={handleChange}
-              />
-              <InputField
-                label="Currency Options"
-                name="currencyOptions"
-                value={paymentInfo.currencyOptions}
-                onChange={handleChange}
-              />
-              <InputField
-                label="Payout Schedule"
-                name="payoutSchedule"
-                value={paymentInfo.payoutSchedule}
-                onChange={handleChange}
-              />
-              <InputField
-                label="Bank Account"
-                name="bankAccount"
-                value={paymentInfo.bankAccount}
-                onChange={handleChange}
-              />
-              <InputField
-                label="Account Holder Name"
-                name="accountHolderName"
-                value={paymentInfo.accountHolderName}
-                onChange={handleChange}
-              />
-              <InputField
-                label="Account Number"
-                name="accountNumber"
-                value={paymentInfo.accountNumber}
-                onChange={handleChange}
-              />
-              <InputField
-                label="Routing Number"
-                name="routingNumber"
-                value={paymentInfo.routingNumber}
-                onChange={handleChange}
-              />
+      <div className="flex h-screen items-center justify-center">
+        <div className="grid bg-white rounded-lg shadow-2xl w-11/12">
+          <form onSubmit={handleSubmit}>
+            <div className="flex justify-center py-4"></div>
+
+            <div className="flex justify-center">
+              <div className="flex">
+                <h1 className="text-[#015FF1] font-bold md:text-2xl text-xl">
+                  REGISTER
+                </h1>
+              </div>
             </div>
 
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-6 w-full"
-            >
-              Submit
-            </button>
+            <Card title="Payment Information" className="mt-5 mx-7">
+              <div className="grid grid-cols-1">
+                <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                  Preferred Payment Methods
+                </label>
+                <input
+                  name="preferredMethods"
+                  onChange={handleChange}
+                  className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                  type="text"
+                  placeholder="Preferred Payment Methods"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5">
+                <div className="grid grid-cols-1">
+                  <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                    Currency Options
+                  </label>
+                  <select
+                    name="currencyOptions"
+                    onChange={handleChange}
+                    className="py-2 px-3 rounded-lg border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 "
+                  >
+                    <option>USD</option>
+                    <option>KES</option>
+                    <option>INR</option>
+                  </select>
+                </div>
+                <div className="grid grid-cols-1">
+                  <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                    Payout Schedule
+                  </label>
+                  <input
+                    name="payoutSchedule"
+                    onChange={handleChange}
+                    className="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                    type="text"
+                    placeholder="Payout Schedule"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 mt-5">
+                <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                  Bank Account
+                </label>
+                <input
+                  name="bankAccount"
+                  onChange={handleChange}
+                  className="py-2 px-3 rounded-lg border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                  type="text"
+                  placeholder="Bank Account"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5">
+                <div className="grid grid-cols-1">
+                  <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                    Account Holder Name
+                  </label>
+                  <input
+                    name="accountHolderName"
+                    onChange={handleChange}
+                    className="py-2 px-3 rounded-lg border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                    type="text"
+                    placeholder="Account Holder Name"
+                  />
+                </div>
+                <div className="grid grid-cols-1">
+                  <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                    Account Number
+                  </label>
+                  <input
+                    name="accountNumber"
+                    onChange={handleChange}
+                    className="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                    type="text"
+                    placeholder="Account Number"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 mt-5">
+                <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                  Routing Number
+                </label>
+                <input
+                  name="routingNumber"
+                  onChange={handleChange}
+                  className="py-2 px-3 rounded-lg border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                  type="text"
+                  placeholder="Routing Number"
+                />
+              </div>
+            </Card>
+
+            <div className="flex items-center justify-center md:gap-8 gap-4 pt-5 pb-5">
+              <button className="w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2">
+                Cancel
+              </button>
+              <button
+                className="w-auto bg-blue-500 hover:bg-blue-700 rounded-lg shadow-xl font-medium text-white px-4 py-2"
+                type="submit"
+              >
+                Create
+              </button>
+            </div>
           </form>
         </div>
       </div>
     </>
   );
 };
-
-const InputField = ({ label, name, value, onChange }) => (
-  <div>
-    <label htmlFor={name} className="block text-gray-700 font-bold mb-1">
-      {label}
-    </label>
-    <input
-      type="text"
-      id={name}
-      name={name}
-      value={value}
-      onChange={onChange}
-      className="input-field w-full border rounded-md px-3 py-2 outline-none focus:border-blue-500"
-    />
-  </div>
-);
 
 export default PaymentRegistration;

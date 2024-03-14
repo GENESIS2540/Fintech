@@ -9,8 +9,8 @@ const ServiceList = () => {
       
       <div className="flex justify-between ">
       <Header title={"Service Listings"} category={"Services"} /> 
-       <button className="rounded border text-blue-300 px-2 h-[40px] mt-2">
-        Add A Service
+       <button className="rounded border bg-[#dee5fb] text-[#015FF1] px-2 h-[40px] mt-2">
+        Add  Service
        </button>
       </div>
 
@@ -117,10 +117,10 @@ const columns = [
     key: "actions",
     render: (text, record) => (
       <Space size="middle">
-        <button className="rounded border text-blue-300 px-2">
+        <button className="rounded border bg-[#dee5fb] text-[#015FF1] px-2">
           Edit
         </button>
-        <button  className="rounded border text-red-300 px-2">
+        <button  className="rounded border  text-[#C21E56] px-2">
           Delete
         </button>
       </Space>
