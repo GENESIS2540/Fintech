@@ -23,12 +23,12 @@ const MyCredits = () => {
       date: new Date().toLocaleDateString(),
     };
 
-    setCreditList([...creditList, newCredit]);
+    setCreditList([newCredit, ...creditList.slice(0, 4)]);
     setCreditAmount("");
   };
 
   return (
-    <div >
+    <div>
       <Header title={"My Credits"} category={"Credits"} />
       <div className="max-w-lg mx-auto mt-8 bg-white rounded-lg shadow-md overflow-hidden">
         <div className="bg-blue-500 py-4 px-6">
@@ -68,21 +68,49 @@ const MyCredits = () => {
             </button>
           </form>
         </div>
-        <div className="p-6">
+        <div className="p-6 overflow-y-auto max-h-72">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Your Credit Transaction History
           </h2>
-          <ul className="divide-y divide-gray-300">
-            {creditList.map((credit, index) => (
-              <li key={index} className="py-4">
-                <p className="text-gray-600">
-                  {credit.type === "Earn" ? "Earned" : "Redeemed"}{" "}
-                  <span className="font-bold">{credit.amount}</span> credits on{" "}
-                  <span className="font-bold">{credit.date}</span>
-                </p>
-              </li>
-            ))}
-          </ul>
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Transaction Type
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Amount
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {creditList.map((credit, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {credit.type}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {credit.amount}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {credit.date}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
