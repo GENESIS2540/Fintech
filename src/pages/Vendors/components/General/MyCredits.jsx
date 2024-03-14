@@ -23,7 +23,7 @@ const MyCredits = () => {
       date: new Date().toLocaleDateString(),
     };
 
-    setCreditList([newCredit, ...creditList.slice(0, 4)]); // Only keep the latest 5 transactions
+    setCreditList([newCredit, ...creditList.slice(0, 4)]);
     setCreditAmount("");
   };
 
