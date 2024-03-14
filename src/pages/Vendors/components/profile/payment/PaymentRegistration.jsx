@@ -26,13 +26,13 @@ const PaymentRegistration = () => {
     <>
       <Header title={"Payment Registration"} category={"Register"} />
 
-      <div className=" min-h-screen py-8 flex justify-center">
+      <div className="min-h-screen py-8 flex justify-center">
         <div className="bg-white rounded-md shadow-md overflow-hidden w-full max-w-lg">
           <div className="bg-blue-500 py-4 px-6 text-white font-bold text-xl">
             Payment Registration
           </div>
           <form onSubmit={handleSubmit} className="p-6">
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols- gap-6">
               <InputField
                 label="Preferred Payment Methods"
                 name="preferredMethods"
@@ -101,7 +101,7 @@ const InputField = ({ label, name, value, onChange }) => (
       name={name}
       value={value}
       onChange={onChange}
-      className="input-field"
+      className="input-field w-full border rounded-md px-3 py-2 outline-none focus:border-blue-500"
     />
   </div>
 );
