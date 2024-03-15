@@ -31,7 +31,7 @@ const MyCredits = () => {
     <div>
       <Header title={"My Credits"} category={"Credits"} />
       <div className="max-w-lg mx-auto mt-8 bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="bg-blue-500 py-4 px-6">
+        <div className="bg-[#015FF1] py-4 px-6">
           <h2 className="text-2xl font-bold text-white">Credits Page</h2>
         </div>
         <div className="p-6">
@@ -62,7 +62,7 @@ const MyCredits = () => {
             </div>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
+              className="bg-[#015FF1] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
             >
               Submit Transaction
             </button>

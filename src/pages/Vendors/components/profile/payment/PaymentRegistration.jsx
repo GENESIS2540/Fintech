@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../common/Header";
 import { Card, Input } from "antd";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
+
 
 const PaymentRegistration = () => {
   const [paymentInfo, setPaymentInfo] = useState({
@@ -42,7 +41,7 @@ const PaymentRegistration = () => {
               </div>
             </div>
 
-            <Card title="Payment Information" className="mt-5 mx-7">
+            <Card>
               <div className="grid grid-cols-1">
                 <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
                   Preferred Payment Methods
@@ -140,14 +139,14 @@ const PaymentRegistration = () => {
             </Card>
 
             <div className="flex items-center justify-center md:gap-8 gap-4 pt-5 pb-5">
-              <button className="w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2">
-                Cancel
+              <button className="w-auto bg-[#015FF1] hover:bg-[#015FF1] rounded-lg shadow-xl font-medium text-white px-4 py-2">
+                Update
               </button>
               <button
-                className="w-auto bg-blue-500 hover:bg-blue-700 rounded-lg shadow-xl font-medium text-white px-4 py-2"
+                className="w-auto bg-[#015FF1] hover:bg-[#015FF1] rounded-lg shadow-xl font-medium text-white px-4 py-2"
                 type="submit"
               >
-                Create
+                Send
               </button>
             </div>
           </form>

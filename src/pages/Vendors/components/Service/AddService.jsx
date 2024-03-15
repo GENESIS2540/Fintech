@@ -35,7 +35,7 @@ const AddService = () => {
 
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="vendor-price">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
               Regular Price
             </label>
             <input
@@ -47,7 +47,7 @@ const AddService = () => {
            
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="vendor-options">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Sale Price
             </label>
             <input
@@ -63,7 +63,7 @@ const AddService = () => {
         <div className="flex flex-wrap -mx-3 mb-6">
          
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="item-image">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
               Item Image 
             </label>
             <input
@@ -75,7 +75,7 @@ const AddService = () => {
           </div>
           
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="vendor-options">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Quantity
             </label>
             <input
