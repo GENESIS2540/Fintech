@@ -3,11 +3,11 @@ import { Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
 
-const NewCollection = ({ handleSidebarClick }) => {
+const NewCollection = ({ handleSidebarClickSecond }) => {
   return (
-    <div className="w-[600px] mx-[auto]">
+    <div className="md:w-[600px] w-[95%] mx-[auto]">
       <div className="flex my-[30px] gap-[20px]">
-          <button onClick={() => handleSidebarClick("collections")} className="border px-[10px] py-[5px] bg-white">
+          <button onClick={() => handleSidebarClickSecond("collections")} className="border px-[10px] py-[5px] bg-white">
             <ArrowLeftOutlined />
           </button>
         <p className="text-[24px] font-semibold">Create A New Collection</p>

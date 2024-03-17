@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "../../assets/svgs/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AuditOutlined, HomeOutlined, LogoutOutlined, RetweetOutlined, UserOutlined } from "@ant-design/icons";
 import UuerOutlined from "../../assets/images/check_balance.jpeg";
 import { Popover } from "antd";
 
-const AdminNavbar = () => {
+const AdminNavbar = ({ handleSideMenuToggle, isCollapsed }) => {
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
@@ -45,12 +45,12 @@ const AdminNavbar = () => {
     </div>
   );
   return (
-    <nav className="grid bg-white p-[10px] gap-[10px] place-content-center grid-cols-2 sm:grid-cols-3 md:h-[12vh] shadow-lg">
+    <nav className="grid bg-white p-[10px] gap-[10px] place-content-center grid-cols-3 sm:grid-cols-3 md:h-[12vh] shadow-lg">
       <Link to={"/"} className="flex  items-center gap-[5px] cursor-pointer">
         <img className="h-[40px] w-[40px]" src={logo} alt="logo" />
         <p className=" font-bold text-[25px] text-[#015FF1]">BNPL</p>
       </Link>
-      <div className="items-center sm:col-span-1 col-span-2 order-last flex relative">
+      <div className="items-center sm:col-span-1 col-span-3 order-last flex relative">
         <FontAwesomeIcon className="absolute pl-[10px]" icon={faSearch} />
         <input
           className="bg-[#f1f2f3] sm:w-[400px] w-[100%] rounded px-[40px] py-[5px] outline-none focus:border-[#015FF1] border-2"
@@ -59,6 +59,7 @@ const AdminNavbar = () => {
           placeholder="Search"
         />
       </div>
+      
       <div className="flex place-self-end	 sm:order-last items-center justify-center rounded-[50%] border-[#015FF1] border-2 h-[32px] w-[32px] cursor-pointer ">
       <Popover content={content} placement="leftTop" trigger="click">
       <img
@@ -67,6 +68,9 @@ const AdminNavbar = () => {
         alt=""
       />
     </Popover>
+      </div>
+      <div onClick={handleSideMenuToggle} className="md:hidden flex items-center justify-end ">
+        <FontAwesomeIcon icon={isCollapsed ? faX : faBars} />
       </div>
     </nav>
   );

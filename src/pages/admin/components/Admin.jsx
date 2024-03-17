@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { HomeOutlined, MenuOutlined, SettingOutlined } from "@ant-design/icons";
 import "./admin.css";
 import AdminNavbar from "./adminNavbar/AdminNavbar";
 import Dashboard from "./dashboard/Dashboard";
@@ -13,78 +12,66 @@ import Orders from "./orders/orders";
 import Coupons from "./coupons/Coupons";
 import Settings from "./settings/Settings";
 import NewCollection from "./collections/NewCollection";
-import Sidebar from "./sidebar/Sidebar";
-import { Affix } from "antd";
+import SidebarResponsive from "./sidebar/Sidebar";
 
 const Admin = () => {
   const [selectedSidebar, setSelectedSidebar] = React.useState("dashboard");
-  const [toggleSideMenu, setToggleSideMenu] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleSideMenuToggle = () => {
-    setToggleSideMenu(!toggleSideMenu);
+    setIsCollapsed(!isCollapsed);
+  
   };
 
   const handleSidebarClick = (setting) => {
-    setSelectedSidebar(setting);
-    setToggleSideMenu(!toggleSideMenu);
+    setSelectedSidebar(setting);  
+    setIsCollapsed(false)
   };
+
+  const handleSidebarClickSecond = (setting) => {
+    setSelectedSidebar(setting);
+  }
 
 
   return (
     <div>
       
       <div className="md:h-[100vh] overflow-hidden">
-        <AdminNavbar />
+        <AdminNavbar handleSideMenuToggle={handleSideMenuToggle} isCollapsed={isCollapsed}/>
         <main className="dashboard bg-[#f6f6f7] md:h-[88vh]">
-          <Sidebar
+          <SidebarResponsive
             selectedSidebar={selectedSidebar}
             handleSidebarClick={handleSidebarClick}
-            toggleSideMenu={toggleSideMenu}
+            setIsCollapsed={setIsCollapsed}
+            isCollapsed={isCollapsed}
+        
           />
           <div className="overflow-auto">
             {selectedSidebar === "dashboard" && <Dashboard />}
             {selectedSidebar === "customers" && <Customers />}
             {selectedSidebar === "newProduct" && (
-              <NewProduct handleSidebarClick={handleSidebarClick} />
+              <NewProduct handleSidebarClickSecond={handleSidebarClickSecond} />
             )}
             {selectedSidebar === "newCoupon" && (
-              <NewCoupon handleSidebarClick={handleSidebarClick} />
+              <NewCoupon handleSidebarClickSecond={handleSidebarClickSecond} />
             )}
             {selectedSidebar === "products" && <Products />}
             {selectedSidebar === "categories" && <Categories />}
             {selectedSidebar === "collections" && (
-              <Collections handleSidebarClick={handleSidebarClick} />
+              <Collections handleSidebarClickSecond={handleSidebarClickSecond} />
             )}
             {selectedSidebar === "orders" && <Orders />}
             {selectedSidebar === "coupons" && (
-              <Coupons handleSidebarClick={handleSidebarClick} />
+              <Coupons handleSidebarClickSecond={handleSidebarClickSecond} />
             )}
             {selectedSidebar === "settings" && <Settings />}
             {selectedSidebar === "newCollection" && (
-              <NewCollection handleSidebarClick={handleSidebarClick} />
+              <NewCollection handleSidebarClickSecond={handleSidebarClickSecond} />
             )}
           </div>
         </main>
       </div>
-      <Affix offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
-        <div className="flex sm:hidden justify-between w-[100vw] uppercase font-semibold bg-white p-[20px] shadow-custom">
-          <div onClick={() => handleSidebarClick("dashboard")} className="grid place-items-center gap-[4px]">
-            <HomeOutlined />
-            <p>home</p>
-          </div>
-          <div
-            onClick={handleSideMenuToggle}
-            className="grid place-items-center gap-[4px]"
-          >
-            <MenuOutlined />
-            <p>Menu</p>
-          </div>
-          <div onClick={() => handleSidebarClick("settings")} className="grid place-items-center gap-[4px]">
-            <SettingOutlined />
-            <p>Settings</p>
-          </div>
-        </div>
-      </Affix>
+      
     </div>
   );
 };

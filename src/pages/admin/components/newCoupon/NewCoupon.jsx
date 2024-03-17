@@ -4,7 +4,7 @@ import TextArea from "antd/es/input/TextArea";
 import React, { useState } from "react";
 import { DatePicker, Space } from "antd";
 
-const NewCoupon = ({ handleSidebarClick }) => {
+const NewCoupon = ({ handleSidebarClickSecond }) => {
   const [discountType, setDiscountType] = useState(1);
 
   const onDiscountTypeChange = (e) => {
@@ -24,7 +24,7 @@ const NewCoupon = ({ handleSidebarClick }) => {
     <div className="overflow-auto">
       <div className="md:mx-[20px] w-[95%] mx-[auto] grid gap-[20px]">
         <div className="flex mt-[30px] my-[10px] gap-[20px]">
-            <button onClick={() => handleSidebarClick("coupons")} className="border px-[10px] py-[5px] bg-white">
+            <button onClick={() => handleSidebarClickSecond("coupons")} className="border px-[10px] py-[5px] bg-white">
               <ArrowLeftOutlined />
             </button>
           <p className="text-[24px] font-semibold">Create A New Coupon</p>
