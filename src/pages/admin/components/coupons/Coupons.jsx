@@ -16,6 +16,7 @@ const Coupons = ({ handleSidebarClickSecond }) => {
             dataSource={dataSource}
             columns={columns}
             pagination={{ pageSize: 10 }}
+            className="overflow-auto bg-white"
           />
         </div>
       </div>

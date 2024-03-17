@@ -3,7 +3,7 @@ import React from "react";
 
 const Collections = ({ handleSidebarClickSecond }) => {
   return (
-    <div className="overflow-auto">
+    <div className="overflow-auto w-[95%] mx-[auto]">
       <div className=" md:mx-[70px]">
         <div className="flex justify-between my-[30px]">
           <p className="text-[24px] font-semibold">Collections</p>
@@ -16,6 +16,7 @@ const Collections = ({ handleSidebarClickSecond }) => {
             dataSource={dataSource}
             columns={columns}
             pagination={{ pageSize: 10 }}
+            className="overflow-auto bg-white"
           />
         </div>
       </div>
