@@ -3,7 +3,7 @@ import {
   faBoxesStacked,
   faCartShopping,
   faCubesStacked,
-  faGears,
+  faGear,
   faGift,
   faHome,
   faUsers,
@@ -139,7 +139,7 @@ const SidebarResponsive = ({
           <Menu>
             <MenuItem
               onClick={() => handleSidebarClick("settings")}
-              icon={<FontAwesomeIcon className="text-[16px]" icon={faGears} />}
+              icon={<FontAwesomeIcon className="text-[16px]" icon={faGear} />}
             >
               Setting
             </MenuItem>
