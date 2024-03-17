@@ -7,7 +7,7 @@ const ShippingSettings = () => {
     <div className="">
       <div className="bg-white p-[25px] grid gap-[10px] shadow-custom mb-[50px]">
         <p className="uppercase text-[24=0px] font-semibold">Shipping</p>
-        <p>Choose where you ship and how much you charge for shipping</p>
+        <p>Choose where you ship and shipping fee</p>
         <hr className="mt-[5px]" />
         <div>
           <div className="flex pb-[10px] gap-[10px]">
@@ -25,13 +25,14 @@ const ShippingSettings = () => {
               </div>
             </div>
           </div>
-          <div className="border p-[20px]">
+          <div className="border">
             <Table
               dataSource={dataSource}
               columns={columns}
               pagination={false}
+              className="overflow-auto md:w-[100%] w-[80vw]"
             />
-            <div className="flex mt-[10px] gap-[5px] text-[#015FF1] cursor-pointer">
+            <div className="flex p-[10px] mt-[10px] gap-[5px] text-[#015FF1] cursor-pointer">
               <PlusOutlined style={{ fontSize: "12px" }} />
               <p>Add Method</p>
             </div>
@@ -54,14 +55,14 @@ const ShippingSettings = () => {
               </div>
             </div>
           </div>
-          <div className="border p-[20px] overflow-auto">
+          <div className="border overflow-auto">
             <Table
               dataSource={dataSource}
               columns={columns}
               pagination={false}
-              scroll={{ x: true }}
+              className="overflow-auto md:w-[100%] w-[80vw]"
             />
-            <div className="flex mt-[10px] gap-[5px] text-[#015FF1] cursor-pointer">
+            <div className="flex p-[10px] mt-[10px] gap-[5px] text-[#015FF1] cursor-pointer">
               <PlusOutlined style={{ fontSize: "12px" }} />
               <p>Add Method</p>
             </div>
