@@ -9,6 +9,7 @@ import {
 import VendorCollapse from "./VendorCollapse";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
   return (
@@ -23,6 +24,7 @@ const Sidebar = ({ handleSidebarVendorClick, selectedSidebarVendor }) => {
         title="DashBoard"
         children={
           <div className="grid gap-[8px]">
+            
             <p
               onClick={() => handleSidebarVendorClick("dash")}
               className={

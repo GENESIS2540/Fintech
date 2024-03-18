@@ -57,10 +57,8 @@ const Vendors = () => {
             {selectedSidebarVendor === "service" && <ServiceList />}
             {selectedSidebarVendor === "payment" && <PaymentRegistration />}
             {selectedSidebarVendor === "credits" && <MyCredits />}
-        
-           {selectedSidebarVendor === "feed" && <MessagesPage/>}
-           
-           
+            {selectedSidebarVendor === "feed" && <MessagesPage/>}
+          
               </div>
         </div>
       </div>
