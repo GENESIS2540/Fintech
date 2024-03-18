@@ -11,8 +11,12 @@ import {
 import React from "react";
 import UuerOutlined from "../../assets/check_balance.jpeg";
 import { Popover } from "antd";
+import logo from "../../assets/logo.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = ({ handleSidebarCustomerClick, handleToggleSidebar }) => {
+
+const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
@@ -53,15 +57,20 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggleSidebar }) => {
   return (
     <div className="border-b border-stone-400">
       <div className="flex justify-between  px-[20px] items-center h-[100px]">
-        <div onClick={handleToggleSidebar} className="sm:hidden">
-        <BarsOutlined />
+        <div>
+        <div className="flex items-center h-[100px] justify-center gap-[5px] cursor-pointer">
+        <img src={logo} className="h-[42px] w-[42px]" alt="logo" />
+        <p className="font-bold text-[25px] text-[#015FF1">BNPL</p>
+      </div>
         </div>
-      <div>
+        <div className="md:block hidden">
           <p className="text-[20px] font-semibold">Hello Brandon!</p>
         </div>
         <div className="flex gap-[15px] text-[20px]">
           <SearchOutlined className="cursor-pointer" />
-          <button onClick={() => handleSidebarCustomerClick("messages")}><MailOutlined className="cursor-pointer" /></button>
+          <button onClick={() => handleSidebarCustomerClick("messages")}>
+            <MailOutlined className="cursor-pointer" />
+          </button>
           <div className="">
             <Popover content={content} placement="leftTop" trigger="click">
               <img
@@ -71,6 +80,9 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggleSidebar }) => {
               />
             </Popover>
           </div>
+        </div>
+        <div onClick={handleToggled} className="sm:hidden">
+          <FontAwesomeIcon icon={toggled ? faX : faBars}/>
         </div>
       </div>
     </div>

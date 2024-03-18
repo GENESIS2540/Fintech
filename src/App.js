@@ -4,7 +4,7 @@ import Customer from "./pages/customer/Customer";
 import Admin from "./pages/admin/components/Admin";
 import LandingPage from "./pages/landing/components/LandingPage";
 import Vendors from "./pages/Vendors/Vendors";
-import Playground from "./pages/admin/components/sidebar/Sidebartest";
+import SidebarCustomerTest from "./pages/customer/components/sidebar/SidebarCustomerTest";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/customer" element={<Customer />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/vendors" element={<Vendors />} />
-        <Route path="/sidebar" element={<Playground />} />
+        <Route path="/sidebar" element={<SidebarCustomerTest />} />
       </Routes>
     </Router>
   );

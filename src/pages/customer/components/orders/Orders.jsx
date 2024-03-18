@@ -5,14 +5,14 @@ import Header from "../common/Header";
 
 const Orders = () => {
   return (
-    <div>
+    <div className="w-[95%] mx-auto">
       <Header title={"My Orders"} category={"Orders"} />
       <Table
         bordered={true}
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        style={{ height: "88vh", overflow:"auto"}}
+        className="overflow-auto bg-white"
       />
     </div>
   );
@@ -80,7 +80,7 @@ const columns = [
     title: "Order ID & Date",
     dataIndex: "order",
     render: (date) => (
-      <div className="grid">
+      <div className="grid w-max">
         <p>{date.orderId}</p>
         <p>{date.date}</p>
       </div>
@@ -91,7 +91,7 @@ const columns = [
     dataIndex: "details",
     fixed: "left",
     render: (details) => (
-      <div className="flex gap-[8px]">
+      <div className="flex gap-[8px] w-max">
         <img className="h-[50px] w-[50px]" src={shoe} alt="" />
         <div>
           <p>{details.name}</p>

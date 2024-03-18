@@ -9,7 +9,7 @@ const orders = () => {
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        className="h-[88vh] overflow-auto bg-white"
+        className="overflow-auto bg-white"
       />
     </div>
   );

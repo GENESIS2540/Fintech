@@ -3,7 +3,13 @@ import logo from "../../assets/svgs/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { AuditOutlined, HomeOutlined, LogoutOutlined, RetweetOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  AuditOutlined,
+  HomeOutlined,
+  LogoutOutlined,
+  RetweetOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import UuerOutlined from "../../assets/images/check_balance.jpeg";
 import { Popover } from "antd";
 
@@ -59,17 +65,20 @@ const AdminNavbar = ({ handleSideMenuToggle, isCollapsed }) => {
           placeholder="Search"
         />
       </div>
-      
+
       <div className="flex place-self-end	 sm:order-last items-center justify-center rounded-[50%] border-[#015FF1] border-2 h-[32px] w-[32px] cursor-pointer ">
-      <Popover content={content} placement="leftTop" trigger="click">
-      <img
-        className="h-[30px] w-[30px] rounded-[100%] cursor-pointer"
-        src={UuerOutlined}
-        alt=""
-      />
-    </Popover>
+        <Popover content={content} placement="leftTop" trigger="click">
+          <img
+            className="h-[30px] w-[30px] rounded-[100%] cursor-pointer"
+            src={UuerOutlined}
+            alt=""
+          />
+        </Popover>
       </div>
-      <div onClick={handleSideMenuToggle} className="md:hidden flex items-center justify-end ">
+      <div
+        onClick={handleSideMenuToggle}
+        className="md:hidden flex items-center justify-end "
+      >
         <FontAwesomeIcon icon={isCollapsed ? faX : faBars} />
       </div>
     </nav>
