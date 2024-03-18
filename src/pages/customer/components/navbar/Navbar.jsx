@@ -22,7 +22,7 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
       <div className="flex gap-[5px] justify-center items-center">
         <img className="h-[40px] w-[40px]" src={UuerOutlined} alt="" />
         <div className="font-semibold">
-          <p className="text-[18px]">Hi, Brandon</p>
+          <p className="text-[18px]">Hi, Brandon.</p>
           <p>user@gmail.com</p>
         </div>
       </div>
