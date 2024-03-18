@@ -21,7 +21,7 @@ const SidebarCustomer = ({
   );
 
   return (
-    <div className="flex bg-[#f2f7ff] min-h-[100vh]">
+    <div className="flex bg-[#f2f7ff] h-[100%]">
       <Sidebar
         onBackdropClick={() => setToggled(false)}
         toggled={toggled}
@@ -30,12 +30,13 @@ const SidebarCustomer = ({
         backgroundColor="#f2f7ff"
       >
         <Menu >
-          <SubMenu icon={<UserOutlined />} label="Profile">
+          <SubMenu defaultOpen={true} icon={<UserOutlined />} label="Profile">
             <MenuItem
               onClick={() => handleSidebarCustomerClick("account")}
               className={
                 selectedSidebarCustomer === "account" ? "bg-[#f2f7ff]" : ""
               }
+              
             >
               My Account
             </MenuItem>
