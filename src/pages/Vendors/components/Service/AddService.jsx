@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Card, Input } from "antd";
-import Header from "../../../customer/components/common/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
+import Header from "../common/Header";
 
 const AddService = () => {
   const [paymentInfo, setPaymentInfo] = useState({
-    preferredMethods: "",
-    currencyOptions: "",
-    payoutSchedule: "",
+    serviceName: "",
+    serviceDescription: "",
+    regularPrice: "",
+    salePrice: "",
+    itemImage: "",
+    quantity: "",
     bankAccount: "",
-    accountHolderName: "",
-    accountNumber: "",
-    routingNumber: "",
   });
 
   const handleChange = (e) => {
@@ -24,144 +26,149 @@ const AddService = () => {
   };
 
   return (
-    <>
-        <Header title={"Add Serive"} category={"Add"} />
-      <div className="flex h-screen items-center justify-center">
-        <div className="grid bg-white rounded-lg shadow-2xl w-11/12">
-          <form onSubmit={handleSubmit}>
-            <div className="flex justify-center py-4"></div>
+    <div>
+      <Header title={"Add Service"} category={" Service"} />
 
-            <div className="flex justify-center">
-              <div className="flex">
-                <h1 className="text-[#015FF1] font-bold md:text-2xl text-xl">
-                  ADD SERVICE
-                </h1>
-              </div>
-            </div>
-
-            <Card>
-              
-              <div className="mb-6">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
-                  Service Name
-                </label>
-                <input
-                  name="preferredMethods"
-                  onChange={handleChange}
-                  className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="vendor-service"
-                  type="text"
-                  placeholder="Service Name"
+      <div className="grid md:grid-cols-2 gap-[10px] items-center">
+        <Card>
+          <p className="font-semibold text-18px">Add Service Details </p>
+          <hr className="my-[10px]" />
+          <form className="grid gap-[10px]" onSubmit={handleSubmit}>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Service Name</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
                 />
               </div>
-
-             
-              <div className="mb-6">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                  Service Description
-                </label>
-                <textarea
-                  name="currencyOptions"
-                  onChange={handleChange}
-                  className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="vendor-additional-info"
-                  placeholder="Service Description"
-                  rows="4"
-                ></textarea>
-              </div>
-
-            
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Regular Price
-                  </label>
-                  <input
-                    name="payoutSchedule"
-                    onChange={handleChange}
-                    className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="vendor-price"
-                    type="text"
-                    placeholder="Regular Price"
-                  />
-                </div>
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Sale Price
-                  </label>
-                  <input
-                    name="bankAccount"
-                    onChange={handleChange}
-                    className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="vendor-options"
-                    type="text"
-                    placeholder="Sale Price"
-                  />
-                </div>
-              </div>
-
-            
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Item Image
-                  </label>
-                  <input
-                    name="accountHolderName"
-                    onChange={handleChange}
-                    className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="item-image"
-                    type="file"
-                    placeholder="Input Image"
-                  />
-                </div>
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Quantity
-                  </label>
-                  <input
-                    name="accountNumber"
-                    onChange={handleChange}
-                    className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="vendor-options"
-                    type="text"
-                    placeholder="Add Quantity"
-                  />
-                </div>
-              </div>
-
-            
-              <div className="grid grid-cols-1 mt-5">
-                <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
-                  Bank Account
-                </label>
-                <input
-                  name="routingNumber"
-                  onChange={handleChange}
-                  className="py-2 px-3 rounded-lg border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
-                  type="text"
-                  placeholder="Bank Account"
+              <Input
+                type="text"
+                name="serviceName"
+                value={paymentInfo.serviceName}
+                onChange={handleChange}
+                placeholder="Service Name"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Service Description</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
                 />
               </div>
-
-       
-            </Card>
-
-            <div className="flex items-center justify-center md:gap-8 gap-4 pt-5 pb-5">
-              <button className="w-auto bg-[#015FF1] hover:bg-[#015FF1] rounded-lg shadow-xl font-medium text-white px-4 py-2">
-                Update
-              </button>
-              <button
-                className="w-auto bg-[#015FF1] hover:bg-[#015FF1] rounded-lg shadow-xl font-medium text-white px-4 py-2"
-                type="submit"
-              >
-                Send
-              </button>
+              <Input
+                type="text"
+                name="serviceDescription"
+                value={paymentInfo.serviceDescription}
+                onChange={handleChange}
+                placeholder="Service Description"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
             </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Regular Price</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
+                name="regularPrice"
+                value={paymentInfo.regularPrice}
+                onChange={handleChange}
+                placeholder="Regular Price"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Sale Price</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
+                name="salePrice"
+                value={paymentInfo.salePrice}
+                onChange={handleChange}
+                placeholder="Sale Price"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Item Image</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="file"
+                name="itemImage"
+                onChange={handleChange}
+                placeholder="Item Image"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Quantity</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
+                name="quantity"
+                value={paymentInfo.quantity}
+                onChange={handleChange}
+                placeholder="Quantity"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Bank Account</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
+                name="bankAccount"
+                value={paymentInfo.bankAccount}
+                onChange={handleChange}
+                placeholder="Bank Account"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+              />
+            </div>
+            <button
+              type="submit"
+              className="shadow-btn transition-all ease-in-out duration-500 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white flex items-center justify-center mx-auto"
+            >
+              Save
+            </button>
           </form>
-        </div>
+        </Card>
       </div>
-    </>
+    </div>
   );
 };
 
