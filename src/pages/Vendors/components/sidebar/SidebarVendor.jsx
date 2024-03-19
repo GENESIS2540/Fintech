@@ -9,7 +9,7 @@ import {
 import { faGem, faLanguage, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SideBarTest = ({
+const SidebarVendor = ({
   handleSidebarVendorClick,
   selectedSidebarVendor,
   setToggled,
@@ -21,7 +21,7 @@ const SideBarTest = ({
   );
 
   return (
-    <div className="flex bg-[#f2f7ff] h-[100%]">
+    <div className="flex h-[100%]">
       <Sidebar
         onBackdropClick={() => setToggled(false)}
         toggled={toggled}
@@ -95,7 +95,7 @@ const SideBarTest = ({
               Payment Registration
             </MenuItem>
           </SubMenu>
-          <SubMenu icon={<ShoppingCartOutlined />} label="services">
+          <SubMenu icon={<ShoppingCartOutlined />} label="Services">
             <MenuItem
               onClick={() => handleSidebarVendorClick("orders")}
               className={
@@ -204,4 +204,4 @@ const SideBarTest = ({
   );
 };
 
-export default SideBarTest;
+export default SidebarVendor;
