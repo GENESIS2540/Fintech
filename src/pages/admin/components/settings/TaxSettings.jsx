@@ -10,7 +10,7 @@ const TaxSettings = () => {
     console.log(`selected ${value}`);
   };
 
-  return (
+  return ( 
     <div className="grid gap-[20px]">
       <div className="bg-white p-[25px] grid gap-[10px] shadow-custom">
         <p className="uppercase text-[24=0px] font-semibold">Tax</p>
@@ -79,13 +79,14 @@ const TaxSettings = () => {
       </div>
       <div className="bg-white p-[25px] grid gap-[10px] shadow-custom mb-[50px]">
         <p className="uppercase text-[24=0px] font-semibold">Tax classes</p>
-        <div>
+        <div className="w-[100%]">
           <p className="text-[14px] mb-[10px]">Taxable Goods</p>
           <div className="border">
             <Table
               dataSource={dataSource}
               columns={columns}
               pagination={false}
+              className="overflow-auto md:w-[100%] w-[83vw]"
             />
           </div>
         </div>

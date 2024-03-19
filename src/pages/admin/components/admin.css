@@ -4,7 +4,7 @@ body {
   /* ADMIN DASHBOARD CSS */
   .dashboard {
       display: grid;
-      grid-template-columns: 14rem auto;
+      grid-template-columns: 16rem auto;
   }
   .dashboard-charts{
     display: grid;
@@ -13,9 +13,8 @@ body {
   
   @media (max-width: 640px) {
     .dashboard{
-      grid-template-columns: auto;
+      grid-template-columns: 0fr 1fr;
       margin-inline: auto;
-      width: 95%;
       margin-bottom: 30px;
     }
     .dashboard-charts{
@@ -32,7 +31,7 @@ body {
   .sidebar { 
       overflow: auto;
       overflow-y: overlay;
-      height: 80vh;
+      height: 90vh;
     }
     
     
@@ -80,3 +79,6 @@ body {
     border: 1px solid #015FF1;
     outline: 0px solid #015FF1;
   }
+
+
+  

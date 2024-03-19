@@ -4,7 +4,7 @@ import TextArea from "antd/es/input/TextArea";
 import React, { useState } from "react";
 import UploadApp from "./UploadIMedia";
 
-const NewProduct = ({ handleSidebarClick }) => {
+const NewProduct = ({ handleSidebarClickSecond }) => {
   const [visibility, setVisibility] = useState(1);
   const [availability, setAvailability] = useState(1);
 
@@ -19,7 +19,7 @@ const NewProduct = ({ handleSidebarClick }) => {
     <div className="grid overflow-auto ">
       <div className="mb-[30px] w-[95%] md:mx-[20px] mx-[auto]">
         <div className="flex my-[30px] gap-[20px]">
-            <button onClick={() => handleSidebarClick("products") } className="border px-[10px] py-[5px] bg-white">
+            <button onClick={() => handleSidebarClickSecond("products") } className="border px-[10px] py-[5px] bg-white">
               <ArrowLeftOutlined />
             </button>
           <p className="text-[24px] font-semibold">Create A New Product</p>

@@ -1,13 +1,13 @@
 import { Checkbox, Table } from "antd";
 import React from "react";
 
-const Collections = ({ handleSidebarClick }) => {
+const Collections = ({ handleSidebarClickSecond }) => {
   return (
-    <div className="overflow-auto">
+    <div className="overflow-auto w-[95%] mx-[auto]">
       <div className=" md:mx-[70px]">
         <div className="flex justify-between my-[30px]">
           <p className="text-[24px] font-semibold">Collections</p>
-            <button onClick={() => handleSidebarClick("newCollection")} className="border-2 px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
+            <button onClick={() => handleSidebarClickSecond("newCollection")} className="border-2 px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
               New Collection
             </button>
         </div>
@@ -16,6 +16,7 @@ const Collections = ({ handleSidebarClick }) => {
             dataSource={dataSource}
             columns={columns}
             pagination={{ pageSize: 10 }}
+            className="overflow-auto bg-white"
           />
         </div>
       </div>

@@ -17,6 +17,8 @@ import ServiceList from "./pages/Vendors/components/Service/ServiceList";
 import PaymentRegistration from "./pages/Vendors/components/profile/payment/PaymentRegistration";
 import MyCredits from "./pages/Vendors/components/General/MyCredits";
 import MessagesPage from "./pages/Vendors/components/General/MessagesPage";
+import SidebarCustomerTest from "./pages/customer/components/sidebar/SidebarCustomerTest";
+
 
 const App = () => {
   return (
@@ -39,6 +41,7 @@ const App = () => {
         <Route path="/vendors/pament" element={<PaymentRegistration />} />
         <Route path="/vendors/credits" element={<MyCredits/>} />
         <Route path="/vendors/feed" element={<MessagesPage/>} />
+        <Route path="/sidebar" element={<SidebarCustomerTest />} />
       </Routes>
     </Router>
   );
