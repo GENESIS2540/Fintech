@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Header from "../../common/Header";
+import { Card, Input } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 
 const PaymentRegistration = () => {
   const [paymentInfo, setPaymentInfo] = useState({
@@ -23,87 +26,136 @@ const PaymentRegistration = () => {
   };
 
   return (
-    <>
-      <Header title={"Payment Registration"} category={"Register"} />
-
-      <div className="min-h-screen py-8 flex justify-center">
-        <div className="bg-white rounded-md shadow-md overflow-hidden w-full max-w-lg">
-          <div className="bg-blue-500 py-4 px-6 text-white font-bold text-xl">
-            Payment Registration
-          </div>
-          <form onSubmit={handleSubmit} className="p-6">
-            <div className="grid grid-cols- gap-6">
-              <InputField
-                label="Preferred Payment Methods"
+    <div>
+      <Header title={"Update Credentials"} category={"Update Credentials"} />
+      <div className="grid md:grid-cols-2 gap-[10px] items-center">
+        <Card >
+          <p className="font-semibold text-18px">Update Payment Information</p>
+          <hr className="my-[10px]" />
+          <form className="grid gap-[10px]" onSubmit={handleSubmit}>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Preferred Payment Methods</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
                 name="preferredMethods"
                 value={paymentInfo.preferredMethods}
                 onChange={handleChange}
+                placeholder="Preferred Payment Methods"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
               />
-              <InputField
-                label="Currency Options"
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Currency Options</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
                 name="currencyOptions"
                 value={paymentInfo.currencyOptions}
                 onChange={handleChange}
+                placeholder="Currency Options"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
               />
-              <InputField
-                label="Payout Schedule"
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Payout Schedule</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
                 name="payoutSchedule"
                 value={paymentInfo.payoutSchedule}
                 onChange={handleChange}
+                placeholder="Payout Schedule"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
               />
-              <InputField
-                label="Bank Account"
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Bank Account</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
                 name="bankAccount"
                 value={paymentInfo.bankAccount}
                 onChange={handleChange}
+                placeholder="Bank Account"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
               />
-              <InputField
-                label="Account Holder Name"
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Account Holder Name</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
                 name="accountHolderName"
                 value={paymentInfo.accountHolderName}
                 onChange={handleChange}
+                placeholder="Account Holder Name"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
               />
-              <InputField
-                label="Account Number"
+            </div>
+            <div className="grid gap-[10px]">
+              <div className="flex gap-[5px]">
+                <label>Account Number</label>
+                <FontAwesomeIcon
+                  className="text-[red] mt-[5px] text-[8px] "
+                  icon={faAsterisk}
+                />
+              </div>
+              <Input
+                type="text"
                 name="accountNumber"
                 value={paymentInfo.accountNumber}
                 onChange={handleChange}
-              />
-              <InputField
-                label="Routing Number"
-                name="routingNumber"
-                value={paymentInfo.routingNumber}
-                onChange={handleChange}
+                placeholder="Account Number"
+                required
+                className="py-2 px-3 rounded-xl border-2  mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
               />
             </div>
 
+
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-6 w-full"
+              className="shadow-btn transition-all ease-in-out duration-500 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white flex items-center justify-center mx-auto"
             >
-              Submit
+              Save
             </button>
+
+
           </form>
-        </div>
+        </Card>
       </div>
-    </>
+    </div>
   );
 };
-
-const InputField = ({ label, name, value, onChange }) => (
-  <div>
-    <label htmlFor={name} className="block text-gray-700 font-bold mb-1">
-      {label}
-    </label>
-    <input
-      type="text"
-      id={name}
-      name={name}
-      value={value}
-      onChange={onChange}
-      className="input-field w-full border rounded-md px-3 py-2 outline-none focus:border-blue-500"
-    />
-  </div>
-);
 
 export default PaymentRegistration;
