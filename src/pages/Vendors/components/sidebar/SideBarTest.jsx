@@ -6,16 +6,16 @@ import {
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { faGem, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { faGem, faLanguage, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SidebarCustomer = ({
-  handleSidebarCustomerClick,
-  selectedSidebarCustomer,
+const SideBarTest = ({
+  handleSidebarVendorClick,
+  selectedSidebarVendor,
   setToggled,
   toggled,
 }) => {
- 
+
   const [broken, setBroken] = React.useState(
     window.matchMedia("(max-width: 800px)").matches
   );
@@ -30,78 +30,108 @@ const SidebarCustomer = ({
         backgroundColor="#f2f7ff"
       >
         <Menu >
+          {/* Dashboard Section */}
+          <SubMenu defaultOpen={true} icon={<FontAwesomeIcon className="text-[16px]" icon={faHome} />} label="DashBoard">
+            <MenuItem
+              onClick={() => handleSidebarVendorClick("dash")}
+              className={
+                selectedSidebarVendor === "account" ? "bg-[#f2f7ff]" : ""
+              }
+
+            >
+              My Performance
+            </MenuItem>
+          </SubMenu>
+
+          {/* Profile Section */}
           <SubMenu defaultOpen={true} icon={<UserOutlined />} label="Profile">
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("account")}
+              onClick={() => handleSidebarVendorClick("account")}
               className={
-                selectedSidebarCustomer === "account" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "account" ? "bg-[#f2f7ff]" : ""
               }
-              
+
             >
               My Account
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("bank")}
+              onClick={() => handleSidebarVendorClick("bank")}
               className={
-                selectedSidebarCustomer === "bank" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "bank" ? "bg-[#f2f7ff]" : ""
               }
             >
               Bank Account
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("cookie")}
+              onClick={() => handleSidebarVendorClick("cookie")}
               className={
-                selectedSidebarCustomer === "cookie" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "cookie" ? "bg-[#f2f7ff]" : ""
               }
             >
               Cookie Prefences
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("address")}
+              onClick={() => handleSidebarVendorClick("address")}
               className={
-                selectedSidebarCustomer === "address" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "address" ? "bg-[#f2f7ff]" : ""
               }
             >
               Manage Addresses
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("update")}
+              onClick={() => handleSidebarVendorClick("update")}
               className={
-                selectedSidebarCustomer === "update" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "update" ? "bg-[#f2f7ff]" : ""
               }
             >
               Update Credentials
             </MenuItem>
-          </SubMenu>
-          <SubMenu icon={<ShoppingCartOutlined />} label="Orders">
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("orders")}
+              onClick={() => handleSidebarVendorClick("payment")}
               className={
-                selectedSidebarCustomer === "orders" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "payment" ? "bg-[#f2f7ff]" : ""
+              }
+            >
+              Payment Registration
+            </MenuItem>
+          </SubMenu>
+          <SubMenu icon={<ShoppingCartOutlined />} label="Services">
+            <MenuItem
+              onClick={() => handleSidebarVendorClick("orders")}
+              className={
+                selectedSidebarVendor === "orders" ? "bg-[#f2f7ff]" : ""
               }
             >
               Orders
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("downloads")}
+              onClick={() => handleSidebarVendorClick("downloads")}
               className={
-                selectedSidebarCustomer === "downloads" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "downloads" ? "bg-[#f2f7ff]" : ""
               }
             >
-              Downloads
+              Add Service
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("cancellation")}
+              onClick={() => handleSidebarVendorClick("service")}
               className={
-                selectedSidebarCustomer === "cancellation" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "service" ? "bg-[#f2f7ff]" : ""
+              }
+            >
+              Service List
+            </MenuItem>
+            <MenuItem
+              onClick={() => handleSidebarVendorClick("cancellation")}
+              className={
+                selectedSidebarVendor === "cancellation" ? "bg-[#f2f7ff]" : ""
               }
             >
               Cancellation Requests
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("return")}
+              onClick={() => handleSidebarVendorClick("return")}
               className={
-                selectedSidebarCustomer === "return" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "return" ? "bg-[#f2f7ff]" : ""
               }
             >
               Return Requests
@@ -112,25 +142,25 @@ const SidebarCustomer = ({
             label="Offers & rewards"
           >
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("offers")}
+              onClick={() => handleSidebarVendorClick("offers")}
               className={
-                selectedSidebarCustomer === "offers" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "offers" ? "bg-[#f2f7ff]" : ""
               }
             >
               My Offers
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("reward")}
+              onClick={() => handleSidebarVendorClick("reward")}
               className={
-                selectedSidebarCustomer === "reward" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "reward" ? "bg-[#f2f7ff]" : ""
               }
             >
               Reward Points
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("share")}
+              onClick={() => handleSidebarVendorClick("share")}
               className={
-                selectedSidebarCustomer === "share" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "share" ? "bg-[#f2f7ff]" : ""
               }
             >
               Share and Earn
@@ -138,29 +168,22 @@ const SidebarCustomer = ({
           </SubMenu>
           <SubMenu icon={<PicLeftOutlined />} label="General">
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("messages")}
+              onClick={() => handleSidebarVendorClick("feed")}
               className={
-                selectedSidebarCustomer === "messages" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "feed" ? "bg-[#f2f7ff]" : ""
               }
             >
               Messages
             </MenuItem>
             <MenuItem
-              onClick={() => handleSidebarCustomerClick("credits")}
+              onClick={() => handleSidebarVendorClick("credits")}
               className={
-                selectedSidebarCustomer === "credits" ? "bg-[#f2f7ff]" : ""
+                selectedSidebarVendor === "credits" ? "bg-[#f2f7ff]" : ""
               }
             >
               My Credits
             </MenuItem>
-            <MenuItem
-              onClick={() => handleSidebarCustomerClick("wishlist")}
-              className={
-                selectedSidebarCustomer === "wishlist" ? "bg-[#f2f7ff]" : ""
-              }
-            >
-              Wishlist
-            </MenuItem>
+           
           </SubMenu>
           <SubMenu
             icon={<FontAwesomeIcon icon={faLanguage} />}
@@ -181,4 +204,4 @@ const SidebarCustomer = ({
   );
 };
 
-export default SidebarCustomer;
+export default SideBarTest;

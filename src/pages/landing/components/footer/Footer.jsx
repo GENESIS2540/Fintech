@@ -21,9 +21,7 @@ const Footer = () => {
             <p className="text-[30px] font-bold cursor-pointer">BNPL</p>
           </div>
 
-          <p>
-            264 Manon road F1 456 caron Town
-          </p>
+          <p>264 Manon road F1 456 caron Town</p>
           <p>Office No 3457</p>
           <p>info@salem.com</p>
           <p>1-800-356-6522</p>
@@ -80,6 +78,9 @@ const Footer = () => {
               alt="googleplay"
             />
           </div>
+          {/* <div className="h-[20px] w-[60px] outline bg-red-500">
+            <PopoverComponent />
+          </div> */}
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <div>
        <Header title={"My Performance"} category={"performance"} />
-    <div className="overflow-auto md:mx-[10px] w-[95%] mx-[auto] bg-[#f6f6f7] ml-2">
+    <div className="overflow-auto md:mx-[10px] w-[95%] mx-[auto]  ml-2">
 
     <div className="grid grid-cols-3 gap-4 my-2">
     <div className="shadow-custom bg-white p-[10px] text-[13px]">

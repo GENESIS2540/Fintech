@@ -1,7 +1,6 @@
 import React from "react";
 import "./Vendors.css";
 import Navbar from "./components/navbar/Navbar";
-import Sidebar from "./components/sidebar/Sidebar";
 import Orders from "./components/Service/Orders";
 import Downloads from "./components/Service/AddService";
 import Cancellation from "./components/Service/requests/Cancellation";
@@ -18,6 +17,7 @@ import PaymentRegistration from "./components/profile/payment/PaymentRegistratio
 import MyCredits from "./components/General/MyCredits";
 import Dashboard from "./components/dashboard/Dashboard";
 import MessagesPage from "./components/General/MessagesPage";
+import SideBarTest from "./components/sidebar/SideBarTest";
 
 
 
@@ -34,7 +34,7 @@ const Vendors = () => {
     <div className="bg-[#f6f6f7]">
       <div className="grid sm:grid-cols-4 w-[100%] mx-auto h-[100vh] shadow-custom">
         <div className="">
-          <Sidebar
+          <SideBarTest
             handleSidebarVendorClick={handleSidebarVendorClick}
             selectedSidebarVendor={selectedSidebarVendor}
           />

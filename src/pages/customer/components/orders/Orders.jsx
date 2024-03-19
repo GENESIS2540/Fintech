@@ -5,15 +5,17 @@ import Header from "../common/Header";
 
 const Orders = () => {
   return (
-    <div>
+    <div className="">
       <Header title={"My Orders"} category={"Orders"} />
-      <Table
-        bordered={true}
-        dataSource={dataSource}
-        columns={columns}
-        pagination={{ pageSize: 10 }}
-        style={{ height: "88vh", overflow:"auto"}}
-      />
+      <div className="pl-[5px] w-[95%] mx-auto">
+        <Table
+          bordered={true}
+          dataSource={dataSource}
+          columns={columns}
+          pagination={{ pageSize: 10 }}
+          className="overflow-auto bg-white md:w-[100%] w-[83vw]"
+        />
+      </div>
     </div>
   );
 };
@@ -80,7 +82,7 @@ const columns = [
     title: "Order ID & Date",
     dataIndex: "order",
     render: (date) => (
-      <div className="grid">
+      <div className="grid w-max">
         <p>{date.orderId}</p>
         <p>{date.date}</p>
       </div>
@@ -89,9 +91,8 @@ const columns = [
   {
     title: "Details",
     dataIndex: "details",
-    fixed: "left",
     render: (details) => (
-      <div className="flex gap-[8px]">
+      <div className="flex gap-[8px] w-max">
         <img className="h-[50px] w-[50px]" src={shoe} alt="" />
         <div>
           <p>{details.name}</p>
@@ -110,7 +111,7 @@ const columns = [
     title: "Status",
     dataIndex: "status",
     render: (text) => (
-      <p className="bg-[#dee5fb] flex rounded py-[3px] justify-center text-[#015FF1] ">
+      <p className="bg-[#dee5fb] px-[10px] flex rounded py-[3px] justify-center text-[#015FF1] ">
         {text.text}
       </p>
     ),

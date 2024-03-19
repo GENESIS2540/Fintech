@@ -4,7 +4,7 @@ import DonutApexChart from "./DonutChart";
 
 const Dashboard = () => {
   return (
-    <div className="overflow-auto md:mx-[10px] w-[95%] mx-[auto] bg-[#f6f6f7]">
+    <div className="overflow-auto md:mx-[10px] w-[95%] content-center mx-auto bg-[#f6f6f7]">
       <p className="text-[24px] font-bold sm:mt-[30px] mt-[10px] mb-[10px]">Dashboard</p>
       <div className="dashboard-charts gap-[10px]">
         <div className="bg-white shadow-custom">

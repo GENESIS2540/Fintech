@@ -20,9 +20,12 @@ const NewsLetter = () => {
           </div>
         </div>
       </div>
+     
       <div className="w-[64%] h-[70px] flex left-[50%] translate-x-[-50%] justify-between shaow-custom px-[20px] py-[15px] absolute bg-white bottom-[-38px]">
         
       </div>
+
+    
     </div>
   );
 };

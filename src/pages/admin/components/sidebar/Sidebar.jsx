@@ -9,126 +9,152 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Typography } from "antd";
 import React from "react";
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 
-const Sidebar = ({ selectedSidebar, handleSidebarClick, toggleSideMenu }) => {
+const SidebarResponsive = ({
+  handleSidebarClick,
+  setIsCollapsed,
+  isCollapsed,
+  selectedSidebar,
+}) => {
+  const [broken, setBroken] = React.useState(
+    window.matchMedia("(max-width: 800px)").matches
+  );
+
   return (
-    <div className="relative sm:h-[100%] text-center sm:text-left h-max sm:w-[90%] ">
-      <div className={`p-[10px] text-[#202223] sidebar sm:block  ${toggleSideMenu ? 'block' : 'hidden'}`}>
-        <p className=" p-[10px] uppercase text-[11px] font-semibold text-[11px] font-semibold">
-          Quick links
-        </p>
-        <div className="text-[14px] font-semibold">
-          <button
+    <div className="flex h-[100%] relative sidebar w-max">
+      <Sidebar
+        onBackdropClick={() => setIsCollapsed(false)}
+        customBreakPoint="800px"
+        onBreakPoint={setBroken}
+        toggled={isCollapsed}
+        backgroundColor="white"
+      >
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            Quick links
+          </Typography>
+        </div>
+        <Menu>
+          <MenuItem
+            className={selectedSidebar === "dashboard" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("dashboard")}
-            className={
-              selectedSidebar === "dashboard" ? "active nav-link" : "nav-link"
-            }
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faHome} />}
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faHome} />
-            <p>Dashboard</p>
-          </button>
-          <button
+            Dashboard
+          </MenuItem>
+          <MenuItem
             onClick={() => handleSidebarClick("newProduct")}
-            className={
-              selectedSidebar === "newProduct" ? "active nav-link" : " nav-link"
-            }
+            className={selectedSidebar === "newProduct" ? "bg-[#f3f3f3]" : ""}
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faBox} />}
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faBox} />
-            <p>New Product</p>
-          </button>
-          <button
+            New Product
+          </MenuItem>
+          <MenuItem
+            className={selectedSidebar === "newCoupon" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("newCoupon")}
-            className={
-              selectedSidebar === "newCoupon" ? "active nav-link" : " nav-link"
-            }
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faGift} />}
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faGift} />
-            <p>New Coupon</p>
-          </button>
+            New Coupon
+          </MenuItem>
+        </Menu>
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            Catalog
+          </Typography>
         </div>
-        <p className="p-[10px] uppercase text-[11px] font-semibold">Catalog</p>
-        <div className="text-[14px] font-semibold">
-          <button
+        <Menu>
+          <MenuItem
+            className={selectedSidebar === "products" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("products")}
-            className={
-              selectedSidebar === "products" ? "active nav-link" : " nav-link"
-            }
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faBox} />}
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faBox} />
-            <p>Products</p>
-          </button>
-          <button
+            Products
+          </MenuItem>
+          <MenuItem
+            className={selectedSidebar === "categories" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("categories")}
-            className={
-              selectedSidebar === "categories" ? "active nav-link" : " nav-link"
+            icon={
+              <FontAwesomeIcon className="text-[16px]" icon={faCubesStacked} />
             }
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faCubesStacked} />
-            <p>Categories</p>
-          </button>
-          <button
+            Categories
+          </MenuItem>
+          <MenuItem
+            className={selectedSidebar === "collections" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("collections")}
-            className={
-              selectedSidebar === "collections"
-                ? "active nav-link"
-                : " nav-link"
+            icon={
+              <FontAwesomeIcon className="text-[16px]" icon={faBoxesStacked} />
             }
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faBoxesStacked} />
-            <p>Collections</p>
-          </button>
+            Collections
+          </MenuItem>
+        </Menu>
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            Sale
+          </Typography>
         </div>
-        <p className="p-[10px] uppercase text-[11px] font-semibold">Sale</p>
-        <div className="text-[14px] font-semibold">
-          <button
+        <Menu>
+          <MenuItem
+            className={selectedSidebar === "orders" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("orders")}
-            className={
-              selectedSidebar === "orders" ? "active nav-link" : " nav-link"
+            icon={
+              <FontAwesomeIcon className="text-[16px]" icon={faCartShopping} />
             }
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faCartShopping} />
-            <p>Orders</p>
-          </button>
+            Orders
+          </MenuItem>
+        </Menu>
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            Customer
+          </Typography>
         </div>
-        <p className="p-[10px] uppercase text-[11px] font-semibold">Customer</p>
-        <div className="text-[14px] font-semibold">
-          <button
+        <Menu>
+          <MenuItem
+            className={selectedSidebar === "customers" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("customers")}
-            className={
-              selectedSidebar === "customers" ? "active nav-link" : " nav-link"
-            }
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faUsers} />}
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faUsers} />
-            <p>Customers</p>
-          </button>
+            Customers
+          </MenuItem>
+        </Menu>
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            Promotion
+          </Typography>
         </div>
-        <p className="p-[10px] uppercase text-[11px] font-semibold">
-          Promotion
-        </p>
-        <div className="text-[14px] font-semibold">
-          <button
+        <Menu>
+          <MenuItem
+            className={selectedSidebar === "coupons" ? "bg-[#f3f3f3]" : ""}
             onClick={() => handleSidebarClick("coupons")}
-            className={
-              selectedSidebar === "coupons" ? "active nav-link" : " nav-link"
-            }
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faGift} />}
           >
-            <FontAwesomeIcon className="text-[12px]" icon={faGift} />
-            <p>Coupons</p>
-          </button>
+            Coupons
+          </MenuItem>
+        </Menu>
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            settings
+          </Typography>
         </div>
-      </div>
-      <button onClick={() => handleSidebarClick("settings")}>
-        <div className="flex items-center gap-[8px] rounded-[5px] px-[15px] p-[5px] sm:flex hidden cursor-pointer">
-          <FontAwesomeIcon className="text-[12px]" icon={faGear} />
-          <p className="p-[10px] uppercase text-[11px] font-semibold">
-            Setting
-          </p>
+        <div className="pb-[20px]">
+          <Menu>
+            <MenuItem
+              className={selectedSidebar === "settings" ? "bg-[#f3f3f3]" : ""}
+              onClick={() => handleSidebarClick("settings")}
+              icon={<FontAwesomeIcon className="text-[16px]" icon={faGear} />}
+            >
+              Setting
+            </MenuItem>
+          </Menu>
         </div>
-      </button>
-      
+      </Sidebar>
     </div>
   );
 };
 
-export default Sidebar;
+export default SidebarResponsive;
