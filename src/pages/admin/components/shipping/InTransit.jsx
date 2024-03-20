@@ -1,13 +1,14 @@
-import { ArrowLeftOutlined, CheckCircleOutlined } from "@ant-design/icons";
+import { CheckCircleOutlined } from "@ant-design/icons";
 import { Checkbox, Table } from "antd";
 import React from "react";
+import MyButton from "../button/Button";
 
 const InTransit = ({ handleSidebarClickSecond }) => {
   return (
-    <div>
-        <div className="flex mx-[20px] my-[30px] gap-[20px]">
-            <button onClick={() => handleSidebarClickSecond("shipping") } className="border shadow-lg px-[10px] py-[5px] bg-white">
-              <ArrowLeftOutlined />
+    <div className="mx-[20px] my-[20px]">
+        <div className="flex my-[30px] gap-[20px]">
+            <button onClick={() => handleSidebarClickSecond("shipping") }>
+              <MyButton />
             </button>
           <p className="text-[24px] font-semibold">In Transit Orders</p>
         </div>
@@ -15,7 +16,7 @@ const InTransit = ({ handleSidebarClickSecond }) => {
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        className="overflow-auto bg-white"
+        className="overflow-auto bg-white shadow-custom rounded-xl"
       />
     </div>
   );

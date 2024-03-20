@@ -3,7 +3,7 @@ import React from "react";
 
 const Coupons = ({ handleSidebarClickSecond }) => {
   return (
-    <div className="overflow-auto">
+    <div className="overflow-auto md:mb-[40px]">
       <div className="mx-[20px]">
         <div className="flex justify-between my-[20px]">
           <p className="text-[24px] font-semibold">Coupons</p>
@@ -16,7 +16,7 @@ const Coupons = ({ handleSidebarClickSecond }) => {
             dataSource={dataSource}
             columns={columns}
             pagination={{ pageSize: 10 }}
-            className="overflow-auto bg-white"
+            className="overflow-auto bg-white shaow-custom rounded-xl"
           />
         </div>
       </div>

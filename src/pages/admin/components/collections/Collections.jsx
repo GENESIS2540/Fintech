@@ -11,12 +11,12 @@ const Collections = ({ handleSidebarClickSecond }) => {
               New Collection
             </button>
         </div>
-        <div className="shadow-custom bg-white">
+        <div>
           <Table
             dataSource={dataSource}
             columns={columns}
             pagination={{ pageSize: 10 }}
-            className="overflow-auto bg-white"
+            className="overflow-auto bg-white shadow-custom rounded-xl"
           />
         </div>
       </div>

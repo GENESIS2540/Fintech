@@ -4,18 +4,21 @@ import React from "react";
 
 const Pending = ({ handleSidebarClickSecond }) => {
   return (
-    <div>
-        <div className="flex mx-[20px] my-[30px] gap-[20px]">
-            <button onClick={() => handleSidebarClickSecond("shipping") } className="border shadow-lg px-[10px] py-[5px] bg-white">
-              <ArrowLeftOutlined />
-            </button>
-          <p className="text-[24px] font-semibold">Pending Orders</p>
-        </div>
+    <div className="mx-[20px] my-[20px]">
+      <div className="flex my-[30px] gap-[20px]">
+        <button
+          onClick={() => handleSidebarClickSecond("shipping")}
+          className="border hover:text-[#015FF1] transition-all duration-500 ease-in-out hover:shadow-lg px-[10px] py-[5px] bg-white rounded-lg"
+        >
+          <ArrowLeftOutlined />
+        </button>
+        <p className="text-[24px] font-semibold">Pending Orders</p>
+      </div>
       <Table
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        className="overflow-auto bg-white"
+        className="overflow-auto bg-white shadow-custom rounded-xl"
       />
     </div>
   );
@@ -33,7 +36,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -47,7 +50,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -61,7 +64,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -75,7 +78,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -89,7 +92,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -103,7 +106,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -117,7 +120,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -131,7 +134,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -145,7 +148,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -159,7 +162,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -173,7 +176,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -187,7 +190,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -201,7 +204,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -215,7 +218,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -229,7 +232,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -243,7 +246,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -257,7 +260,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -271,7 +274,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -285,7 +288,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -299,7 +302,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",
@@ -313,7 +316,7 @@ const dataSource = [
     email: "user@gmail.com",
     shipmentStatus: "Pending",
     paymentStatus: {
-      icon: <ClockCircleOutlined style={{ color: 'orange' }} />,
+      icon: <ClockCircleOutlined style={{ color: "orange" }} />,
       text: "Paid",
     },
     total: "$400",

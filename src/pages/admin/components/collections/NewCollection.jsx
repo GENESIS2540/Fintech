@@ -2,17 +2,18 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
+import MyButton from "../button/Button";
 
 const NewCollection = ({ handleSidebarClickSecond }) => {
   return (
     <div className="md:w-[600px] w-[95%] mx-[auto]">
       <div className="flex my-[30px] gap-[20px]">
-          <button onClick={() => handleSidebarClickSecond("collections")} className="border px-[10px] py-[5px] bg-white">
-            <ArrowLeftOutlined />
+          <button onClick={() => handleSidebarClickSecond("collections")}>
+          <MyButton />
           </button>
         <p className="text-[24px] font-semibold">Create A New Collection</p>
       </div>
-      <div className="bg-white shadow-custom p-[25px] grid gap-[10px]">
+      <div className="bg-white shadow-custom rounded-xl p-[25px] grid gap-[10px]">
         <p className="text-[20px] font-semibold">General</p>
         <label>Name</label>
         <Input placeholder="Featured Vendors" type="text" />

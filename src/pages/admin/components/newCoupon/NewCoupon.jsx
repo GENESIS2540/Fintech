@@ -3,6 +3,7 @@ import { Checkbox, Form, Input, Radio } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React, { useState } from "react";
 import { DatePicker, Space } from "antd";
+import MyButton from "../button/Button";
 
 const NewCoupon = ({ handleSidebarClickSecond }) => {
   const [discountType, setDiscountType] = useState(1);
@@ -24,12 +25,12 @@ const NewCoupon = ({ handleSidebarClickSecond }) => {
     <div className="overflow-auto">
       <div className="md:mx-[20px] w-[95%] mx-[auto] grid gap-[20px]">
         <div className="flex mt-[30px] my-[10px] gap-[20px]">
-            <button onClick={() => handleSidebarClickSecond("coupons")} className="border px-[10px] py-[5px] bg-white">
-              <ArrowLeftOutlined />
+            <button onClick={() => handleSidebarClickSecond("coupons")}>
+              <MyButton />
             </button>
           <p className="text-[24px] font-semibold">Create A New Coupon</p>
         </div>
-        <div className="shadow-custom bg-white p-[25px]">
+        <div className="shadow-custom bg-white p-[25px] rounded-xl">
           <p className="text-[20px] font-semibold">General</p>
           <Form className="grid gap-[15px]">
             <div className="grid gap-[5px]">
@@ -62,7 +63,7 @@ const NewCoupon = ({ handleSidebarClickSecond }) => {
             </div>
           </Form>
         </div>
-        <div className="shadow-custom bg-white p-[25px]">
+        <div className="shadow-custom bg-white rounded-xl p-[25px]">
           <p className="text-[20px] font-semibold mb-[10px]">Discount type</p>
           <Radio.Group
             onChange={onDiscountTypeChange}
@@ -76,7 +77,7 @@ const NewCoupon = ({ handleSidebarClickSecond }) => {
             <Radio value={5}>Buy X get Y</Radio>
           </Radio.Group>
         </div>
-        <div className="shadow-custom bg-white p-[25px]">
+        <div className="shadow-custom bg-white rounded-xl p-[25px]">
           <p className="text-[20px] font-semibold mb-[15px]">
             Order Conditions
           </p>

@@ -10,7 +10,7 @@ const PaymentSettings = () => {
 
   return (
     <div className="grid gap-[20px]">
-      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom">
+      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom rounded-xl">
         <p className="uppercase text-[24=0px] font-semibold">Stripe Payment</p>
         <div className="flex justify-between">
           <p>Enable?</p>
@@ -57,7 +57,7 @@ const PaymentSettings = () => {
           />
         </div>
       </div>
-      <div className="grid gap-[10px] bg-white p-[25px] shadow-custom">
+      <div className="grid gap-[10px] bg-white p-[25px] shadow-custom rounded-xl">
         <p className="uppercase text-[24=0px] font-semibold">Paypal Payment</p>
         <div className="flex justify-between">
           <p>Enable?</p>

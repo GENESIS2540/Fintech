@@ -3,6 +3,7 @@ import { Input, Radio } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React, { useState } from "react";
 import UploadApp from "./UploadIMedia";
+import MyButton from "../button/Button";
 
 const NewProduct = ({ handleSidebarClickSecond }) => {
   const [visibility, setVisibility] = useState(1);
@@ -19,14 +20,14 @@ const NewProduct = ({ handleSidebarClickSecond }) => {
     <div className="grid overflow-auto ">
       <div className="mb-[30px] w-[95%] md:mx-[20px] mx-[auto]">
         <div className="flex my-[30px] gap-[20px]">
-            <button onClick={() => handleSidebarClickSecond("products") } className="border px-[10px] py-[5px] bg-white">
-              <ArrowLeftOutlined />
+            <button onClick={() => handleSidebarClickSecond("products")}>
+              <MyButton />
             </button>
           <p className="text-[24px] font-semibold">Create A New Product</p>
         </div>
         <div className="lg:flex gap-[30px]">
           <div className="grid gap-[20px] w-[100%]">
-            <div className="mb-[10px] bg-white shadow-custom p-[10px] sm:p-[25px]">
+            <div className="mb-[10px] bg-white shadow-custom rounded-xl p-[10px] sm:p-[25px]">
               <p className="text-[20px] font-semibold">General</p>
               <form className="grid gap-[20px]">
                 <div className="grid">
@@ -49,12 +50,12 @@ const NewProduct = ({ handleSidebarClickSecond }) => {
                 </div>
               </form>
             </div>
-            <div className="bg-white shadow-custom p-[20px] font-semibold h-max mb-[20px]">
+            <div className="bg-white shadow-custom rounded-xl p-[20px] font-semibold h-max mb-[20px]">
               <p>Upload Product Image</p>
               <UploadApp />
             </div>
           </div>
-          <div className="bg-white w-[100%] grid gap-[30px] shadow-custom p-[20px] h-max">
+          <div className="bg-white w-[100%] grid gap-[30px] shadow-custom rounded-xl p-[20px] h-max">
             <div className="text-[18px] font-semibold">
               <p>Visibility</p>
               <Radio.Group

@@ -7,7 +7,7 @@ const SidebarSettings = ({ setSelectedSetting }) => {
   };
 
   return (
-    <div className="bg-white shadow-custom p-[25px] grid gap-[15px]">
+    <div className="bg-white shadow-custom rounded-xl p-[25px] grid gap-[15px]">
       <div>
         <Link to="store">
           <button onClick={() => handleSettingClick("store")}>

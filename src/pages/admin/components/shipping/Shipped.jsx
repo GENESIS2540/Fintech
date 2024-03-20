@@ -1,21 +1,23 @@
-import { ArrowLeftOutlined, CheckCircleOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { CheckCircleOutlined } from "@ant-design/icons";
 import { Checkbox, Table } from "antd";
 import React from "react";
+import MyButton from "../button/Button";
 
 const Shipped = ({ handleSidebarClickSecond }) => {
   return (
-    <div>
-        <div className="flex my-[30px] mx-[20px] gap-[20px]">
-            <button onClick={() => handleSidebarClickSecond("shipping") } className="border shadow-lg px-[10px] py-[5px] bg-white">
-              <ArrowLeftOutlined />
-            </button>
-          <p className="text-[24px] font-semibold">Shipped Orders</p>
-        </div>
+    <div className="mx-[20px] my-[20px]">
+      <div className="flex my-[30px] gap-[20px]">
+        <button onClick={() => handleSidebarClickSecond("shipping")}>
+          <MyButton />
+        </button>
+
+        <p className="text-[24px] font-semibold">Shipped Orders</p>
+      </div>
       <Table
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        className="overflow-auto bg-white"
+        className="overflow-auto bg-white shadow-custom rounded-xl"
       />
     </div>
   );

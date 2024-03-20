@@ -19,7 +19,7 @@ class StoreSettings extends React.Component {
     const { country, region } = this.state;
     return (
       <div>
-        <div className="bg-white p-[25px]  grid gap-[10px] mb-[50px] shadow-custom">
+        <div className="bg-white p-[25px]  grid gap-[10px] mb-[50px] shadow-custom rounded-xl">
           <p className="uppercase text-[24=0px] font-semibold">
             store information
           </p>

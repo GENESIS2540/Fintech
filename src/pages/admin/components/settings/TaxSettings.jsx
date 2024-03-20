@@ -12,7 +12,7 @@ const TaxSettings = () => {
 
   return ( 
     <div className="grid gap-[20px]">
-      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom">
+      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom rounded-xl">
         <p className="uppercase text-[24=0px] font-semibold">Tax</p>
         <p className="text-[14px]">
           Configure the tax classes that will be available to your customers at
@@ -77,7 +77,7 @@ const TaxSettings = () => {
           Save
         </button>
       </div>
-      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom mb-[50px]">
+      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom rounded-xl mb-[50px]">
         <p className="uppercase text-[24=0px] font-semibold">Tax classes</p>
         <div className="w-[100%]">
           <p className="text-[14px] mb-[10px]">Taxable Goods</p>

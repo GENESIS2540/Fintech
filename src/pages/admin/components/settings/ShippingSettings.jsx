@@ -4,8 +4,8 @@ import React from "react";
 
 const ShippingSettings = () => {
   return (
-    <div className="">
-      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom mb-[50px]">
+    <div>
+      <div className="bg-white p-[25px] grid gap-[10px] shadow-custom rounded-xl mb-[50px]">
         <p className="uppercase text-[24=0px] font-semibold">Shipping</p>
         <p>Choose where you ship and shipping fee</p>
         <hr className="mt-[5px]" />
