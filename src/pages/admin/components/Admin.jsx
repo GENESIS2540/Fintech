@@ -13,6 +13,10 @@ import Coupons from "./coupons/Coupons";
 import Settings from "./settings/Settings";
 import NewCollection from "./collections/NewCollection";
 import SidebarResponsive from "./sidebar/Sidebar";
+import Shipping from "./shipping/Shipping";
+import InTransit from "./shipping/InTransit";
+import Shipped from "./shipping/Shipped";
+import Pending from "./shipping/Pending";
 
 const Admin = () => {
   const [selectedSidebar, setSelectedSidebar] = React.useState("dashboard");
@@ -38,15 +42,14 @@ const Admin = () => {
       
       <div className="md:h-[100vh] overflow-hidden">
         <AdminNavbar handleSideMenuToggle={handleSideMenuToggle} isCollapsed={isCollapsed}/>
-        <main className="dashboard bg-[#f6f6f7] md:h-[88vh]">
+        <main className="dashboard shadow-custom bg-[#f6f6f7] md:h-[88vh]">
           <SidebarResponsive
             selectedSidebar={selectedSidebar}
             handleSidebarClick={handleSidebarClick}
             setIsCollapsed={setIsCollapsed}
             isCollapsed={isCollapsed}
-        
           />
-          <div className="overflow-auto">
+          <div className="overflow-auto shadow-custom">
             {selectedSidebar === "dashboard" && <Dashboard />}
             {selectedSidebar === "customers" && <Customers />}
             {selectedSidebar === "newProduct" && (
@@ -68,6 +71,10 @@ const Admin = () => {
             {selectedSidebar === "newCollection" && (
               <NewCollection handleSidebarClickSecond={handleSidebarClickSecond} />
             )}
+             {selectedSidebar === "shipping" && <Shipping handleSidebarClickSecond={handleSidebarClickSecond}/>}
+             {selectedSidebar === "inTransit" && <InTransit handleSidebarClickSecond={handleSidebarClickSecond} />}
+             {selectedSidebar === "shipped" && <Shipped handleSidebarClickSecond={handleSidebarClickSecond} />}
+             {selectedSidebar === "pending" && <Pending handleSidebarClickSecond={handleSidebarClickSecond} />}
           </div>
         </main>
       </div>

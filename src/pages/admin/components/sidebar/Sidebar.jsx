@@ -6,6 +6,7 @@ import {
   faGear,
   faGift,
   faHome,
+  faShippingFast,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,14 +21,14 @@ const SidebarResponsive = ({
   selectedSidebar,
 }) => {
   const [broken, setBroken] = React.useState(
-    window.matchMedia("(max-width: 800px)").matches
+    window.matchMedia("(max-width: 1024px)").matches
   );
 
   return (
     <div className="flex h-[100%] relative sidebar w-max">
       <Sidebar
         onBackdropClick={() => setIsCollapsed(false)}
-        customBreakPoint="800px"
+        customBreakPoint="1024px"
         onBreakPoint={setBroken}
         toggled={isCollapsed}
         backgroundColor="white"
@@ -120,6 +121,20 @@ const SidebarResponsive = ({
             icon={<FontAwesomeIcon className="text-[16px]" icon={faUsers} />}
           >
             Customers
+          </MenuItem>
+        </Menu>
+        <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">
+          <Typography variant="body2" fontWeight={600}>
+            Shipping
+          </Typography>
+        </div>
+        <Menu>
+          <MenuItem
+            className={selectedSidebar === "shipping" ? "bg-[#f3f3f3]" : ""}
+            onClick={() => handleSidebarClick("shipping")}
+            icon={<FontAwesomeIcon className="text-[16px]" icon={faShippingFast} />}
+          >
+            Shipping
           </MenuItem>
         </Menu>
         <div className="uppercase mt-[10px] mx-[10px] h-[20px] font-semibold text-[11px] font-semibold">

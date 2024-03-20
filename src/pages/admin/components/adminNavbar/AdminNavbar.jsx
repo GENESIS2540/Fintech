@@ -51,7 +51,7 @@ const AdminNavbar = ({ handleSideMenuToggle, isCollapsed }) => {
     </div>
   );
   return (
-    <nav className="grid bg-white p-[10px] gap-[10px] place-content-center grid-cols-3 sm:grid-cols-3 md:h-[12vh] shadow-lg">
+    <nav className="grid p-[10px] gap-[10px] place-content-center grid-cols-3 sm:grid-cols-3 md:h-[12vh] shadow-xl">
       <Link to={"/"} className="flex  items-center gap-[5px] cursor-pointer">
         <img className="h-[40px] w-[40px]" src={logo} alt="logo" />
         <p className=" font-bold text-[25px] text-[#015FF1]">BNPL</p>
