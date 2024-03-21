@@ -29,7 +29,7 @@ const Shipping = ({ handleSidebarClickSecond }) => {
               icon={faEllipsis}
             />
           </div>
-          <div className="rounded-xl  md:w-[100%] h-[300px] md:h-[550px] overflow-hidden border">
+          <div className="rounded-xl  md:w-[100%] h-[300px] md:h-[350px] overflow-hidden border">
           
           </div>
           <div className="md:flex grid gap-[10px] justify-between">
