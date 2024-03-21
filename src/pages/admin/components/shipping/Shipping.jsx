@@ -11,6 +11,7 @@ import React from "react";
 import CostChart from "./CostChart";
 import { Slider } from "antd";
 import MyMapComponent from "./TrackingMaps";
+import mapImg from '../../assets/images/unnamed.png'
 
 const Shipping = ({ handleSidebarClickSecond }) => {
   return (
@@ -30,7 +31,7 @@ const Shipping = ({ handleSidebarClickSecond }) => {
             />
           </div>
           <div className="rounded-xl  md:w-[100%] h-[300px] md:h-[350px] overflow-hidden border">
-          
+          <img className="h-[300px] md:h-[350px] w-[100%]" src={mapImg} alt="map"/>
           </div>
           <div className="md:flex grid gap-[10px] justify-between">
             <div className="flex gap-[5px]">
