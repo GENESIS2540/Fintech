@@ -9,8 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import salemLogo from "../../assets/brand/logo.svg";
 import business_icon from "../../assets/SVGs/business.svg";
+import { NavLink } from "react-router-dom";
 
-const Navbar = ({ handleButtonClick }) => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -42,18 +43,18 @@ const Navbar = ({ handleButtonClick }) => {
       <hr className="md:w-[70%] w-[90%] mx-[auto]" />
       <div className="flex justify-between md:w-[70%] w-[90%] mx-[auto] py-[10px]">
         <div className="flex items-center justify-center gap-[5px]">
-          <img
-            onClick={() => handleButtonClick("landingPage")}
-            className="w-[45px] cursor-pointer"
-            src={salemLogo}
-            alt="Salem logo"
-          />
-          <p
-            onClick={() => handleButtonClick("landingPage")}
-            className="text-[40px] font-bold text-[#015FF1] cursor-pointer"
-          >
-            BNPL
-          </p>
+          <NavLink className="w-[45px]" to="/">
+            <img
+              className="cursor-pointer"
+              src={salemLogo}
+              alt="Salem logo"
+            />
+          </NavLink>
+          <NavLink to="/">
+            <p className="text-[40px] font-bold text-[#015FF1] cursor-pointer z-[99999]">
+              BNPL
+            </p>
+          </NavLink>
         </div>
         <div
           className={`${
@@ -104,24 +105,24 @@ const Navbar = ({ handleButtonClick }) => {
             </Link>
           </li>
           <div className="self-center md:hidden">
-            <button
-              onClick={() => handleButtonClick("login")}
-              className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150"
-            >
-              Sign in
-            </button>
+            <NavLink to="/login">
+              <button className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] hover:bg-transparent hover:border border-[#015FF1] hover:text-black transition-background duration-150">
+                Sign in
+              </button>
+            </NavLink>
           </div>
         </ul>
         <div className="self-center md:block hidden">
-          <button
-            onClick={() => {
-              handleButtonClick("login");
-              handleToggle();
-            }}
-            className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] shadow-btn transition-all ease-in-out duration-500"
-          >
-            Sign in
-          </button>
+          <NavLink to="/login">
+            <button
+              onClick={() => {
+                handleToggle();
+              }}
+              className="bg-[#015FF1] text-white rounded w-[95px] uppercase h-[34px] shadow-btn transition-all ease-in-out duration-500"
+            >
+              Sign in
+            </button>
+          </NavLink>
         </div>
         <button
           onClick={handleToggle}
