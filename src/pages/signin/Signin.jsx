@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Signin = () => {
   return (
-    <div className="bg-img flex h-[100vh] items-center justify-center">
+    <div className="bg-img flex h-[100vh] items-center justify-center w-[95%] mx-auto">
       <div className="grid glass gap-[10px] shadow-custom md:w-[450px] p-[30px] bg-white bg-opacity-70 rounded-2xl">
         <img className="place-self-center cursor-pointer" src={logo} alt="" />
         <p className="font-bold text-[34px] text-center text-[#015FF1]">
