@@ -78,7 +78,7 @@ const Shipping = ({ handleSidebarClickSecond }) => {
               </div>
               <button
                 onClick={() => handleSidebarClickSecond("inTransit")}
-                className="cursor-pointer hover:text-[#015FF1] transition-all  duration-300 ease-in-out hover:underline"
+                className="cursor-pointer hover:text-[#015FF1] transition-all  duration-500 ease-in-out hover:underline"
               >
                 In Transit Order
               </button>

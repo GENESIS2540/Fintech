@@ -7,8 +7,8 @@ import {
   faPhoneAlt,
   faX,
 } from "@fortawesome/free-solid-svg-icons";
-import salemLogo from "../../assets/brand/logo.svg";
 import business_icon from "../../assets/SVGs/business.svg";
+import salemLogo from '../../assets/brand/logo.svg'
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -49,11 +49,6 @@ const Navbar = () => {
               src={salemLogo}
               alt="Salem logo"
             />
-          </NavLink>
-          <NavLink to="/">
-            <p className="text-[40px] font-bold text-[#015FF1] cursor-pointer z-[99999]">
-              BNPL
-            </p>
           </NavLink>
         </div>
         <div
