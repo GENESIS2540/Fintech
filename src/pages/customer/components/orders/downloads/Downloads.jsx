@@ -13,7 +13,7 @@ const Downloads = () => {
   return (
     <div>
       <Header title={"Downloads"} category={"My Downloads"} />
-      <div className="shadow-custom">
+      <div className="shadow-custom rounded-xl">
         <div className="flex gap-[40px] font-semibold px-[20px] pt-[20px]">
           <button className={`transition-all ease-in-out duration-300 ${selectedOption === "files" ? "text-[#015FF1]" : " "}`} onClick={() => handleSelectedOption("files")}>
             Downloadable Files

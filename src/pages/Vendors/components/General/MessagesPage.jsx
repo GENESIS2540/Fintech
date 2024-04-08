@@ -11,7 +11,7 @@ const MessagesPage = () => {
     <div>
       <Header title={"My Messages"} category={"Messages"} />
       <div className="grid sm:grid-cols-2 gap-[20px]">
-        <div className="shadow-custom flex flex-col">
+        <div className="shadow-custom rounded-xl flex flex-col">
           <div className="px-[20px] pt-[20px]">
             <div className="items-center w-[100%] flex relative">
               <FontAwesomeIcon className="absolute pl-[10px]" icon={faSearch} />
@@ -36,7 +36,7 @@ const MessagesPage = () => {
             </div>
           </div>
         </div>
-        <div className="shadow-custom">
+        <div className="shadow-custom rounded-xl" >
           <div className="flex gap-[10px] px-[20px] pt-[20px]">
             <img
               className="h-[30px] w-[30px] rounded-[100%] cursor-pointer"

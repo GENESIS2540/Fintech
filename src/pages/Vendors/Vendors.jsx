@@ -25,7 +25,7 @@ import Sidebar from "./components/sidebar/SidebarVendor";
 const Vendors = () => {
   const [toggled, setToggled] = React.useState(false);
   const [selectedSidebarVendor, setselectedSidebarVendor] =
-    React.useState("orders");
+    React.useState("dash");
 
   const handleSidebarVendorClick = (setting) => {
     setselectedSidebarVendor(setting);

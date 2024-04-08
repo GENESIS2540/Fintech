@@ -7,10 +7,10 @@ import TextArea from "antd/es/input/TextArea";
 
 export default function BankAccount() {
   return (
-    <div className="mb-[20px]">
+    <div className="mb-5">
       <Header title={"Bank Account"} category={"Bank account information"} />
-      <form className="grid gap-[20px]">
-        <div className="flex gap-[40px] justify-between">
+      <form className="grid gap-5 p-5 rounded-xl shadow-custom">
+        <div className="flex gap-10 justify-between">
           <div className="grid gap-[10px] w-[100%]">
             <div className="flex gap-[5px]">
               <label>Bank name</label>
@@ -20,7 +20,7 @@ export default function BankAccount() {
               />
             </div>
 
-            <Input type="text" required />
+            <Input type="text" placeholder="Bank name" required />
           </div>
           <div className="grid gap-[10px] w-[100%]">
             <div className="flex gap-[5px]">
@@ -30,10 +30,10 @@ export default function BankAccount() {
                 icon={faAsterisk}
               />
             </div>
-            <Input type="text" required />
+            <Input type="text" placeholder="Account holder name" required />
           </div>
         </div>
-        <div className="flex gap-[40px] justify-between">
+        <div className="flex gap-10 justify-between">
           <div className="grid gap-[10px] w-[100%]">
             <div className="flex gap-[5px]">
               <label>Account number</label>
@@ -42,7 +42,7 @@ export default function BankAccount() {
                 icon={faAsterisk}
               />
             </div>
-            <Input type="number" required />
+            <Input type="number" placeholder="Account number" required />
           </div>
           <div className="grid gap-[10px] w-[100%]">
             <div className="flex gap-[5px]">
@@ -52,12 +52,12 @@ export default function BankAccount() {
                 icon={faAsterisk}
               />
             </div>
-            <Input required />
+            <Input required placeholder="IFSC/Swift code" />
           </div>
         </div>
         <div className=" grid gap-[10px]">
           <label>Bank Address</label>
-          <TextArea />
+          <TextArea placeholder="Enter bank address" required />
         </div>
         <div className="flex w-max">
           <Alert
@@ -66,9 +66,12 @@ export default function BankAccount() {
             showIcon
           />
         </div>
-        <button type="submit" className="border-2 font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
-            Save Changes
-          </button>
+        <button
+          type="submit"
+          className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-5 py-[5px] bg-[#015FF1] rounded-lg text-white"
+        >
+          Save Changes
+        </button>
       </form>
     </div>
   );

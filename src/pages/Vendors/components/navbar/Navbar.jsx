@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 
-const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
+const Navbar = ({ handleSidebarVendorClick, handleToggled, toggled }) => {
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
@@ -68,7 +68,7 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
         </div>
         <div className="flex gap-[15px] text-[20px]">
           <SearchOutlined className="cursor-pointer" />
-          <button onClick={() => handleSidebarCustomerClick("messages")}>
+          <button onClick={() => handleSidebarVendorClick("feed")}>
             <MailOutlined className="cursor-pointer" />
           </button>
           <div className="">

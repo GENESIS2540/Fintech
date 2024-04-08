@@ -6,10 +6,6 @@ body {
       display: grid;
       grid-template-columns: 16rem auto;
   }
-  .dashboard-charts{
-    display: grid;
-    grid-template-columns: 4fr 3fr;
-  }
   
   @media (max-width: 1024px) {
     .dashboard{

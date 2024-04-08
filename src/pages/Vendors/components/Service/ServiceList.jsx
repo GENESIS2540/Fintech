@@ -6,12 +6,11 @@ import shoe from "../../assets/shoe.jpeg";
 const ServiceList = () => {
   return (
     <div className="p-6">
-      
       <div className="flex justify-between ">
-      <Header title={"Service Listings"} category={"Services"} /> 
-       <button className="rounded border bg-[#dee5fb] text-[#015FF1] px-2 h-[40px] mt-2">
-        Add  Service
-       </button>
+        <Header title={"Service Listings"} category={"Services"} />
+        <button className="rounded border bg-[#dee5fb] text-[#015FF1] px-2 h-[40px] mt-2">
+          Add Service
+        </button>
       </div>
 
       <Table
@@ -19,7 +18,7 @@ const ServiceList = () => {
         dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        style={{ height: "88vh", overflow: "auto" }}
+        className="overflow-auto bg-white md:w-[100%] w-[83vw] rounded-xl shadow-custom"
       />
     </div>
   );
@@ -93,7 +92,12 @@ const columns = [
     fixed: "left",
     render: (details) => (
       <div className="flex gap-[8px] items-center">
-        <Image src={details.image} alt={details.name} preview={false} width={50} />
+        <Image
+          src={details.image}
+          alt={details.name}
+          preview={false}
+          width={50}
+        />
         <div>
           <p className="font-bold">{details.name}</p>
           {/* <p>{details.description}</p> */}
@@ -106,12 +110,10 @@ const columns = [
     title: "Stock",
     dataIndex: "stock",
     render: (text) => (
-      <p className=" flex  py-[3px] justify-center  ">
-        {text.text}
-      </p>
+      <p className=" flex  py-[3px] justify-center  ">{text.text}</p>
     ),
   },
- 
+
   {
     title: "Actions",
     key: "actions",
@@ -120,9 +122,7 @@ const columns = [
         <button className="rounded border bg-[#dee5fb] text-[#015FF1] px-2">
           Edit
         </button>
-        <button  className="rounded border  text-[#C21E56] px-2">
-          Delete
-        </button>
+        <button className="rounded border  text-[#C21E56] px-2">Delete</button>
       </Space>
     ),
   },

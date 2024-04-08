@@ -21,8 +21,8 @@ const MyCredits = () => {
             </p>
           </div>
         </div>
-        <div className="shadow-custom">
-          <Table />
+        <div>
+          <Table className="overflow-auto bg-white md:w-[100%] w-[83vw] rounded-xl shadow-custom" />
         </div>
       </div>
     </div>

@@ -26,23 +26,23 @@ const CheckBalance = () => {
   return (
     <div className="">
       <Header title={"Account Settings"} category={"Profile Info"} />
-      <div className="shadow-custom p-[20px]">
+      <div className="shadow-custom rounded-xl p-5">
         <div>
         <Avatar />
         </div>
-        <form className="grid gap-[20px]">
-          <div className=" sm:flex gap-[40px]">
-            <div className="grid w-[100%] gap-[10px]">
+        <form className="grid gap-5">
+          <div className=" sm:flex gap-10">
+            <div className="grid w-[100%] gap-2.5">
               <label>Username</label>
               <Input placeholder="username" disabled />
             </div>
-            <div className="grid w-[100%] gap-[10px]">
+            <div className="grid w-[100%] gap-2.5">
               <label>Email</label>
               <Input placeholder="username@gmail.com" disabled />
             </div>
           </div>
-          <div className="sm:flex gap-[40px]">
-            <div className="grid w-[100%] gap-[10px]">
+          <div className="sm:flex gap-10">
+            <div className="grid w-[100%] gap-2.5">
               <div className="flex gap-[5px]">
                 <label>New Email</label>
                 <FontAwesomeIcon
@@ -52,13 +52,13 @@ const CheckBalance = () => {
               </div>
               <Input placeholder="New Email" type="email" required />
             </div>
-            <div className="grid w-[100%] gap-[10px]">
+            <div className="grid w-[100%] gap-2.5">
               <label>Date of birth</label>
               <Input placeholder="22nd February 1990" disabled />
             </div>
           </div>
-          <div className="sm:flex gap-[40px]">
-            <div className="grid w-[100%] gap-[10px]">
+          <div className="sm:flex gap-10">
+            <div className="grid w-[100%] gap-2.5">
               <label>Phone</label>
               <PhoneInput
                 international
@@ -69,7 +69,7 @@ const CheckBalance = () => {
                 className="outline-none border p-[5px] rounded-[5px]"
               />
             </div>
-            <div className="grid w-[100%] gap-[10px]">
+            <div className="grid w-[100%] gap-2.5">
               <div className="flex gap-[5px]">
                 <label>Country</label>
                 <FontAwesomeIcon
@@ -86,8 +86,8 @@ const CheckBalance = () => {
               </div>
             </div>
           </div>
-          <div className="sm:flex gap-[40px]">
-            <div className="grid w-[100%] gap-[10px]">
+          <div className="sm:flex gap-10">
+            <div className="grid w-[100%] gap-2.5">
               <div className="flex gap-[5px]">
                 <label>State</label>
                 <FontAwesomeIcon
@@ -102,16 +102,16 @@ const CheckBalance = () => {
                 onChange={handleRegionChange}
               />
             </div>
-            <div className="grid w-[100%] gap-[10px]">
+            <div className="grid w-[100%] gap-2.5">
               <label>City</label>
               <Input placeholder="Enter City" required />
             </div>
           </div>
-          <div className="grid gap-[10px]">
+          <div className="grid gap-2.5">
             <label>Company</label>
             <Input placeholder="Enter company" />
           </div>
-          <div className="flex gap-[40px]">
+          <div className="flex gap-10">
             <div className="grid w-[100%]">
               <label>Brief profile</label>
               <TextArea />
@@ -125,16 +125,16 @@ const CheckBalance = () => {
           </div>
           <button
             type="submit"
-            className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+            className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-5 py-[5px] bg-[#015FF1] rounded-lg text-white"
           >
             Save changes
           </button>
           <Divider children="More Options" />
-          <div className="flex gap-[40px]">
-            <button className="shadow-btn transition-all ease-in-out duration-500 w-[100%] border border-zinc-300 py-[10px] px-[25px]">
+          <div className="flex gap-10">
+            <button className="shadow-btn transition-all ease-in-out duration-500 w-[100%] border border-zinc-300 py-2.5 px-[25px]">
               Request To Remove My Data
             </button>
-            <button className="shadow-btn transition-all ease-in-out duration-500 border w-[100%] border-zinc-300 py-[10px] px-[25px]">Request My Data</button>
+            <button className="shadow-btn transition-all ease-in-out duration-500 border w-[100%] border-zinc-300 py-2.5 px-[25px]">Request My Data</button>
           </div>
         </form>
       </div>

@@ -26,11 +26,11 @@ const CheckBalance = () => {
   return (
     <div className="">
       <Header title={"Account Settings"} category={"Profile Info"} />
-      <div className="shadow-custom p-[20px]">
+      <div className="shadow-custom rounded-xl p-5">
         <div>
         <Avatar />
         </div>
-        <form className="grid gap-[20px]">
+        <form className="grid gap-5">
           <div className=" sm:flex gap-[40px]">
             <div className="grid w-[100%] gap-[10px]">
               <label>Username</label>
@@ -125,7 +125,7 @@ const CheckBalance = () => {
           </div>
           <button
             type="submit"
-            className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+            className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-5 py-[5px] bg-[#015FF1] rounded-lg text-white"
           >
             Save changes
           </button>

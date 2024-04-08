@@ -18,7 +18,7 @@ const Return = () => {
         title={"Order Return Requests"}
         category={"Order Return Requests"}
       />
-      <div className="shadow-custom">
+      <div className="shadow-custom rounded-xl">
         <div className="flex sm:gap-[30px] gap-[5px] px-[20px] pt-[30px]">
           <Search search={"Search by invoice number"}/>
           <BiFilter onClick={toggleCollapse} className="w-[40px] h-[40px] cursor-pointer"/>

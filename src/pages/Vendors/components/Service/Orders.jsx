@@ -13,7 +13,7 @@ const Orders = () => {
           dataSource={dataSource}
           columns={columns}
           pagination={{ pageSize: 10 }}
-          className="overflow-auto bg-white md:w-[100%] w-[83vw]"
+          className="overflow-auto bg-white shadow-custom rounded-xl md:w-[100%] w-[83vw]"
         />
       </div>
     </div>

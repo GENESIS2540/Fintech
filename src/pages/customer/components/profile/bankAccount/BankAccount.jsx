@@ -7,11 +7,11 @@ import TextArea from "antd/es/input/TextArea";
 
 export default function BankAccount() {
   return (
-    <div className="mb-[20px]">
+    <div className="mb-5">
       <Header title={"Bank Account"} category={"Bank account information"} />
-      <form className="shadow-custom p-[20px] grid gap-[20px]">
-        <div className="sm:flex gap-[20px] justify-between">
-          <div className="grid gap-[10px] w-[100%]">
+      <form className="shadow-custom rounded-xl p-5 grid gap-5">
+        <div className="sm:flex gap-5 justify-between">
+          <div className="grid gap-2.5 w-[100%]">
             <div className="flex gap-[5px]">
               <label>Bank name</label>
               <FontAwesomeIcon
@@ -22,8 +22,8 @@ export default function BankAccount() {
 
             <Input placeholder="Bank name" type="text" required />
           </div>
-          <div className="grid gap-[10px] w-[100%]">
-            <div className="flex mt-[10px] sm:mt-0 gap-[5px]">
+          <div className="grid gap-2.5 w-[100%]">
+          <div className="flex mt-2.5 sm:mt-0 gap-[5px]">
               <label>Account holder name</label>
               <FontAwesomeIcon
                 className="text-[red] mt-[5px] text-[8px] "
@@ -33,8 +33,8 @@ export default function BankAccount() {
             <Input placeholder="Account holder name" type="text" required />
           </div>
         </div>
-        <div className="sm:flex gap-[20px] justify-between">
-          <div className="grid gap-[10px] w-[100%]">
+        <div className="sm:flex gap-5 justify-between">
+          <div className="grid gap-2.5 w-[100%]">
             <div className="flex gap-[5px]">
               <label>Account number</label>
               <FontAwesomeIcon
@@ -44,8 +44,8 @@ export default function BankAccount() {
             </div>
             <Input placeholder="Account number" type="number" required />
           </div>
-          <div className="grid gap-[10px] w-[100%]">
-            <div className="flex mt-[10px] sm:mt-0 gap-[5px]">
+          <div className="grid gap-2.5 w-[100%]">
+            <div className="flex mt-2.5 sm:mt-0 gap-[5px]">
               <label>IFSC/Swift code</label>
               <FontAwesomeIcon
                 className="text-[red] mt-[5px] text-[8px] "
@@ -55,7 +55,7 @@ export default function BankAccount() {
             <Input placeholder="IFSC/Swift code" required />
           </div>
         </div>
-        <div className=" grid gap-[10px]">
+        <div className=" grid gap-2.5">
           <label>Bank Address</label>
           <TextArea placeholder="Enter bank address"/>
         </div>
@@ -66,7 +66,7 @@ export default function BankAccount() {
             showIcon
           />
         </div>
-        <button type="submit" className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white">
+        <button type="submit" className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-5 py-[5px] bg-[#015FF1] rounded-lg text-white">
             Save Changes
           </button>
       </form>

@@ -5,15 +5,15 @@ import Header from "../common/Header";
 
 const Orders = () => {
   return (
-    <div className="">
+    <div>
       <Header title={"My Orders"} category={"Orders"} />
-      <div className="pl-[5px] w-[95%] mx-auto">
+      <div className="w-[95%] mx-auto">
         <Table
           bordered={true}
           dataSource={dataSource}
           columns={columns}
           pagination={{ pageSize: 10 }}
-          className="overflow-auto bg-white md:w-[100%] w-[83vw]"
+          className="overflow-auto bg-white md:w-[100%] w-[83vw] rounded-xl shadow-custom"
         />
       </div>
     </div>

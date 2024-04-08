@@ -6,8 +6,8 @@ const Cookie = () => {
   return (
     <div>
       <Header title={"Cookie Preferences"} category={"Cookie preferences"} />
-      <div className=" p-[20px] shadow-custom">
-        <div className="grid gap-[10px]">
+      <div className=" p-5 shadow-custom rounded-xl">
+        <div className="grid gap-2.5">
           <div className="flex gap-[15px]">
             <Switch defaultChecked  className="shadow-custom"/>
             <p className="font-semibold text-[18px]">Functional</p>
@@ -22,7 +22,7 @@ const Cookie = () => {
           </p>
         </div>
         <Divider />
-        <div className="grid gap-[10px]">
+        <div className="grid gap-2.5">
           <div className="flex gap-[15px]">
             <Switch defaultChecked  className="shadow-custom"/>
             <p className="font-semibold text-[18px]">Statistical analysis</p>
@@ -35,7 +35,7 @@ const Cookie = () => {
           </p>
         </div>
         <Divider />
-        <div className="grid gap-[10px]">
+        <div className="grid gap-2.5">
           <div className="flex gap-[15px]">
             <Switch defaultChecked  className="shadow-custom"/>
             <p className="font-semibold text-[18px]">Personalize experience</p>
@@ -48,7 +48,7 @@ const Cookie = () => {
           </p>
         </div>
         <Divider />
-        <button className="text-white font-semibold bg-red-500 px-[20px] py-[5px] rounded-lg">
+        <button className="shadow-btn transition-all ease-in-out duration-500 w-max font-semibold px-5 py-[5px] bg-[#015FF1] rounded-lg text-white">
           Save Changes
         </button>
       </div>

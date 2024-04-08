@@ -21,8 +21,8 @@ const Credits = () => {
             </p>
           </div>
         </div>
-        <div className="shadow-custom">
-          <Table />
+        <div>
+          <Table className="shadow-custom rounded-xl"/>
         </div>
       </div>
     </div>

@@ -8,11 +8,11 @@ const Update = () => {
   return (
     <div>
       <Header title={"Update Credentials"} category={"Update Credentials"} />
-      <div className="grid md:grid-cols-2 gap-[10px]">
-        <Card>
-          <p className="font-semibold text-18px]">Update Email</p>
-          <hr className="my-[10px]"/>
-          <form className="grid gap-[10px]">
+      <div className="grid md:grid-cols-2 gap-5">
+        <div className="shadow-custom rounded-xl">
+          <p className="font-semibold text-[18px] p-5">Update Email</p>
+          <hr/>
+          <form className="grid gap-[10px] p-5">
             <div className="grid gap-[10px]">
               <div className="flex gap-[5px]">
                 <label>New Email</label>
@@ -50,12 +50,12 @@ const Update = () => {
               </button>
             </div>
           </form>
-        </Card>
-        <Card>
-          <p className="font-semibold text-18px]">Update Password</p>
-          <hr className="my-[10px]"/>
-          <form className="grid gap-[10px]">
-            <div className="grid gap-[10px]">
+        </div>
+        <div className="shadow-custom rounded-xl">
+          <p className="font-semibold text-[18px] p-5">Update Password</p>
+          <hr/>
+          <form className="grid gap-2.5 p-5">
+            <div className="grid gap-2.5">
               <div className="flex gap-[5px]">
                 <label>Current password</label>
                 <FontAwesomeIcon
@@ -96,7 +96,7 @@ const Update = () => {
               </button>
             </div>
           </form>
-        </Card>
+        </div>
       </div>
     </div>
   );

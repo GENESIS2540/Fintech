@@ -5,67 +5,115 @@ import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 import Header from "../common/Header";
 
 const AddService = () => {
+  const [paymentInfo, setPaymentInfo] = useState({
+    serviceName: "",
+    serviceDescription: "",
+    regularPrice: "",
+    salePrice: "",
+    itemImage: "",
+    quantity: "",
+  });
 
-    const [paymentInfo, setPaymentInfo] = useState({
-        serviceName: "",
-        serviceDescription: "",
-        regularPrice: "",
-        salePrice: "",
-        itemImage: "",
-        quantity: "",
-      });
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setPaymentInfo({ ...paymentInfo, [name]: value });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Payment information submitted:", paymentInfo);
-    };
-  
-    return (
-      <div>
-        <Header title={"Update Credentials"} category={"Update Credentials"} />
-        <div className="py-4">
-          <div className="w-full max-w-lg mx-auto">
-            <Card className="py-4">
-              <p className="font-semibold text-xl mb-4">Update Payment Information</p>
-              <hr className="my-4" />
-              <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {Object.entries(paymentInfo).map(([key, value]) => (
-                    <div key={key}>
-                      <div className="flex gap-2">
-                        <label>{key}</label>
-                        <FontAwesomeIcon className="text-red-500 mt-1" icon={faAsterisk} />
-                      </div>
-                      <Input
-                        type="text"
-                        name={key}
-                        value={value}
-                        onChange={handleChange}
-                        placeholder={key}
-                        required
-                        className="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="flex justify-center mt-6 py-4">
-                  <button
-                    type="submit"
-                    className="shadow-btn transition-all ease-in-out duration-500 w-[150px] font-semibold px-6 py-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700"
-                  >
-                    Save
-                  </button>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setPaymentInfo({ ...paymentInfo, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Payment information submitted:", paymentInfo);
+  };
+
+  return (
+    <div>
+      <Header title={"Add a Service"} category={"Add Services"} />
+      <div className="py-4">
+        <div className="w-full mx-auto">
+          <div className="shadow-custom rounded-xl">
+            <p className="font-semibold text-xl mb-4 p-5">
+              Update Payment Information
+            </p>
+            <hr />
+            <form className="grid md:grid-cols-2 gap-2.5 p-5">
+              <div className="grid gap-2.5">
+                <div className="grid gap-[10px]">
+                  <div className="flex gap-[5px]">
+                    <label>Service Name</label>
+                    <FontAwesomeIcon
+                      className="text-[red] mt-[5px] text-[8px] "
+                      icon={faAsterisk}
+                    />
                   </div>
-              </form>
-            </Card>
+                  <Input type="email" placeholder="Service Name" required />
+                </div>
+                <div className="grid gap-[10px]">
+                  <div className="flex gap-[5px]">
+                    <label>Regular price</label>
+                    <FontAwesomeIcon
+                      className="text-[red] mt-[5px] text-[8px] "
+                      icon={faAsterisk}
+                    />
+                  </div>
+                  <Input type="email" placeholder="Regular price" required />
+                </div>
+                <div className="grid gap-[10px]">
+                  <div className="flex gap-[5px]">
+                    <label>Item Image</label>
+                    <FontAwesomeIcon
+                      className="text-[red] mt-[5px] text-[8px] "
+                      icon={faAsterisk}
+                    />
+                  </div>
+                  <Input type="email" placeholder="Item Image" required />
+                </div>
+              </div>
+              <div className="grid gap-2.5">
+                <div className="grid gap-[10px]">
+                  <div className="flex gap-[5px]">
+                    <label>Service Description</label>
+                    <FontAwesomeIcon
+                      className="text-[red] mt-[5px] text-[8px] "
+                      icon={faAsterisk}
+                    />
+                  </div>
+                  <Input
+                    type="email"
+                    placeholder="Service Description"
+                    required
+                  />
+                </div>
+                <div className="grid gap-[10px]">
+                  <div className="flex gap-[5px]">
+                    <label>Sale Price</label>
+                    <FontAwesomeIcon
+                      className="text-[red] mt-[5px] text-[8px] "
+                      icon={faAsterisk}
+                    />
+                  </div>
+                  <Input type="email" placeholder="Sale Price" required />
+                </div>
+                <div className="grid gap-[10px]">
+                  <div className="flex gap-[5px]">
+                    <label>Quantity</label>
+                    <FontAwesomeIcon
+                      className="text-[red] mt-[5px] text-[8px] "
+                      icon={faAsterisk}
+                    />
+                  </div>
+                  <Input type="email" placeholder="Quantity" required />
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="border-2 mt-[10px] w-max font-semibold px-[20px] py-[5px] bg-[#015FF1] rounded-lg text-white"
+              >
+                Save
+              </button>
+            </form>
           </div>
         </div>
       </div>
+    </div>
   );
 };
 
