@@ -4,6 +4,7 @@ import { Checkbox, Form } from "antd";
 import React, { useState } from "react";
 import logo from "../landing/assets/brand/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { loginUser} from "../../Api/handler/Authentication/login";
 
 const Login = () => {
   const [acccountID, setAccountId] = useState("");
@@ -11,16 +12,34 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    if (acccountID === "customer" && passcode === "1234567") {
-      navigate("/customer");
-    } else if (acccountID === "admin" && passcode === "1234567") {
-      navigate("/admin");
-    } else if (acccountID === "vendor" && passcode === "1234567") {
-      navigate("/vendors");
-    } else {
-      alert("Wrong passcode or account id");
+  const handleLogin = async () => {
+    try{
+      const response = await loginUser(acccountID,passcode);
+      if (response.success){
+        let userProfile = sessionStorage.getItem('userProfile');
+        userProfile = JSON.parse(userProfile);
+        alert('login sucessfull')
+        console.log(userProfile.user_type)
+        if (userProfile.user_type === "customer") {
+          navigate("/customer");
+        } else if (userProfile.user_type  === "admin") {
+          navigate("/admin");
+        } else if (userProfile.user_type  === "vendor") {
+          navigate("/vendors");
+        } else {
+          alert("Server error please contact support");
+        }
+      }
+      else{
+        alert("Wrong passcode or account id");
+      }
     }
+    catch(error){
+      console.log(error);
+    }
+    
+    
+    
   };
 
   return (

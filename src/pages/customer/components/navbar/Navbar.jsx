@@ -17,13 +17,15 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 
 const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
+  let userProfile = sessionStorage.getItem('userProfile');
+  userProfile = JSON.parse(userProfile);
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
         <img className="h-[40px] w-[40px]" src={UuerOutlined} alt="" />
         <div className="font-semibold">
-          <p className="text-[18px]">Hi, Brandon.</p>
-          <p>user@gmail.com</p>
+          <p className="text-[18px]">Hi, {userProfile.username}.</p>
+          <p>{userProfile.email}</p>
         </div>
       </div>
       <hr className="my-[10px]" />
@@ -64,7 +66,7 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
       </div>
         </div>
         <div className="md:block hidden">
-          <p className="text-[20px] font-semibold">Hello Brandon!</p>
+          <p className="text-[20px] font-semibold">Hello {userProfile.username}</p>
         </div>
         <div className="flex gap-[15px] text-[20px]">
           <SearchOutlined className="cursor-pointer" />
