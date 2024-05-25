@@ -20,7 +20,7 @@ const Signin = () => {
           <Input required type="password" placeholder="Password" />
           <Input required type="password" placeholder="Confirm Password" />
           <div className="flex gap-[5px]">
-            <Checkbox />{" "}
+            <Checkbox required/>{" "}
             <p>
               I accept the BNPL{" "}
               <span className="text-[#015FF1] cursor-pointer transition-all ease-in-out duration-500 hover:opacity-60">

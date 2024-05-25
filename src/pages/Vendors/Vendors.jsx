@@ -18,6 +18,7 @@ import MyCredits from "./components/General/MyCredits";
 import Dashboard from "./components/dashboard/Dashboard";
 import MessagesPage from "./components/General/MessagesPage";
 import Sidebar from "./components/sidebar/SidebarVendor";
+import Offers from "./components/offers/Offers";
 
 
 
@@ -37,70 +38,6 @@ const Vendors = () => {
   }
 
   return (
-    // <div className="bg-[#f6f6f7]">
-    //   <div className="grid w-[100%] mx-auto h-[100vh] shadow-custom">
-    //     <div className="bg-white">
-    //       <div>
-    //         <Navbar
-    //           handleSidebarVendorsClick={handleSidebarVendorsClick}
-    //           handleToggled={handleToggled}
-    //           toggled={toggled}
-    //         />
-    //       </div>
-    //       <div className="dashboard">
-    //         <div>
-    //           <SidebarCustomer
-    //             handleSidebarVendorsClick={handleSidebarVendorsClick}
-    //             selectedSidebarVendor={selectedSidebarVendor}
-    //             toggled={toggled}
-    //             setToggled={setToggled}
-    //           />
-    //         </div>
-    //       <div className="sm:px-[40px] px-[20px] mb-[20px]">
-    //       {selectedSidebarVendor === "dash" && <Dashboard />}
-    //         {selectedSidebarVendor === "orders" && <Orders />}
-    //         {selectedSidebarVendor === "downloads" && <Downloads />}
-    //         {selectedSidebarVendor === "cancellation" && <Cancellation />}
-    //         {selectedSidebarVendor === "return" && <Return />}
-    //         {selectedSidebarVendor === "account" && <CheckBalance />}
-    //         {selectedSidebarVendor === "bank" && <BankAccount />}
-    //         {selectedSidebarVendor === "cookie" && <Cookie />}
-    //         {selectedSidebarVendor === "address" && <ManageAddres />}
-    //         {selectedSidebarVendor === "update" && <Update />}
-    //         {selectedSidebarVendor === "service" && <ServiceList />}
-    //         {selectedSidebarVendor === "payment" && <PaymentRegistration />}
-    //         {selectedSidebarVendor === "credits" && <MyCredits />}
-    //         {selectedSidebarVendor === "feed" && <MessagesPage/>}
-
-    //           </div>
-    //     </div>
-    //   </div>
-    //   <Affix className="w-[100vw]" offsetBottom={-5} onChange={(affixed) => console.log(affixed)}>
-    //     <div className="flex sm:hidden justify-between w-[100vw] uppercase font-semibold bg-white p-[20px] shadow-custom">
-    //       <div
-    //         onClick={() => handleSidebarVendorClick("dashboard")}
-    //         className="grid place-items-center gap-[4px]"
-    //       >
-    //         <HomeOutlined />
-    //         <p>home</p>
-    //       </div>
-    //       <div
-    //         className="grid place-items-center gap-[4px]"
-    //       >
-    //         <MenuOutlined />
-    //         <p>Menu</p>
-    //       </div>
-    //       <div
-    //         onClick={() => handleSidebarVendorClick("settings")}
-    //         className="grid place-items-center gap-[4px]"
-    //       >
-    //         <SettingOutlined />
-    //         <p>Settings</p>
-    //       </div>
-    //     </div>
-    //   </Affix>
-    // </div>
-    // </div>
     <div className="bg-[#f6f6f7]">
       <div className="grid w-[100%] mx-auto h-[100vh] shadow-custom">
         <div className="bg-white">
@@ -133,6 +70,7 @@ const Vendors = () => {
               {selectedSidebarVendor === "update" && <Update />}
               {selectedSidebarVendor === "service" && <ServiceList />}
               {selectedSidebarVendor === "payment" && <PaymentRegistration />}
+              {selectedSidebarVendor === "offers" && <Offers />}
               {selectedSidebarVendor === "credits" && <MyCredits />}
               {selectedSidebarVendor === "feed" && <MessagesPage />}
 
