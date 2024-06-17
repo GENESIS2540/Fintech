@@ -4,7 +4,7 @@ import { Checkbox, Form } from "antd";
 import React, { useState } from "react";
 import logo from "../landing/assets/brand/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { loginUser} from "../../Api/handler/Authentication/login";
+import { loginUser } from "../../Api/handler/Authentication/login";
 
 const Login = () => {
   const [acccountID, setAccountId] = useState("");
@@ -13,33 +13,28 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    try{
-      const response = await loginUser(acccountID,passcode);
-      if (response.success){
-        let userProfile = sessionStorage.getItem('userProfile');
+    try {
+      const response = await loginUser(acccountID, passcode);
+      if (response.success) {
+        let userProfile = sessionStorage.getItem("userProfile");
         userProfile = JSON.parse(userProfile);
-        alert('login sucessfull')
-        console.log(userProfile.user_type)
+        alert("login sucessfull");
+        console.log(userProfile.user_type);
         if (userProfile.user_type === "customer") {
           navigate("/customer");
-        } else if (userProfile.user_type  === "admin") {
+        } else if (userProfile.user_type === "admin") {
           navigate("/admin");
-        } else if (userProfile.user_type  === "vendor") {
+        } else if (userProfile.user_type === "vendor") {
           navigate("/vendors");
         } else {
           alert("Server error please contact support");
         }
-      }
-      else{
+      } else {
         alert("Wrong passcode or account id");
       }
-    }
-    catch(error){
+    } catch (error) {
       console.log(error);
     }
-    
-    
-    
   };
 
   return (
@@ -99,7 +94,10 @@ const Login = () => {
         </Form>
         <p className="text-area ">
           Don't have an account yet?{" "}
-          <Link to='/signup' className="cursor-pointer transition-all duration-300 ease-in-out text-[#015FF1] hover:opacity-70 font-semibold">
+          <Link
+            to="/signup"
+            className="cursor-pointer transition-all duration-300 ease-in-out text-[#015FF1] hover:opacity-70 font-semibold"
+          >
             Register for free
           </Link>
         </p>

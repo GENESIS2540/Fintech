@@ -14,7 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.15.0",
     "apexcharts": "^3.48.0",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "chart.js": "^4.4.2",
     "firebase": "^10.8.1",
     "font-awesome-icons": "^1.6.0",

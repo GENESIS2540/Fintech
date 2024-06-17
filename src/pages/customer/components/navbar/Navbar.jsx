@@ -15,17 +15,16 @@ import logo from "../../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
-
 const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
-  let userProfile = sessionStorage.getItem('userProfile');
+  let userProfile = sessionStorage.getItem("userProfile");
   userProfile = JSON.parse(userProfile);
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
         <img className="h-[40px] w-[40px]" src={UuerOutlined} alt="" />
         <div className="font-semibold">
-          <p className="text-[18px]">Hi, {userProfile.username}.</p>
-          <p>{userProfile.email}</p>
+          <p className="text-[18px]">Hi, userProfile.username.</p>
+          <p>userProfile.email</p>
         </div>
       </div>
       <hr className="my-[10px]" />
@@ -60,13 +59,15 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
     <div className="border-b border-stone-400">
       <div className="flex justify-between  px-[20px] items-center h-[100px]">
         <div>
-        <div className="flex items-center h-[100px] justify-center gap-[5px] cursor-pointer">
-        <img src={logo} className="h-[42px] w-[42px]" alt="logo" />
-        <p className="font-bold text-[25px] text-[#015FF1">BNPL</p>
-      </div>
+          <div className="flex items-center h-[100px] justify-center gap-[5px] cursor-pointer">
+            <img src={logo} className="h-[42px] w-[42px]" alt="logo" />
+            <p className="font-bold text-[25px] text-[#015FF1">BNPL</p>
+          </div>
         </div>
         <div className="md:block hidden">
-          <p className="text-[20px] font-semibold">Hello {userProfile.username}</p>
+          <p className="text-[20px] font-semibold">
+            Hello NEWUSER
+          </p>
         </div>
         <div className="flex gap-[15px] text-[20px]">
           <SearchOutlined className="cursor-pointer" />
@@ -84,7 +85,7 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
           </div>
         </div>
         <div onClick={handleToggled} className="sm:hidden">
-          <FontAwesomeIcon icon={toggled ? faX : faBars}/>
+          <FontAwesomeIcon icon={toggled ? faX : faBars} />
         </div>
       </div>
     </div>

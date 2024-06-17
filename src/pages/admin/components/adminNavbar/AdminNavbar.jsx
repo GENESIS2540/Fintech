@@ -21,8 +21,8 @@ const AdminNavbar = ({ handleSideMenuToggle, isCollapsed }) => {
       <div className="flex gap-[5px] justify-center items-center">
         <img className="h-[40px] w-[40px]" src={UuerOutlined} alt="" />
         <div className="font-semibold">
-          <p className="text-[18px]">Hi, {userProfile.username}</p>
-          <p>{userProfile.email}</p>
+          <p className="text-[18px]">Hi, userProfile.username</p>
+          <p>userProfile.email</p>
         </div>
       </div>
       <hr className="my-[10px]" />
