@@ -62,10 +62,13 @@ const ImageCarousel = () => {
             </p>
           </div>
           <div className="flex order-6 flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center bg-[#015FF1] text-white font-semibold | transform-scale shaow-custom">
+          <Link to="/printing">
           <FontAwesomeIcon className="text-[42px]" icon={faPrint}/>
             <p>
               Printing
             </p>
+          </Link>
+          
           </div>
         </div>
         <div className="md:absolute mx-auto my-[20px]  md:left-1/2 md:transform md:-translate-x-1/2 md:bottom-[-200px]">

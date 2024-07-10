@@ -6,6 +6,7 @@ import LandingPage from "./pages/landing/components/LandingPage";
 import Vendors from "./pages/Vendors/Vendors";
 import Login from "./pages/login/Login";
 import Signin from "./pages/signin/Signin";
+import Printing from "./pages/printing/Printing";
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/vendors" element={<Vendors />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signin />} />
+        <Route path="/printing" element={<Printing />} />
       </Routes>
     </Router>
   );
