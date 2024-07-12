@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../../Vendors/components/common/Header";
+import santa from '../../assets/santa2.jpg'
 
 const Offers = () => {
   return (
@@ -7,7 +8,9 @@ const Offers = () => {
       <Header title={"My Offers"} category={"Offers"} />
       <div className="grid gap-2.5 shadow-custom p-5 rounded-xl">
         <div className="flex gap-5">
-          <div className="w-[150px] h-[150px] border"></div>
+          <div >
+            <img className="w-[150px] h-[150px] border" src={santa} alt='Santa' />
+          </div>
           <div className="grid">
             <p className="font-semibold text-[20px]">
               10.00 % OFF <span>Christmas</span>
