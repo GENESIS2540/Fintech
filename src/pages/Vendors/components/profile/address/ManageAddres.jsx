@@ -9,12 +9,12 @@ const ManageAddres = () => {
       <Header title={"Manage Addresses"} category={"My Addresses"} />
       <div className="shadow-custom rounded-xl p-5">
         <div className="grid md:grid-cols-2 gap-[10px]">
-          <div className="hover:shadow-xl shadow-custom transition-all rounded-xl p-5 ease-in-out duration-500 cursor-pointer">
+        <Card className="transition-all text-white bg-primary/70 shadow-custom-2 ease-in-out duration-500 cursor-pointer">
             <div className="grid place-items-center place-content-center h-[250px] gap-[10px] text-[20px]">
               <HomeOutlined className="text-[30px]" />
               <p>Add New Address</p>
             </div>
-          </div>
+          </Card>
           <div className="shadow-custom rounded-xl p-5">
             <div className="flex gap-[10px]">
               <Checkbox className="rounded-[50%] self-start" />

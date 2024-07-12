@@ -149,14 +149,7 @@ const SidebarVendor = ({
             >
               My Offers
             </MenuItem>
-            <MenuItem
-              onClick={() => handleSidebarVendorClick("reward")}
-              className={
-                selectedSidebarVendor === "reward" ? "bg-[#f2f7ff]" : ""
-              }
-            >
-              Reward Points
-            </MenuItem>
+            
             <MenuItem
               onClick={() => handleSidebarVendorClick("share")}
               className={
