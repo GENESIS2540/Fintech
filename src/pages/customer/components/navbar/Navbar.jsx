@@ -14,6 +14,7 @@ import { Popover } from "antd";
 import logo from "../../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
   let userProfile = sessionStorage.getItem("userProfile");
@@ -33,15 +34,20 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
           <AuditOutlined />
           <p className="">Dashboard</p>
         </div>
+        <Link to='/'>
+        
         <div className="flex gap-[5px] transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
           <HomeOutlined />
           <p>Home</p>
         </div>
-        <div className="flex gap-[5px] transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
+        </Link>
+        
+        
+        <div onClick={() => handleSidebarCustomerClick("account")} className="flex gap-[5px] transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
           <UserOutlined />
           <p>Profile</p>
         </div>
-        <div className="flex gap-[5px] transition-all duration-300 ease-in-out transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
+        <div onClick={() => handleSidebarCustomerClick("update")} className="flex gap-[5px] transition-all duration-300 ease-in-out opacity-70 hover:opacity-100 cursor-pointer">
           <RetweetOutlined />
           <p>Update Credentials</p>
         </div>
