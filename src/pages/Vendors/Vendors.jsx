@@ -7,8 +7,6 @@ import Cancellation from "./components/Service/requests/Cancellation";
 import Return from "./components/Service/requests/Return";
 import CheckBalance from "./components/profile/checkBalance/checkBalance";
 import BankAccount from "./components/profile/bankAccount/BankAccount";
-import { HomeOutlined, MenuOutlined, SettingOutlined } from "@ant-design/icons";
-import { Affix } from "antd";
 import Cookie from "./components/profile/cookie/Cookie";
 import ManageAddres from "./components/profile/address/ManageAddres";
 import Update from "./components/profile/updateCredentials/Update";
@@ -19,6 +17,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import MessagesPage from "./components/General/MessagesPage";
 import Sidebar from "./components/sidebar/SidebarVendor";
 import Offers from "./components/offers/Offers";
+import Share from "./components/offers/share";
 
 
 
@@ -73,6 +72,7 @@ const Vendors = () => {
               {selectedSidebarVendor === "offers" && <Offers />}
               {selectedSidebarVendor === "credits" && <MyCredits />}
               {selectedSidebarVendor === "feed" && <MessagesPage />}
+              {selectedSidebarVendor === "share" && <Share />}
 
             </div>
           </div>

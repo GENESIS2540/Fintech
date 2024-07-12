@@ -181,7 +181,7 @@ const SideBarTest = ({
                 selectedSidebarVendor === "credits" ? "bg-[#f2f7ff]" : ""
               }
             >
-              My Credits
+              Total Balance
             </MenuItem>
            
           </SubMenu>

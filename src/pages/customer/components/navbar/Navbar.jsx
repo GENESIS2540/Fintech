@@ -66,7 +66,7 @@ const Navbar = ({ handleSidebarCustomerClick, handleToggled, toggled }) => {
         </div>
         <div className="md:block hidden">
           <p className="text-[20px] font-semibold">
-            Hello NEWUSER
+            Hello Brandon!
           </p>
         </div>
         <div className="flex gap-[15px] text-[20px]">

@@ -9,15 +9,15 @@ const Dashboard = () => {
       <Header title={"My Performance"} category={"performance"} />
       <div>
         <div className="grid md:grid-cols-3 gap-4 my-2">
-          <div className="shadow-custom rounded-xl bg-white p-[10px] text-[13px]">
+          <div className="shadow-custom bg-primary rounded-xl text-white p-[10px] text-[13px]">
             <p className="font-semibold text-[18px] mb-[10px]">Total Sales</p>
             <p className="my-[8px]">6734</p>
           </div>
-          <div className="shadow-custom rounded-xl bg-white p-[10px] text-[13px]">
+          <div className="shadow-custom rounded-xl border border-primary bg-white p-[10px] text-[13px]">
             <p className="font-semibold text-[18px] mb-[10px]">Total Profit</p>
             <p className="my-[8px]">Ksh 67344</p>
           </div>
-          <div className="shadow-custom rounded-xl bg-white p-[10px] text-[13px]">
+          <div className="shadow-custom rounded-xl bg-primary text-white p-[10px] text-[13px]">
             <p className="font-semibold text-[18px] mb-[10px]">My Ratings</p>
             <p className="my-[8px]">67+</p>
           </div>
