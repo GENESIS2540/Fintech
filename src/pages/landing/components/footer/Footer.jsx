@@ -1,11 +1,12 @@
-import React from "react";
-import salem_logo_footer from "../../assets/brand/salem-logo-footer.png";
-import app_store_banner from "../../assets/images/appstorebanner.png";
-import googleplay from "../../assets/images/googleplay.png";
-import facebook from "../../assets/SVGs/facebook.svg";
-import instagram from "../../assets/SVGs/instagram.svg";
-import twitter from "../../assets/SVGs/twitter.svg";
-import youtube from "../../assets/SVGs/youtube.svg";
+import React from 'react';
+import salem_logo_footer from '../../assets/brand/salem-logo-footer.png';
+import app_store_banner from '../../assets/images/appstorebanner.png';
+import googleplay from '../../assets/images/googleplay.png';
+import facebook from '../../assets/SVGs/facebook.svg';
+import instagram from '../../assets/SVGs/instagram.svg';
+import twitter from '../../assets/SVGs/twitter.svg';
+import youtube from '../../assets/SVGs/youtube.svg';
+import { Link } from 'react-scroll';
 
 const Footer = () => {
   return (
@@ -43,10 +44,12 @@ const Footer = () => {
         <div className="py-[20px] order-3 md:-order-1 text-left">
           <h4 className="text-[22px] font-semibold mb-[15px]">About Us</h4>
           <ol className="grid gap-[15px] text-[14px]">
-            <li>Careers</li>
-            <li>Blog</li>
-            <li>Team</li>
-            <li>Contact Us</li>
+            <li className="cursor-pointer">Careers</li>
+            <li className="cursor-pointer">Blog</li>
+            <li className="cursor-pointer">Team</li>
+            <Link to="faqs" smooth={true} duration={500}>
+              <li className="cursor-pointer">Contact Us</li>
+            </Link>
           </ol>
         </div>
         <div className="py-[20px] text-left">
