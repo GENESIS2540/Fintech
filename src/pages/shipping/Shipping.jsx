@@ -41,15 +41,12 @@ const ShippingService = () => {
         <div>
           <Title level={3}>Shipping Information</Title>
           <Form className="bg-white grid md:grid-cols-2 rounded-xl mb-3 p-4 shadow-custom">
-            <div>
-              <div className="flex w-full gap-3">
+            <div className='grid gap-3'>
+              <div className="grid grid-cols-2 w-full gap-3">
                 <div className="grid gap-2">
                   <p>Shipping from:</p>
                   <Select
                     placeholder="Choose location to ship from"
-                    style={{
-                      width: 200,
-                    }}
                     onChange={handleChange}
                     options={[
                       {
@@ -69,9 +66,6 @@ const ShippingService = () => {
                   <p>Shipping to:</p>
                   <Select
                     placeholder="Choose location to ship to"
-                    style={{
-                      width: 200,
-                    }}
                     onChange={handleChange}
                     options={[
                       {
@@ -89,8 +83,8 @@ const ShippingService = () => {
                 </div>
               </div>
               <p>Item's retail price:</p>
-              <div className="flex gap-3">
-                <Input placeholder="Price" type="number" min={0} required />
+              <div className="grid grid-cols-2 w-full gap-3">
+                <Input  placeholder="Price" type="number" min={0} required />
                 <Select placeholder="Select a currency">
                   {currencies.map((currency) => (
                     <Option key={currency.value} value={currency.value}>
