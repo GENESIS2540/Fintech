@@ -8,7 +8,7 @@ const NewsLetter = () => {
           <h3 className="md:text-[46px] text-[30px] font-bold">SignUp For Our News Letter</h3>
           <div className="flex gap-[10px] justify-center">
             <input
-              className="w-[130px] focus:outline-none border bg-transparent h-[40px] rounded text-center placeholder-white"
+              className="w-[230px] focus:outline-none border bg-transparent h-[40px] rounded text-center placeholder-white"
               type="email"
               placeholder="Enter Your Email"
             />
