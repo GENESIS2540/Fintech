@@ -4,6 +4,7 @@ import krake from "../../assets/images/krake.jpeg";
 import stroke_bar from "../../assets/SVGs/strokes-bars.svg";
 import vision from "../../assets/SVGs/vision.svg";
 import bulls_eye from "../../assets/SVGs/Bullseye.svg";
+import { Link } from "react-scroll";
 
 const GlobalReach = () => {
   return (
@@ -63,9 +64,13 @@ const GlobalReach = () => {
               </p>
             </div>
           </div>
+          <Link to="services" smooth={true} duration={500}>
           <button className="text-white place-self-center md:place-self-start bg-[#015FF1] rounded-[5px]  w-[140px] mt-[20px] h-[40px] shadow-btn transition-all duration-300 ease-in-out">
             More About Us
           </button>
+          </Link>
+
+          
         </div>
       </div>
     </div>

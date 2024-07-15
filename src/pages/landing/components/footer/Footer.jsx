@@ -1,12 +1,8 @@
 import React from 'react';
 import salem_logo_footer from '../../assets/brand/salem-logo-footer.png';
-import app_store_banner from '../../assets/images/appstorebanner.png';
-import googleplay from '../../assets/images/googleplay.png';
-import facebook from '../../assets/SVGs/facebook.svg';
-import instagram from '../../assets/SVGs/instagram.svg';
-import twitter from '../../assets/SVGs/twitter.svg';
-import youtube from '../../assets/SVGs/youtube.svg';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
+import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -26,30 +22,22 @@ const Footer = () => {
           <p>Office No 3457</p>
           <p>info@salem.com</p>
           <p>1-800-356-6522</p>
-          <div className="flex place-self-center gap-[15px] mt-[10px]">
-            <div className="bg-white rounded-[50%] p-[5px]  h-[42px] w-[42px] flex cursor-pointer">
-              <img src={facebook} alt="facebook" />
-            </div>
-            <div className="bg-white rounded-[50%] p-[5px]  h-[42px] w-[42px] flex cursor-pointer">
-              <img src={instagram} alt="instagram" />
-            </div>
-            <div className="bg-white rounded-[50%] p-[5px]  h-[42px] w-[42px] flex cursor-pointer">
-              <img src={twitter} alt="twitter" />
-            </div>
-            <div className="bg-white rounded-[50%] p-[5px]  h-[42px] w-[42px] flex cursor-pointer">
-              <img src={youtube} alt="youtube" />
-            </div>
-          </div>
         </div>
         <div className="py-[20px] order-3 md:-order-1 text-left">
           <h4 className="text-[22px] font-semibold mb-[15px]">About Us</h4>
           <ol className="grid gap-[15px] text-[14px]">
-            <li className="cursor-pointer">Careers</li>
-            <li className="cursor-pointer">Blog</li>
-            <li className="cursor-pointer">Team</li>
-            <Link to="faqs" smooth={true} duration={500}>
-              <li className="cursor-pointer">Contact Us</li>
+            <Link to="/printing">
+              <li className="cursor-pointer">Printing</li>
             </Link>
+            <Link to="/shipping">
+              <li className="cursor-pointer">Shipping</li>
+            </Link>
+            <ScrollLink to="faqs" smooth={true} duration={500}>
+              <li className="cursor-pointer">FAQs</li>
+            </ScrollLink>
+            <ScrollLink to="faqs" smooth={true} duration={500}>
+              <li className="cursor-pointer">Contact Us</li>
+            </ScrollLink>
           </ol>
         </div>
         <div className="py-[20px] text-left">
@@ -62,28 +50,26 @@ const Footer = () => {
           </ol>
         </div>
         <div className="py-[20px] text-left">
-          <h4 className="text-[22px] font-semibold mb-[15px]">
-            Download our app
-          </h4>
-          <p className="text-[14px]">
-            Tackle your Financial experience with our Mobile app and Make Your
-            Life Easy.
-          </p>
-          <div className="hidden flex-wrap justify-between">
-            <img
-              className="mt-[20px] h-[30px]"
-              src={app_store_banner}
-              alt="app_store_banner"
+          <h4 className="text-[22px] font-semibold mb-[15px]">Our Socials.</h4>
+          <div className="flex place-self-center gap-[15px] mt-[10px]">
+            <Facebook
+              size={45}
+              className="text-primary cursor-pointer transition-all duration-300 ease-out p-2 rounded-full  hover:bg-primary bg-white hover:text-white"
             />
-            <img
-              className="mt-[20px] h-[30px]"
-              src={googleplay}
-              alt="googleplay"
+
+            <Instagram
+              size={45}
+              className="text-primary cursor-pointer transition-all duration-300 ease-out p-2 rounded-full  hover:bg-primary bg-white hover:text-white"
+            />
+            <Twitter
+              size={45}
+              className="text-primary cursor-pointer transition-all duration-300 ease-out p-2 rounded-full  hover:bg-primary bg-white hover:text-white"
+            />
+            <Youtube
+              size={45}
+              className="text-primary cursor-pointer transition-all duration-300 ease-out p-2 rounded-full  hover:bg-primary bg-white hover:text-white"
             />
           </div>
-          {/* <div className="h-[20px] w-[60px] outline bg-red-500">
-            <PopoverComponent />
-          </div> */}
         </div>
       </div>
     </div>
