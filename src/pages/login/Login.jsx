@@ -4,35 +4,45 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../landing/assets/brand/logo.svg";
 import { message } from "antd";
-
+import { login,getUserProfile } from "../../Api/api";
 const Login = () => {
   const [accountID, setAccountId] = useState("");
   const [passcode, setPasscode] = useState("");
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const validPasscode = "1234567";
-    const validAccounts = ["customer", "vendor", "admin"];
-
-    if (!validAccounts.includes(accountID)) {
-      message.error("Invalid account ID");
-      return;
+  const handleLogin = async () => {
+    try{
+      const response = await login({username:accountID,password:passcode})
+      if (response.non_field_errors) {
+        message.error(response.non_field_errors);
+        return;
+      }
+      const user = await getUserProfile();
+      if(!user.id){
+        message.error("please try again later");
+        return;
+      }
+      // Storing the user object in sessionStorage
+      sessionStorage.setItem('user', JSON.stringify(user));
+      message.success("Login successful");
+      if (user.user_type === "customer") {
+        navigate("/customer");
+      } else if (user.user_type === "admin") {
+        navigate("/admin");
+      } else if (user.user_type === "vendor") {
+        navigate("/vendors");
+      } else {
+        message.error("Server error, please contact support");
+      }
     }
-    if (passcode !== validPasscode) {
-      message.error("Invalid passcode");
-      return;
-    }
-
-    message.success("Login successful");
-    if (accountID === "customer") {
-      navigate("/customer");
-    } else if (accountID === "admin") {
-      navigate("/admin");
-    } else if (accountID === "vendor") {
-      navigate("/vendors");
-    } else {
-      message.error("Server error, please contact support");
+    catch(error){
+      if(error.response.data.non_field_errors){
+        message.error(error.response.data.non_field_errors)
+      }
+      else{
+        message.error("Server error, please contact support");
+      }
     }
   };
 

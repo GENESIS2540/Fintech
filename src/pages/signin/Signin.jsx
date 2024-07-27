@@ -1,62 +1,83 @@
 import { Checkbox, Form, Input, Select } from 'antd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import logo from '../landing/assets/brand/logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import { signUpUser } from '../../Api/handler/Authentication/signup'; // Import your API function for signing up
-import { toast } from 'react-toastify';
+import { createCustomer , createVendor } from '../../Api/api';
 import 'react-toastify/dist/ReactToastify.css';
+import { message } from "antd";
+
 const Signin = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     username: '',
-    password: '',
-    confirmPassword: '',
+    password1: '',
+    password2: '',
     user_type: 'customer',
   });
 
-  // Update the username when firstName or lastName changes
-  useEffect(() => {
-    setFormData((prevState) => ({
-      ...prevState,
-      username: `${firstName}${lastName}`,
-      firstName: `${firstName}`,
-      lastName: `${lastName}`,
-    }));
-  }, [firstName, lastName]);
+
   const navigate = useNavigate();
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
+    await setFormData((prevState) => ({
+      ...prevState,
+      username: `${formData.email}`,
+    }));
     console.log(formData); // Log form data to verify
-
     try {
-      // Call your signUpUser function from the API with formData
-      const response = await signUpUser(formData);
+        // Call your signUpUser function from the API with formData
+      let response = '';
+      if( formData.user_type === 'customer'){
+         response = await createCustomer(formData);
+      }
+      else{
+         response = await createVendor(formData);
+      }
 
       // Check if signup was successful
-      if (response.success) {
-        // Show success message (assuming you have a function called `roastify` to display messages)
-        toast.success(response.message);
+      if (response.key) {
+
         // Delay for 200 milliseconds (assuming you have a function called `delay`)
         await delay(600);
         // Redirect to login page after successful signup or regardless of success
-        alert(response.message);
+        message.success('Welcome to the BNPL family.Sign up successfull');
         navigate('/login');
       } else {
-        alert(response.message);
-        toast.error(response.message);
+        message.error('Sign up failed Try again later')
       }
     } catch (error) {
       console.error('Error signing up:', error.response.data);
-      alert('Error signing up');
-      toast.error(error);
-      // Handle error (e.g., show error message to the user)
+
+      if(error.response.data.email){
+        message.error('email: '+error.response.data.email)
+      }
+      else if(error.response.data.first_name){
+        message.error('first name: '+error.response.data.first_name)
+
+      }
+      else if(error.response.data.last_name){
+        message.error('last name: '+error.response.data.last_name)
+
+      }
+      else if(error.response.data.password1){
+        message.error('password: '+error.response.data.password1)
+      }      
+      else if(error.response.data.password2){
+        message.error('Confirm password: '+error.response.data.password2)
+      }
+      else if(error.response.data.username){
+        message.error('username: '+error.response.data.username)
+      }
+      else {
+        message.error('An unexpected error occurred. Please try again later.');
+      }      
+      // message.error('Sign up failed Try again later')
     }
   };
 
@@ -81,14 +102,18 @@ const Signin = () => {
               placeholder="First Name"
               required
               type="text"
-              onChange={(e) => setFirstName(e.target.value)}
-            />
+              onChange={(e) =>
+                setFormData({ ...formData, first_name: e.target.value })
+              }
+                          />
             <Input
               required
               type="text"
               placeholder="Last Name"
-              onChange={(e) => setLastName(e.target.value)}
-            />
+              onChange={(e) =>
+                setFormData({ ...formData, last_name: e.target.value })
+              }   
+                       />
           </div>
           <Input
             required
@@ -99,12 +124,13 @@ const Signin = () => {
             }
           />
           <div>
-            <Select
-              defaultValue='Customer'
-              className='w-full'
+          <Select
+              defaultValue="Customer"
+              className="w-full"
+              onChange={(value) => setFormData({ ...formData, user_type: value })}
             >
-              <Option value="Vendor">Vendor</Option>
-              <Option value="Customer">Customer</Option>
+              <Option value="vendor">Vendor</Option>
+              <Option value="customer">Customer</Option>
             </Select>
           </div>
           <Input
@@ -112,7 +138,7 @@ const Signin = () => {
             type="password"
             placeholder="Password"
             onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
+              setFormData({ ...formData, password1: e.target.value })
             }
           />
           <Input
@@ -120,7 +146,7 @@ const Signin = () => {
             type="password"
             placeholder="Confirm Password"
             onChange={(e) =>
-              setFormData({ ...formData, confirmPassword: e.target.value })
+              setFormData({ ...formData, password2: e.target.value })
             }
           />
           <div className="flex gap-[5px]">

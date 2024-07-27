@@ -4,8 +4,7 @@ import { Input } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 import Password from "antd/es/input/Password";
-import { changeEmail,changePassword } from "../../../../../Api/handler/userManagement/updateProfile";
-
+import { changePassword,updateCustomer } from "../../../../../Api/api";
 const Update = () => {
   const [formData, setFormData] = useState({
     newEmail: "",
@@ -26,7 +25,7 @@ const Update = () => {
   const handleChangeEmail = (e) => {
     e.preventDefault();
     // Submit form data to the backend
-    const response = changeEmail({
+    const response = updateCustomer({
       password: formData.currentPassword,
       user_type: userProfile.user_type,
       username: userProfile.username,

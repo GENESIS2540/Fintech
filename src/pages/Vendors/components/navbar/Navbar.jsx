@@ -18,13 +18,15 @@ import { Link } from "react-router-dom";
 
 
 const Navbar = ({ handleSidebarVendorClick, handleToggled, toggled }) => {
+  let userProfile = sessionStorage.getItem("user");
+  userProfile = JSON.parse(userProfile);
   const content = (
     <div className="p-[10px]">
       <div className="flex gap-[5px] justify-center items-center">
         <img className="h-[40px] w-[40px]" src={UuerOutlined} alt="" />
         <div className="font-semibold">
-          <p className="text-[18px]">Hi, Brandon.</p>
-          <p>user@gmail.com</p>
+          <p className="text-[18px]">Hi, {userProfile.first_name}.</p>
+          <p>{userProfile.email}</p>
         </div>
       </div>
       <hr className="my-[10px]" />
@@ -67,7 +69,7 @@ const Navbar = ({ handleSidebarVendorClick, handleToggled, toggled }) => {
       </div>
         </div>
         <div className="md:block hidden">
-          <p className="text-[20px] font-semibold">Hello Brandon!</p>
+          <p className="text-[20px] font-semibold">Hello {userProfile.first_name}!</p>
         </div>
         <div className="flex gap-[15px] text-[20px]">
           <SearchOutlined className="cursor-pointer" />

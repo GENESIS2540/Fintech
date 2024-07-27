@@ -17,5 +17,8 @@
   "prettier.semi": true,
   "prettier.trailingComma": "es5",
   "prettier.tabWidth": 2,
-  "prettier.printWidth": 80
+  "prettier.printWidth": 80,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
