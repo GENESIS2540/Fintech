@@ -3,14 +3,16 @@ import React, { useState } from 'react';
 import CustomerAccount from './CustomerAccount';
 import { Input } from 'antd';
 import FilterPopOver from './FilterPopOver';
-import { AlignJustify, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { departments, marketPlaceProducts, shoppingIdeas } from './data';
 import CustomButton from '../../Common/Button';
 import ProductDetail from './ProductDetail';
+import LeftDrawer from './LeftDrawer';
 
 const MarketPlace = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [numItemsInCart, setNumItemsInCart] = useState(0);
+  
 
   const handleAddToCart = () => {
     setNumItemsInCart((prevCount) => prevCount + 1);
@@ -52,10 +54,7 @@ const MarketPlace = () => {
         </div>
       </nav>
       <div className="flex px-4 h-10 items-center gap-4 w-full bg-gray-200">
-        <div className="flex gap-1 p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
-          <AlignJustify />
-          <p>All</p>
-        </div>
+        <LeftDrawer handleClick={handleClick}/>
         <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
           Today's Deals
         </p>
