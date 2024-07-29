@@ -1,24 +1,36 @@
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import React from 'react';
+import React, { useState } from 'react';
 import CustomerAccount from './CustomerAccount';
 import { Input } from 'antd';
 import FilterPopOver from './FilterPopOver';
 import { AlignJustify, Search } from 'lucide-react';
 import { departments, marketPlaceProducts, shoppingIdeas } from './data';
 import CustomButton from '../../Common/Button';
+import ProductDetail from './ProductDetail';
 
 const MarketPlace = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [numItemsInCart, setNumItemsInCart] = useState(0);
+
+  const handleAddToCart = () => {
+    setNumItemsInCart((prevCount) => prevCount + 1);
+  };
+
   const handleClick = (value) => {
     console.log(value);
   };
 
-  const handleAddToCart = () => {
-    
-  }
-  const numItemsInCart = 1;
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleBackToProducts = () => {
+    setSelectedProduct(null);
+  };
+
   return (
-    <div className="">
-      <nav className="grid grid-cols-5 h-20  bg-white p-4">
+    <div className=" min-h-[100vh] bg-white">
+      <nav className="grid grid-cols-5 h-20 bg-white p-4">
         <p className="font-bold text-2xl text-primary">Genesis Market Place</p>
         <div className="col-span-2 mx-5 border-2 h-12 rounded-md border-gray-300 flex relative">
           <FilterPopOver />
@@ -32,7 +44,7 @@ const MarketPlace = () => {
         </div>
 
         <CustomerAccount />
-        <div className="flex justify-self-end relative justify-center  hover:border p-2 cursor-pointer items-center">
+        <div className="flex justify-self-end relative justify-center hover:border p-2 cursor-pointer items-center">
           <p className="bg-red-500 text-white text-sm rounded-full flex justify-center items-center -right-1 top-0 h-5 w-5 absolute">
             {numItemsInCart}
           </p>
@@ -57,7 +69,7 @@ const MarketPlace = () => {
           Sell
         </p>
       </div>
-      <div className="grid grid-cols-5 bg-white">
+      <div className="grid grid-cols-5">
         <div className="p-4">
           <p className="font-semibold text-xl">Shopping Ideas</p>
           {shoppingIdeas.map((shop) => (
@@ -81,39 +93,56 @@ const MarketPlace = () => {
           ))}
         </div>
         <div className="col-span-4">
-          <p className="font-semibold text-primary text-xl py-3">
-            Welcome to our Market Place
-          </p>
-          <div className="grid w-full gap-5 grid-cols-4">
-            {marketPlaceProducts.map((product) => (
-              <div
-                className="grid h-max border border-zinc-300 rounded-md"
-                key={product.userId}
-              >
-                <img
-                  className="h-[200px] w-full border rounded-t-md"
-                  src={product.image[0]}
-                  alt={product.nameOfProduct}
-                />
-                <p className="hover:text-primary leading-6 font-medium px-2 cursor-pointer  transition-all duration-200">
-                  {product.nameOfProduct} {product.shortDescription}
-                </p>
-                <p className="font-semibold text-black/90 flex text-2xl px-2">
-                  <span className="text-[12px] align-top">$</span>
-                  {product.price}
-                </p>
-                <p className="px-2 text-sm cursor-pointer hover:opacity-80">
-                  {product.shipping}
-                </p>
-                <p className="text-red-600 text-sm font-semibold px-2">
-                  Only {product.numberInStock} left instock - order soon.
-                </p>
-                <CustomButton onClick={handleAddToCart} className="m-2 rounded-[30px] bg-primary/90">
-                  Add to cart
-                </CustomButton>
+          {selectedProduct ? (
+            <ProductDetail
+              handleBackToProducts={handleBackToProducts}
+              selectedProduct={selectedProduct}
+              handleAddToCart={handleAddToCart}
+            />
+          ) : (
+            <div>
+              <p className="font-semibold text-primary text-xl py-3">
+                Welcome to our Market Place
+              </p>
+              <div className="grid w-full gap-5 grid-cols-4">
+                {marketPlaceProducts.map((product) => (
+                  <div
+                    className="grid h-max border border-zinc-300 rounded-md cursor-pointer"
+                    key={product.userId}
+                    onClick={() => handleProductClick(product)}
+                  >
+                    <img
+                      className="h-[200px] w-full border rounded-t-md"
+                      src={product.image[0]}
+                      alt={product.nameOfProduct}
+                    />
+                    <p className="hover:text-primary leading-6 font-medium px-2 cursor-pointer transition-all duration-200">
+                      {product.nameOfProduct} {product.shortDescription}
+                    </p>
+                    <p className="font-semibold text-black/90 flex text-2xl px-2">
+                      <span className="text-[12px] align-top">$</span>
+                      {product.price}
+                    </p>
+                    <p className="px-2 text-sm cursor-pointer hover:opacity-80">
+                      {product.shipping}
+                    </p>
+                    <p className="text-triadic_red text-sm font-semibold px-2">
+                      Only {product.numberInStock} left in stock - order soon.
+                    </p>
+                    <CustomButton
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart();
+                      }}
+                      className="mx-2 my-4 rounded-[30px] bg-complementary"
+                    >
+                      Add to cart
+                    </CustomButton>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

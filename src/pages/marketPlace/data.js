@@ -61,7 +61,8 @@ export const marketPlaceProducts = [
     numberInStock: '4',
     shippingFees: '144.4',
     importFees: '43.84',
-    depositLocation: 'Kenya',
+    vendorCountry: 'Tanzania',
+    vendorCity: 'Dar es Salaam',
     size: '7-7.5',
     color: ['blue', 'red', 'green'],
     productDetails: [
@@ -95,7 +96,8 @@ export const marketPlaceProducts = [
     numberInStock: '4',
     shippingFees: '144.4',
     importFees: '43.84',
-    depositLocation: 'Kenya',
+    vendorCountry: 'Tanzania',
+    vendorCity: 'Dar es Salaam',
     size: '7-7.5',
     color: ['blue', 'red', 'green'],
     productDetails: [
@@ -129,7 +131,8 @@ export const marketPlaceProducts = [
     numberInStock: '4',
     shippingFees: '144.4',
     importFees: '43.84',
-    depositLocation: 'Kenya',
+    vendorCountry: 'Tanzania',
+    vendorCity: 'Dar es Salaam',
     size: '7-7.5',
     color: ['blue', 'red', 'green'],
     productDetails: [
@@ -163,7 +166,8 @@ export const marketPlaceProducts = [
     numberInStock: '4',
     shippingFees: '144.4',
     importFees: '43.84',
-    depositLocation: 'Kenya',
+    vendorCountry: 'Tanzania',
+    vendorCity: 'Dar es Salaam',
     size: '7-7.5',
     color: ['blue', 'red', 'green'],
     productDetails: [
@@ -197,7 +201,8 @@ export const marketPlaceProducts = [
     numberInStock: '4',
     shippingFees: '144.4',
     importFees: '43.84',
-    depositLocation: 'Kenya',
+    vendorCountry: 'Tanzania',
+    vendorCity: 'Dar es Salaam',
     size: '7-7.5',
     color: ['blue', 'red', 'green'],
     productDetails: [
