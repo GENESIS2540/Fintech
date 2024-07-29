@@ -8,6 +8,7 @@ import Login from "./pages/login/Login";
 import Signin from "./pages/signin/Signin";
 import Printing from "./pages/printing/Printing";
 import ShippingService from "./pages/shipping/Shipping";
+import MarketPlace from "./pages/marketPlace/MarketPlace";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/signup" element={<Signin />} />
         <Route path="/printing" element={<Printing />} />
         <Route path="/shipping" element={<ShippingService />} />
+        <Route path="/market-place" element={<MarketPlace />} />
       </Routes>
     </Router>
   );

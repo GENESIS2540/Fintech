@@ -50,10 +50,10 @@ const ImageCarousel = () => {
             </p>
           </div>
           <div className="flex order-3 md:order-4 flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center bg-[#015FF1] text-white font-semibold | transform-scale shaow-custom">
-            <img src={enhanced_shopping} alt="enhanced_shopping" />
-            <p>
-              Enhanced Shopping <br /> Experience
-            </p>
+            <Link to="/market-place">
+              <img src={enhanced_shopping} alt="enhanced_shopping" />
+              <p>Market Place</p>
+            </Link>
           </div>
           <div className="flex  order-6 md:order-5 flex-col cursor-pointer rounded justify-center items-center h-[150px] w-[100%] md:w-[150px] text-center  bg-white font-semibold | transform-scale shaow-custom">
             <Link to="/shipping">
