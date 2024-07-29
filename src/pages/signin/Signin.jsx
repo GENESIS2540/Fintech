@@ -73,6 +73,9 @@ const Signin = () => {
       }
       else if(error.response.data.username){
         message.error('username: '+error.response.data.username)
+      }      
+      else if(error.response.data.non_field_errors){
+        message.error('username: '+error.response.data.username)
       }
       else {
         message.error('An unexpected error occurred. Please try again later.');

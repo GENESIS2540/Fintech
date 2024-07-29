@@ -3,6 +3,7 @@
 const BASE_URL = 'http://127.0.0.1:8000'; // Replace with your actual API base URL
 // const BASE_URL = 'https://calm-deadly-kit.ngrok-free.app';
 // const BASE_URL = ' https://calm-deadly-kit.ngrok-free.app';
+export const USER_LIST_URL = `${BASE_URL}/api/users/`;
 
 export const CREATE_ADMIN = `${BASE_URL}/api/auth/registration/`;
 export const CREATE_VENDOR = `${BASE_URL}/api/auth/registration/`;
@@ -26,6 +27,40 @@ export const GET_USER = `${BASE_URL}/api/users/pk/`;
 export const SUBSCRIBE_NEWSLETTER = `${BASE_URL}/api/newsletter/`;
 
 export const CHANGE_PASSWORD_URL = `${BASE_URL}/api/password/change/`;
+
+export const CREATE_PRODUCT_URL = `${BASE_URL}/api/item/`;
+export const EDIT_PRODUCT_URL = `${BASE_URL}/api/item/`;
+export const GET_PRODUCT_URL = `${BASE_URL}/api/item/`;
+
+export const CREATE_COUPON_URL = `${BASE_URL}/api/coupon/`;
+export const EDIT_COUPON_URL = `${BASE_URL}/api/coupon/`;
+export const GET_COUPON_URL = `${BASE_URL}/api/coupon/`;
+
+export const CREATE_COLLECTION_URL = `${BASE_URL}/api/collections/`;
+export const EDIT_COLLECTION_URL = `${BASE_URL}/api/collections/`;
+export const GET_COLLECTION_URL = `${BASE_URL}/api/collections/`
+
+export const CREATE_ORDER_URL = `${BASE_URL}/api/orders/`;
+export const EDIT_ORDER_URL = `${BASE_URL}/api/orders/`;
+export const GET_ORDER_URL = `${BASE_URL}/api/orders/`
+
+export const CREATE_WISHLIST_URL = `${BASE_URL}/api/password/change/`;
+export const EDIT_WISHLIST_URL = `${BASE_URL}/api/password/change/`;
+export const GET_WISHLIST_URL = `${BASE_URL}/api/password/change/`
+
+export const CREATE_ORDER_CANCELLETION_URL = `${BASE_URL}/api/password/change/`;
+export const EDIT_ORDER_CANCELLETION_URL = `${BASE_URL}/api/password/change/`;
+export const GET_ORDER_CANCELLETION_URL = `${BASE_URL}/api/password/change/`
+
+
+export const CREATE_ORDER_RETURN_URL = `${BASE_URL}/api/password/change/`;
+export const EDIT_ORDER_RETURN_URL = `${BASE_URL}/api/password/change/`;
+export const GET_ORDER_RETURN_URL = `${BASE_URL}/api/password/change/`
+
+export const CREATE_ORDER_DOWNLOAD_URL = `${BASE_URL}/api/password/change/`;
+export const EDIT_ORDER_DOWNLOAD_URL = `${BASE_URL}/api/password/change/`;
+export const GET_ORDER_DOWNLOAD_URL = `${BASE_URL}/api/password/change/`
+
 
 export const GET_DOCUMENT_TYPES_URL = `${BASE_URL}/document-types/`;
 export const CREATE_DOCUMENT_TYPE_URL = `${BASE_URL}/document-types/`;
