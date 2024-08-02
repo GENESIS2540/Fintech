@@ -1,22 +1,26 @@
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import CustomerAccount from './CustomerAccount';
-import { Input } from 'antd';
+import { Input, Spin, message } from 'antd';
 import FilterPopOver from './FilterPopOver';
 import { Search } from 'lucide-react';
 import { departments, marketPlaceProducts, shoppingIdeas } from './data';
 import CustomButton from '../../Common/Button';
 import ProductDetail from './ProductDetail';
 import LeftDrawer from './LeftDrawer';
+import LanguageSwitcher from '../../translations/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../context';
 
 const MarketPlace = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [numItemsInCart, setNumItemsInCart] = useState(0);
-  
-
-  const handleAddToCart = () => {
-    setNumItemsInCart((prevCount) => prevCount + 1);
-  };
+  const {
+    cartItems,
+    loadingProductId,
+    handleAddToCart,
+  } = useContext(CartContext);
+  const { t } = useTranslation();
 
   const handleClick = (value) => {
     console.log(value);
@@ -30,8 +34,13 @@ const MarketPlace = () => {
     setSelectedProduct(null);
   };
 
+  const totalItemsInCart = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
-    <div className=" min-h-[100vh] bg-white">
+    <div className="min-h-[100vh] bg-white">
       <nav className="grid grid-cols-5 h-20 bg-white p-4">
         <p className="font-bold text-2xl text-primary">Genesis Market Place</p>
         <div className="col-span-2 mx-5 border-2 h-12 rounded-md border-gray-300 flex relative">
@@ -44,17 +53,25 @@ const MarketPlace = () => {
             <Search className="size-6" />
           </div>
         </div>
-
-        <CustomerAccount />
-        <div className="flex justify-self-end relative justify-center hover:border p-2 cursor-pointer items-center">
-          <p className="bg-red-500 text-white text-sm rounded-full flex justify-center items-center -right-1 top-0 h-5 w-5 absolute">
-            {numItemsInCart}
-          </p>
-          <ShoppingCartOutlined className="text-4xl" />
+        <div className="flex items-center col-span-2 justify-between w-full">
+          <CustomerAccount />
+          <div className="grid text-sm cursor-pointer hover:outline outline-analogous_teal p-2">
+            <p>Returns</p>
+            <p className="font-semibold">& Orders</p>
+          </div>
+          <LanguageSwitcher />
+          <Link to="/market-place/cart">
+            <div className="flex justify-self-end relative justify-center hover:outline outline-analogous_teal p-2 cursor-pointer items-center">
+              <p className="bg-red-500 text-white text-sm rounded-full flex justify-center items-center -right-1 top-0 h-5 w-5 absolute">
+                {totalItemsInCart}
+              </p>
+              <ShoppingCartOutlined className="text-4xl" />
+            </div>
+          </Link>
         </div>
       </nav>
       <div className="flex px-4 h-10 items-center gap-4 w-full bg-gray-200">
-        <LeftDrawer handleClick={handleClick}/>
+        <LeftDrawer handleClick={handleClick} />
         <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
           Today's Deals
         </p>
@@ -80,7 +97,7 @@ const MarketPlace = () => {
               {shop.text}
             </button>
           ))}
-          <p className="font-semibold text-xl">Departments </p>
+          <p className="font-semibold text-xl">Departments</p>
           {departments.map((department) => (
             <button
               className="grid my-2 hover:text-primary transition-all duration-200"
@@ -131,11 +148,16 @@ const MarketPlace = () => {
                     <CustomButton
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleAddToCart();
+                        handleAddToCart(product, 1, 'M', 'Red'); // Example size and color
                       }}
                       className="mx-2 my-4 rounded-[30px] bg-complementary"
+                      disabled={loadingProductId === product.userId}
                     >
-                      Add to cart
+                      {loadingProductId === product.userId ? (
+                        <Spin />
+                      ) : (
+                        'Add to cart'
+                      )}
                     </CustomButton>
                   </div>
                 ))}

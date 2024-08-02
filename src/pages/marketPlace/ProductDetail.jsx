@@ -13,7 +13,7 @@ const ProductDetail = ({
   const [quantityNumber, setQuantityNumber] = useState(1);
 
   const handleQuantityChange = (e) => {
-    setQuantityNumber(e.target.value);
+    setQuantityNumber(Number(e.target.value));
   };
 
   const shippingFees = parseFloat(selectedProduct.shippingFees) || 0;
@@ -21,10 +21,10 @@ const ProductDetail = ({
 
   const totalFees = shippingFees + importFees;
 
-  //normal delivery days based on users location
+  // Normal delivery days based on user's location
   const deliveryDate = <p className="font-semibold">Wednesday, August 21</p>;
 
-  //fastest delivery based on products being shipped to the location within 48 hrs
+  // Fastest delivery based on products being shipped to the location within 48 hrs
   const fastDeliveryDate = (
     <p className="inline">
       <span className="font-semibold">Monday, August 5</span> Order within{' '}
@@ -58,6 +58,7 @@ const ProductDetail = ({
       info: 'Genesis 254',
     },
   ];
+
   return (
     <div className="p-4">
       <button
@@ -131,8 +132,8 @@ const ProductDetail = ({
           </p>
           <div className="flex gap-1 cursor-pointer transition-all duration-200 hover:text-primary text-[12px] text-complementary_1">
             <MapPin className="size-4 mt-0.5" />
-            {loggedInUser.map((user) => (
-              <p>
+            {loggedInUser.map((user, index) => (
+              <p key={index}>
                 Deliver to {user.firstName} - {user.city} {user.address}
               </p>
             ))}
@@ -141,6 +142,8 @@ const ProductDetail = ({
           <div className="flex gap-2">
             <label>Quantity</label>{' '}
             <Input
+              type="number"
+              min="1"
               value={quantityNumber}
               onChange={handleQuantityChange}
               placeholder="Enter Quantity"
@@ -148,7 +151,7 @@ const ProductDetail = ({
           </div>
 
           <CustomButton
-            onClick={handleAddToCart}
+            onClick={() => handleAddToCart(selectedProduct, quantityNumber)}
             className="rounded-[20px] bg-complementary w-full"
           >
             Add to cart

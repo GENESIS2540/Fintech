@@ -49,9 +49,12 @@ export const departments = [
   },
 ];
 
+// productId should be unique to each product
+
 export const marketPlaceProducts = [
   {
     userId: 1,
+    productId: 1,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -87,6 +90,7 @@ export const marketPlaceProducts = [
   },
   {
     userId: 2,
+    productId: 2,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -122,6 +126,7 @@ export const marketPlaceProducts = [
   },
   {
     userId: 3,
+    productId: 3,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -157,6 +162,7 @@ export const marketPlaceProducts = [
   },
   {
     userId: 4,
+    productId: 4,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -191,7 +197,8 @@ export const marketPlaceProducts = [
     image: [trouser4, trouser2, trouser3, trouser1],
   },
   {
-    userId: 4,
+    userId: 5,
+    productId: 5,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
