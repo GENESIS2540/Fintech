@@ -41,9 +41,9 @@ const MarketPlace = () => {
 
   return (
     <div className="min-h-[100vh] bg-white">
-      <nav className="grid grid-cols-5 h-20 bg-white p-4">
-        <p className="font-bold text-2xl text-primary">Genesis Market Place</p>
-        <div className="col-span-2 mx-5 border-2 h-12 rounded-md border-gray-300 flex relative">
+      <nav className="grid md:grid-cols-5 h-20 bg-white p-4">
+        <p className="font-bold text-2xl col-span-2 md:col-span-1 text-center md:text-left text-primary">Genesis Market Place</p>
+        <div className="col-span-2 w-full mx-auto border-2 h-12 rounded-md border-gray-300 flex relative">
           <FilterPopOver />
           <Input
             placeholder="Search Genesis Market Place"
@@ -53,7 +53,7 @@ const MarketPlace = () => {
             <Search className="size-6" />
           </div>
         </div>
-        <div className="flex items-center col-span-2 justify-between w-full">
+        <div className="md:flex items-center col-span-2 justify-between hidden w-full">
           <CustomerAccount />
           <div className="grid text-sm cursor-pointer hover:outline outline-analogous_teal p-2">
             <p>Returns</p>
@@ -70,7 +70,7 @@ const MarketPlace = () => {
           </Link>
         </div>
       </nav>
-      <div className="flex px-4 h-10 items-center gap-4 w-full bg-gray-200">
+      <div className="md:flex px-4 h-10 items-center hidden gap-4 w-full bg-gray-200">
         <LeftDrawer handleClick={handleClick} />
         <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
           Today's Deals
@@ -85,8 +85,8 @@ const MarketPlace = () => {
           Sell
         </p>
       </div>
-      <div className="grid grid-cols-5">
-        <div className="p-4">
+      <div className="grid md:grid-cols-5">
+        <div className="p-4 lg:block hidden">
           <p className="font-semibold text-xl">Shopping Ideas</p>
           {shoppingIdeas.map((shop) => (
             <button
@@ -108,7 +108,7 @@ const MarketPlace = () => {
             </button>
           ))}
         </div>
-        <div className="col-span-4">
+        <div className="md:col-span-5 p-4 md:p-4 lg:col-span-4">
           {selectedProduct ? (
             <ProductDetail
               handleBackToProducts={handleBackToProducts}
@@ -117,10 +117,10 @@ const MarketPlace = () => {
             />
           ) : (
             <div>
-              <p className="font-semibold text-primary text-xl py-3">
+              <p className="font-semibold  text-xl py-3">
                 Welcome to our Market Place
               </p>
-              <div className="grid w-full gap-5 grid-cols-4">
+              <div className="grid w-full gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
                 {marketPlaceProducts.map((product) => (
                   <div
                     className="grid h-max border border-zinc-300 rounded-md cursor-pointer"
