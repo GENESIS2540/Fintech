@@ -76,7 +76,7 @@ const ProductDetail = ({
               {selectedProduct.image.map((img, index) => (
                 <img
                   key={index}
-                  className="h-[80px] sm:w-full hover:border-4 border-primary rounded-md transition-all w-[60px] cursor-pointer object-cover"
+                  className="h-[80px] w-[60px] hover:border-4 border-primary rounded-md transition-all cursor-pointer object-cover"
                   src={img}
                   alt={`${selectedProduct.nameOfProduct}-thumbnail-${index}`}
                   onMouseEnter={() => setMainImage(img)} // Change main image on hover
@@ -86,7 +86,7 @@ const ProductDetail = ({
 
             {/* Main Image */}
             <img
-              className="h-[344px] w-[320px] object-cover"
+              className="h-[344px] min-w-[275px] w-full md:w-[320px]"
               src={mainImage}
               alt={selectedProduct.nameOfProduct}
             />
