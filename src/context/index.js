@@ -8,8 +8,36 @@ const CartContext = createContext();
 const ContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [loadingProductId, setLoadingProductId] = useState(null);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selected, setSelected] = React.useState('market');
+  
+  const handleSelected = (setting) => {
+    setSelected(setting);
+  };
 
   const loggedInUser = { firstName: 'Brandon', lastName: 'Opere' };
+
+  const handleCheckboxChange = (productId) => {
+    setSelectedItems((prevSelectedItems) => {
+      if (prevSelectedItems.includes(productId)) {
+        return prevSelectedItems.filter((id) => id !== productId);
+      } else {
+        return [...prevSelectedItems, productId];
+      }
+    });
+  };
+
+  const totalCartItemsSelected = selectedItems.length;
+
+  const totalCostOfSelectedItems = selectedItems
+    .reduce((total, productId) => {
+      const item = cartItems.find(
+        (item) => item?.product?.userId === productId
+      );
+      return item ? total + item.product.price * item.quantity : total;
+    }, 0)
+    .toFixed(2);
+
 
   const handleAddToCart = (product, quantity, size, color) => {
     setLoadingProductId(product.userId);
@@ -73,6 +101,12 @@ const ContextProvider = ({ children }) => {
         handleClearCart,
         totalItemsInCart,
         loggedInUser,
+        handleCheckboxChange,
+        totalCartItemsSelected,
+        totalCostOfSelectedItems,
+        selectedItems,
+        selected,
+        handleSelected,
       }}
     >
       {children}

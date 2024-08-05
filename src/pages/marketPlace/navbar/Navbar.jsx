@@ -4,19 +4,18 @@ import { Input } from 'antd';
 import { Search } from 'lucide-react';
 import CustomerAccount from '../CustomerAccount';
 import LanguageSwitcher from '../../../translations/LanguageSwitcher';
-import { Link } from 'react-router-dom';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import LeftDrawer from '../LeftDrawer';
 import { CartContext } from '../../../context';
 
 const Navbar = () => {
-  const { totalItemsInCart } = useContext(CartContext);
+  const { totalItemsInCart, handleSelected } = useContext(CartContext);
   const handleClick = (value) => {
     console.log(value);
   };
 
   return (
-    <div className='hidden md:block'>
+    <div className="hidden md:block">
       <nav className="grid md:grid-cols-5 h-20 bg-white p-4">
         <p className="font-bold text-2xl col-span-2 md:col-span-1 text-center md:text-left text-primary">
           Genesis Market Place
@@ -38,14 +37,15 @@ const Navbar = () => {
             <p className="font-semibold">& Orders</p>
           </div>
           <LanguageSwitcher />
-          <Link to="/market-place/cart">
-            <div className="flex justify-self-end relative justify-center hover:outline outline-analogous_teal p-2 cursor-pointer items-center">
-              <p className="bg-red-500 text-white text-sm rounded-full flex justify-center items-center -right-1 top-0 h-5 w-5 absolute">
-                {totalItemsInCart}
-              </p>
-              <ShoppingCartOutlined className="text-4xl" />
-            </div>
-          </Link>
+          <button
+            onClick={() => handleSelected('cart')}
+            className="flex justify-self-end relative justify-center hover:outline outline-analogous_teal p-2 cursor-pointer items-center"
+          >
+            <p className="bg-red-500 text-white text-sm rounded-full flex justify-center items-center -right-1 top-0 h-5 w-5 absolute">
+              {totalItemsInCart}
+            </p>
+            <ShoppingCartOutlined className="text-4xl" />
+          </button>
         </div>
       </nav>
       <div className="md:flex px-4 h-10 items-center hidden gap-4 w-full bg-gray-200">
