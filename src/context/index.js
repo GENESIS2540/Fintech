@@ -9,6 +9,8 @@ const ContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [loadingProductId, setLoadingProductId] = useState(null);
 
+  const loggedInUser = { firstName: 'Brandon', lastName: 'Opere' };
+
   const handleAddToCart = (product, quantity, size, color) => {
     setLoadingProductId(product.userId);
     setTimeout(() => {
@@ -56,6 +58,11 @@ const ContextProvider = ({ children }) => {
     message.info('All items removed from cart');
   };
 
+  const totalItemsInCart = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <CartContext.Provider
       value={{
@@ -64,6 +71,8 @@ const ContextProvider = ({ children }) => {
         handleAddToCart,
         handleRemoveFromCart,
         handleClearCart,
+        totalItemsInCart,
+        loggedInUser,
       }}
     >
       {children}

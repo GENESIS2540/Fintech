@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import CustomButton from '../../Common/Button';
 import { formatToCurrency } from '../../Common/lib';
 import { MapPin } from 'lucide-react';
-import { Input } from 'antd';
+import { Input, Spin } from 'antd';
 
 const ProductDetail = ({
   handleBackToProducts,
   selectedProduct,
   handleAddToCart,
+  loadingProductId, 
 }) => {
   const [mainImage, setMainImage] = useState(selectedProduct.image[0]);
   const [quantityNumber, setQuantityNumber] = useState(1);
@@ -60,14 +61,14 @@ const ProductDetail = ({
   ];
 
   return (
-    <div className="p-4">
+    <div className="md:p-4">
       <button
         className="mb-4 text-primary font-semibold"
         onClick={handleBackToProducts}
       >
         Back to Products
       </button>
-      <div className="grid grid-cols-7 gap-4">
+      <div className="grid md:grid-cols-7 gap-4">
         <div className="col-span-3">
           <div className="flex gap-2">
             {/* Thumbnail Images */}
@@ -75,7 +76,7 @@ const ProductDetail = ({
               {selectedProduct.image.map((img, index) => (
                 <img
                   key={index}
-                  className="h-[80px] hover:border-4 border-primary rounded-md transition-all w-[60px] cursor-pointer object-cover"
+                  className="h-[80px] sm:w-full hover:border-4 border-primary rounded-md transition-all w-[60px] cursor-pointer object-cover"
                   src={img}
                   alt={`${selectedProduct.nameOfProduct}-thumbnail-${index}`}
                   onMouseEnter={() => setMainImage(img)} // Change main image on hover
@@ -153,8 +154,9 @@ const ProductDetail = ({
           <CustomButton
             onClick={() => handleAddToCart(selectedProduct, quantityNumber)}
             className="rounded-[20px] bg-complementary w-full"
+            disabled={loadingProductId === selectedProduct.userId}
           >
-            Add to cart
+            {loadingProductId === selectedProduct.userId ? <Spin /> : 'Add to cart'}
           </CustomButton>
           <CustomButton className="rounded-[20px] bg-complementary/80 w-full">
             Buy Now

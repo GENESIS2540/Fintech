@@ -12,16 +12,17 @@ import LanguageSwitcher from '../../translations/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context';
+import Navbar from './navbar/Navbar';
+import MobileNavbar from './navbar/MobileNavbar';
 
 const MarketPlace = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const {
-    cartItems,
     loadingProductId,
     handleAddToCart,
   } = useContext(CartContext);
   const { t } = useTranslation();
-
+ 
   const handleClick = (value) => {
     console.log(value);
   };
@@ -34,57 +35,12 @@ const MarketPlace = () => {
     setSelectedProduct(null);
   };
 
-  const totalItemsInCart = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  
 
   return (
     <div className="min-h-[100vh] bg-white">
-      <nav className="grid md:grid-cols-5 h-20 bg-white p-4">
-        <p className="font-bold text-2xl col-span-2 md:col-span-1 text-center md:text-left text-primary">Genesis Market Place</p>
-        <div className="col-span-2 w-full mx-auto border-2 h-12 rounded-md border-gray-300 flex relative">
-          <FilterPopOver />
-          <Input
-            placeholder="Search Genesis Market Place"
-            className="pl-[70px] bordr-2 border-primary rounded-md bg-white"
-          />
-          <div className="absolute right-0 cursor-pointer p-2 rounded-md h-full bg-primary/30 hover:bg-primary/50 flex items-center justify-center">
-            <Search className="size-6" />
-          </div>
-        </div>
-        <div className="md:flex items-center col-span-2 justify-between hidden w-full">
-          <CustomerAccount />
-          <div className="grid text-sm cursor-pointer hover:outline outline-analogous_teal p-2">
-            <p>Returns</p>
-            <p className="font-semibold">& Orders</p>
-          </div>
-          <LanguageSwitcher />
-          <Link to="/market-place/cart">
-            <div className="flex justify-self-end relative justify-center hover:outline outline-analogous_teal p-2 cursor-pointer items-center">
-              <p className="bg-red-500 text-white text-sm rounded-full flex justify-center items-center -right-1 top-0 h-5 w-5 absolute">
-                {totalItemsInCart}
-              </p>
-              <ShoppingCartOutlined className="text-4xl" />
-            </div>
-          </Link>
-        </div>
-      </nav>
-      <div className="md:flex px-4 h-10 items-center hidden gap-4 w-full bg-gray-200">
-        <LeftDrawer handleClick={handleClick} />
-        <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
-          Today's Deals
-        </p>
-        <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
-          Customer Service
-        </p>
-        <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
-          Gift Cards
-        </p>
-        <p className="p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer">
-          Sell
-        </p>
-      </div>
+      <Navbar />
+      <MobileNavbar />
       <div className="grid md:grid-cols-5">
         <div className="p-4 lg:block hidden">
           <p className="font-semibold text-xl">Shopping Ideas</p>
@@ -114,10 +70,11 @@ const MarketPlace = () => {
               handleBackToProducts={handleBackToProducts}
               selectedProduct={selectedProduct}
               handleAddToCart={handleAddToCart}
+              loadingProductId={loadingProductId}  
             />
           ) : (
             <div>
-              <p className="font-semibold  text-xl py-3">
+              <p className="font-semibold text-xl py-3">
                 Welcome to our Market Place
               </p>
               <div className="grid w-full gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">

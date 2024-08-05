@@ -31,8 +31,8 @@ const Cart = () => {
     .toFixed(2);
 
   return (
-    <div className="p-4 grid grid-cols-4 gap-2 bg-[#f7f7f7]">
-      <div className="grid bg-white p-2 rounded-xl col-span-3">
+    <div className="p-4 grid md:grid-cols-4 gap-2 bg-[#f7f7f7]">
+      <div className="grid bg-white p-2 rounded-xl md:col-span-3">
         <div className="flex justify-between items-center">
           <p className="text-2xl font-semibold">Shopping Cart</p>
           <button
@@ -74,7 +74,7 @@ const Cart = () => {
           ))
         )}
       </div>
-      <div className="space-y-4">
+      <div className="gap-4 grid border md:grid-cols-1 sm:grid-cols-2">
         <div className="border h-max bg-white rounded-xl p-2 grid gap-2">
           <p className="font-medium text-xl">
             Subtotal({totalCartItemsSelected}):{' '}
