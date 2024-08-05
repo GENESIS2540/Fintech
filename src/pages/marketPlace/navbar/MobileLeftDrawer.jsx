@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Drawer, Space } from 'antd';
+import { Button, Drawer, Space } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 import { AlignJustify } from 'lucide-react';
 import { departments, shoppingIdeas } from '../data';
@@ -21,20 +21,35 @@ const MobileLeftDrawer = ({ handleClick }) => {
   return (
     <>
       <Space>
-        <div
-          onClick={showDrawer}
-          className="flex gap-1  cursor-pointer"
-        >
+        <div onClick={showDrawer} className="flex gap-1  cursor-pointer">
           <AlignJustify />
         </div>
       </Space>
       <Drawer
-        title={`Hello, ${loggedInUser.firstName}`}
+        title={
+          <div className="bg-black/70 text-white p-2 flex justify-between items-start">
+            <p className="font-semibold text-xl">Browse Genesis</p>
+            <Button
+              type="text"
+              onClick={onClose}
+              icon={<CloseOutlined />}
+              className="text-white"
+            />
+          </div>
+        }
         placement="left"
         width={300}
         onClose={onClose}
         open={open}
-        closeIcon={<CloseOutlined />}
+        closeIcon={false}
+        styles={{
+          header: {
+            padding: 0,
+          },
+          body: {
+            padding: 0,
+          },
+        }}
       >
         <div className="p-4">
           <p className="font-semibold text-xl">Shopping Ideas</p>

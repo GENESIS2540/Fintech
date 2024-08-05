@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import FilterPopOver from '../FilterPopOver';
 import { Input } from 'antd';
 import { Search } from 'lucide-react';
-import CustomerAccount from '../CustomerAccount';
+import CustomerAccount from '../account/CustomerAccount';
 import LanguageSwitcher from '../../../translations/LanguageSwitcher';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import LeftDrawer from '../LeftDrawer';

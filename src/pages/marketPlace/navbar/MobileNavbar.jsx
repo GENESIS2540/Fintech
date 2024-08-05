@@ -7,9 +7,10 @@ import {
 import { CartContext } from '../../../context';
 import MobileLeftDrawer from './MobileLeftDrawer';
 import { Search } from 'lucide-react';
+import AccountDrawer from '../account/AccountDrawer';
 
 const MobileNavbar = () => {
-  const { totalItemsInCart, loggedInUser, handleSelected } = useContext(CartContext);
+  const { totalItemsInCart, handleSelected } = useContext(CartContext);
 
   return (
     <nav className="md:hidden space-y-2 text-white bg-black/70 p-2">
@@ -19,13 +20,7 @@ const MobileNavbar = () => {
           Genesis
         </div>
         <div className="flex gap-2">
-          <div className="flex items-center">
-            <p className="font-semibold">{loggedInUser.firstName}</p>
-            <RightOutlined className="size-2" />
-            <div>
-              <UserOutlined className="text-[20px] font-bold" />
-            </div>
-          </div>
+          <AccountDrawer />
           <button
             onClick={() => handleSelected('cart')}
             className="flex justify-self-end relative justify-cente cursor-pointer items-center"
