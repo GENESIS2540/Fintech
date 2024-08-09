@@ -209,7 +209,7 @@ const Checkout = () => {
           </div>
           <hr className="my-1.5 border-t border-gray-300" />
         </div>
-        <div className="grid rounded-xl shadow-custom p-4">
+        <div className="grid h-max gap-3 rounded-xl shadow-custom p-4">
           <p className="text-center text-sm">
             Choose a payment method to continue checking out. You'll still have
             a chance to review and edit your order before it's final.
