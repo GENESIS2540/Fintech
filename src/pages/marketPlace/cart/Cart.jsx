@@ -6,6 +6,7 @@ import { CartContext } from '../../../context';
 import MobileCartItem from './MobileCartItem';
 import MobileCart from './MobileCart';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const {
@@ -95,13 +96,15 @@ const Cart = () => {
       </div>
       <div className="gap-4 hidden md:flex flex-col ">
         <div className="border h-max bg-white rounded-xl p-2 grid gap-2">
-          <p className="font-medium text-xl">
+          <p className="text-xl">
             Subtotal({totalCartItemsSelected}):{' '}
-            <span className="font-semibold">${totalCostOfSelectedItems}</span>
+            <span className="font-medium">${totalCostOfSelectedItems}</span>
           </p>
-          <CustomButton className="rounded-[30px] bg-complementary">
-            Proceed to Checkout
-          </CustomButton>
+          <Link to={'/checkout'}>
+            <CustomButton className="rounded-[30px] bg-complementary">
+              Proceed to Checkout
+            </CustomButton>
+          </Link>
         </div>
         <div className="flex h-max gap-2 bg-white p-2 rounded-xl border">
           <img src="" alt="" />

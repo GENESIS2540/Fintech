@@ -1,4 +1,4 @@
-import { Table, Button, Space, Image } from "antd";
+import { Table, Space, Image } from "antd";
 import React from "react";
 import Header from "../common/Header";
 import shoe from "../../assets/shoe.jpeg";
