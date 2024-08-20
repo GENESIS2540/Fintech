@@ -12,27 +12,24 @@ import Signin from "./pages/signin/Signin";
 import Printing from "./pages/printing/Printing";
 import ShippingService from "./pages/shipping/Shipping";
 import MarketPlace from "./pages/marketPlace/MarketPlace";
+import Checkout from "./pages/marketPlace/checkout/Checkout";
 
 const App = () => {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signin />} />
-          <Route path="/market-place" element={<MarketPlace />}/>
-
-
-          {/* Private Routes */}
-          <Route path="/customer" element={<PrivateRoute><Customer /></PrivateRoute>} />
-          <Route path="/admin" element={<PrivateRoute><Admin /></PrivateRoute>} />
-          <Route path="/vendors" element={<PrivateRoute><Vendors /></PrivateRoute>} />
-          <Route path="/printing" element={<PrivateRoute><Printing /></PrivateRoute>} />
-          <Route path="/shipping" element={<PrivateRoute><ShippingService /></PrivateRoute>} />
-        </Routes>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/customer" element={<Customer />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/vendors" element={<Vendors />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signin />} />
+        <Route path="/printing" element={<Printing />} />
+        <Route path="/shipping" element={<ShippingService />} />
+        <Route path="/market-place" element={<MarketPlace />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </Router>
   );
 };
 

@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import CustomButton from '../../Common/Button';
 import { formatToCurrency } from '../../Common/lib';
 import { MapPin } from 'lucide-react';
-import { Input } from 'antd';
+import { Input, Spin } from 'antd';
 
 const ProductDetail = ({
   handleBackToProducts,
   selectedProduct,
   handleAddToCart,
+  loadingProductId, 
 }) => {
   const [mainImage, setMainImage] = useState(selectedProduct.image[0]);
   const [quantityNumber, setQuantityNumber] = useState(1);
 
   const handleQuantityChange = (e) => {
-    setQuantityNumber(e.target.value);
+    setQuantityNumber(Number(e.target.value));
   };
 
   const shippingFees = parseFloat(selectedProduct.shippingFees) || 0;
@@ -21,10 +22,10 @@ const ProductDetail = ({
 
   const totalFees = shippingFees + importFees;
 
-  //normal delivery days based on users location
+  // Normal delivery days based on user's location
   const deliveryDate = <p className="font-semibold">Wednesday, August 21</p>;
 
-  //fastest delivery based on products being shipped to the location within 48 hrs
+  // Fastest delivery based on products being shipped to the location within 48 hrs
   const fastDeliveryDate = (
     <p className="inline">
       <span className="font-semibold">Monday, August 5</span> Order within{' '}
@@ -58,15 +59,16 @@ const ProductDetail = ({
       info: 'Genesis 254',
     },
   ];
+
   return (
-    <div className="p-4">
+    <div className="md:p-4">
       <button
         className="mb-4 text-primary font-semibold"
         onClick={handleBackToProducts}
       >
         Back to Products
       </button>
-      <div className="grid grid-cols-7 gap-4">
+      <div className="grid md:grid-cols-7 gap-4">
         <div className="col-span-3">
           <div className="flex gap-2">
             {/* Thumbnail Images */}
@@ -74,7 +76,7 @@ const ProductDetail = ({
               {selectedProduct.image.map((img, index) => (
                 <img
                   key={index}
-                  className="h-[80px] hover:border-4 border-primary rounded-md transition-all w-[60px] cursor-pointer object-cover"
+                  className="h-[80px] w-[60px] hover:border-4 border-primary rounded-md transition-all cursor-pointer object-cover"
                   src={img}
                   alt={`${selectedProduct.nameOfProduct}-thumbnail-${index}`}
                   onMouseEnter={() => setMainImage(img)} // Change main image on hover
@@ -84,7 +86,7 @@ const ProductDetail = ({
 
             {/* Main Image */}
             <img
-              className="h-[344px] w-[320px] object-cover"
+              className="h-[344px] min-w-[275px] w-full md:w-[320px]"
               src={mainImage}
               alt={selectedProduct.nameOfProduct}
             />
@@ -131,8 +133,8 @@ const ProductDetail = ({
           </p>
           <div className="flex gap-1 cursor-pointer transition-all duration-200 hover:text-primary text-[12px] text-complementary_1">
             <MapPin className="size-4 mt-0.5" />
-            {loggedInUser.map((user) => (
-              <p>
+            {loggedInUser.map((user, index) => (
+              <p key={index}>
                 Deliver to {user.firstName} - {user.city} {user.address}
               </p>
             ))}
@@ -141,6 +143,8 @@ const ProductDetail = ({
           <div className="flex gap-2">
             <label>Quantity</label>{' '}
             <Input
+              type="number"
+              min="1"
               value={quantityNumber}
               onChange={handleQuantityChange}
               placeholder="Enter Quantity"
@@ -148,10 +152,11 @@ const ProductDetail = ({
           </div>
 
           <CustomButton
-            onClick={handleAddToCart}
+            onClick={() => handleAddToCart(selectedProduct, quantityNumber)}
             className="rounded-[20px] bg-complementary w-full"
+            disabled={loadingProductId === selectedProduct.userId}
           >
-            Add to cart
+            {loadingProductId === selectedProduct.userId ? <Spin /> : 'Add to cart'}
           </CustomButton>
           <CustomButton className="rounded-[20px] bg-complementary/80 w-full">
             Buy Now

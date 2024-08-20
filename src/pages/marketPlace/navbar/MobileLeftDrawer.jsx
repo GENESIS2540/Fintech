@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Drawer, Space } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 import { AlignJustify } from 'lucide-react';
-import { departments, shoppingIdeas } from './data';
-const LeftDrawer = ({ handleClick }) => {
+import { departments, shoppingIdeas } from '../data';
+import { CartContext } from '../../../context';
+
+const MobileLeftDrawer = ({ handleClick }) => {
   const [open, setOpen] = useState(false);
+
+  const { loggedInUser } = useContext(CartContext);
 
   const showDrawer = () => {
     setOpen(true);
@@ -14,25 +18,17 @@ const LeftDrawer = ({ handleClick }) => {
     setOpen(false);
   };
 
-  const loggedInUser = { firstName: 'Brandon' };
-
   return (
     <>
       <Space>
-        <div
-          onClick={showDrawer}
-          className="flex gap-1 p-1.5 transition-all duration-300 border hover:border hover:border-gray-400 cursor-pointer"
-        >
+        <div onClick={showDrawer} className="flex gap-1  cursor-pointer">
           <AlignJustify />
-          <p>All</p>
         </div>
       </Space>
       <Drawer
         title={
           <div className="bg-black/70 text-white p-2 flex justify-between items-start">
-            <p className="font-semibold text-xl">
-              Hello {loggedInUser.firstName}
-            </p>
+            <p className="font-semibold text-xl">Browse Genesis</p>
             <Button
               type="text"
               onClick={onClose}
@@ -81,4 +77,5 @@ const LeftDrawer = ({ handleClick }) => {
     </>
   );
 };
-export default LeftDrawer;
+
+export default MobileLeftDrawer;

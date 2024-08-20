@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Steps } from 'antd';
-import logo from '../landing/assets/brand/logo.svg';
+import logo from '../../Common/Assets/gennesiisn.jpg';
 import { Link } from 'react-router-dom';
 import ShippingInfo from './ShippingInfo';
 import PaymentDetails from './PaymentDetails';
@@ -19,10 +19,9 @@ const ShippingService = () => {
     <div className="mx-auto md:p-8 p-4">
       <div className="flex gap-3 justify-center items-center">
         <Link to={'/'}>
-          <img className="cursor-pointer" src={logo} alt="Logo" />
+          <img className="cursor-pointer rounded-full h-20 w-20"  src={logo} alt="Logo" />
         </Link>
-
-        <p className="text-center font-bold text-3xl">BNPL Shipping Services</p>
+        <p className="text-center font-bold text-3xl">Shipping Services</p>
       </div>
 
       <div className="bg-white/50 md:p-6 p-2 rounded-xl mt-2">

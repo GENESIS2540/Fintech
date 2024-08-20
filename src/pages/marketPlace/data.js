@@ -49,9 +49,12 @@ export const departments = [
   },
 ];
 
+// productId should be unique to each product
+
 export const marketPlaceProducts = [
   {
     userId: 1,
+    productId: 1,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -87,6 +90,7 @@ export const marketPlaceProducts = [
   },
   {
     userId: 2,
+    productId: 2,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -122,6 +126,7 @@ export const marketPlaceProducts = [
   },
   {
     userId: 3,
+    productId: 3,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -157,6 +162,7 @@ export const marketPlaceProducts = [
   },
   {
     userId: 4,
+    productId: 4,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -191,7 +197,8 @@ export const marketPlaceProducts = [
     image: [trouser4, trouser2, trouser3, trouser1],
   },
   {
-    userId: 4,
+    userId: 5,
+    productId: 5,  
     vendorsName: 'Shopify',
     nameOfProduct: 'Trouser',
     shortDescription:
@@ -226,3 +233,60 @@ export const marketPlaceProducts = [
     image: [trouser4, trouser2, trouser3, trouser1],
   },
 ];
+
+export const yourOrders = [
+  {
+    key: 1,
+    text: 'Track and Manage Your Orders',
+    value: 'track',
+  },
+  {
+    key: 2,
+    text: 'Buy Again',
+    value: 'buy',
+  },
+  {
+    key: 3,
+    text: 'Returns & Replacements',
+    value: 'returns',
+  },
+  {
+    key: 4,
+    text: 'Shipping Rates & Policies',
+    value: 'shippingrates',
+  },
+]
+
+
+export const yourAccount = [
+  {
+    key: 1,
+    text: 'Lists',
+    value: 'list',
+  },
+  {
+    key: 2,
+    text: 'Recommendations',
+    value: 'recommendation',
+  },
+  {
+    key: 3,
+    text: 'Browsing History',
+    value: 'history',
+  },
+  {
+    key: 4,
+    text: 'Recalls and Product safety Alert',
+    value: 'recalls',
+  },
+  {
+    key: 5,
+    text: 'Your Memberships and Subscriptions',
+    value: 'membership',
+  },
+  {
+    key: 6,
+    text: 'See All Accounts',
+    value: 'accounts',
+  },
+]
