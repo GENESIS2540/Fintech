@@ -25,10 +25,8 @@ import {
   CREATE_STRIPE_PAYMENT_INTENT_URL,COMPLETE_STRIPE_PAYMENT_URL,CREATE_MPESA_PAYMENT_INTENT_URL,
   MPESA_CALLBACK_URL,REFUND_PAYMENT_URL,MPESA_B2C_RESULT_URL,MPESA_B2C_TIMEOUT_URL,
 } from './apiConfig';
-
 // Set up axios instance
 const apiClient = axios.create();
-
 apiClient.interceptors.request.use(
   config => {
     const token = localStorage.getItem('token');
