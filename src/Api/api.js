@@ -1,6 +1,6 @@
 // api.js
 
-import axios from 'axios';
+import axios  from 'axios';
 import {
   USER_LIST_URL,
   CREATE_ADMIN,CREATE_VENDOR, CREATE_CUSTOMER,
